@@ -1,13 +1,7 @@
 import React from 'react'
 import { Metadata } from "next";
-import Hero from '@/components/Home/Hero';
-import Help from '@/components/Home/Help';
-import Causes from '@/components/Home/Causes';
-import FutureEvents from '@/components/Home/FutureEvents';
-import UrgentDonation from '@/components/Home/UrgentDonation';
-import Newsletter from '@/components/Home/NewsLetter';
-import Testimonial from '@/components/Home/Testimonial';
-import Volunteer from '@/components/SharedComponent/Volunteer';
+import MinimalHome from '@/components/Home/MinimalHome';
+
 export const metadata: Metadata = {
   title: "Shield Our Elders",
   description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
@@ -15,15 +9,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Help />
-      <Causes />
-      <FutureEvents />
-      <UrgentDonation />
-      <Newsletter />
-      <Testimonial />
-      <Volunteer />
-    </main>
+    <MinimalHome />
   )
 }

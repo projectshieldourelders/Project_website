@@ -10,7 +10,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, bgImage }) => {
 
   return (
     <section
-      className="relative py-10 sm:py-20 bg-no-repeat bg-center bg-cover lg:mt-40 sm:mt-44 mt-20"
+      className="relative mt-20 bg-cover bg-center bg-no-repeat py-10 sm:py-20"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Overlay */}

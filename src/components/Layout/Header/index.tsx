@@ -1,10 +1,8 @@
 'use client'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { headerData } from '../Header/Navigation/menuData'
 import Logo from './Logo'
-import Image from 'next/image'
 import HeaderLink from '../Header/Navigation/HeaderLink'
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { useTheme } from '@/app/context/themeContext'
@@ -62,16 +60,16 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all ${sticky
-        ? 'shadow-lg dark:shadow-darkmd bg-white dark:bg-dark'
+      className={`fixed top-0 z-50 w-full border-b border-border/80 bg-white/95 backdrop-blur-md transition-all dark:border-dark_border dark:bg-dark/95 ${sticky
+        ? 'shadow-sm dark:shadow-darkmd'
         : 'shadow-none'
         }`}>
-      <div className='bg-primary lg:py-0 py-2 dark:bg-primary'>
-        <div className='container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex items-center justify-between px-4'>
-          <div className='lg:hidden block'>
+      <div className='py-3'>
+        <div className='container mx-auto flex items-center justify-between px-4 md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-xl)'>
+          <div className='block shrink-0'>
             <Logo />
           </div>
-          <nav className='hidden lg:flex grow items-center justify-start'>
+          <nav className='hidden grow items-center justify-center lg:flex'>
             {headerData.map((item, index) => (
               <HeaderLink key={index} item={item} />
             ))}
@@ -80,11 +78,10 @@ const Header: React.FC = () => {
             <button
               aria-label='Toggle theme'
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className='flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white hover:cursor-pointer'>
+              className='flex h-10 w-10 items-center justify-center rounded-full text-midnight_text duration-300 hover:bg-primary/10 hover:cursor-pointer dark:text-white dark:hover:bg-white/10'>
               <svg
                 viewBox='0 0 16 16'
-                className={`hidden h-6 w-6 dark:block ${!sticky && pathUrl === '/' && 'text-white'
-                  }`}>
+                className='hidden h-6 w-6 dark:block'>
                 <path
                   d='M4.50663 3.2267L3.30663 2.03337L2.36663 2.97337L3.55996 4.1667L4.50663 3.2267ZM2.66663 7.00003H0.666626V8.33337H2.66663V7.00003ZM8.66663 0.366699H7.33329V2.33337H8.66663V0.366699V0.366699ZM13.6333 2.97337L12.6933 2.03337L11.5 3.2267L12.44 4.1667L13.6333 2.97337ZM11.4933 12.1067L12.6866 13.3067L13.6266 12.3667L12.4266 11.1734L11.4933 12.1067ZM13.3333 7.00003V8.33337H15.3333V7.00003H13.3333ZM7.99996 3.6667C5.79329 3.6667 3.99996 5.46003 3.99996 7.6667C3.99996 9.87337 5.79329 11.6667 7.99996 11.6667C10.2066 11.6667 12 9.87337 12 7.6667C12 5.46003 10.2066 3.6667 7.99996 3.6667ZM7.33329 14.9667H8.66663V13H7.33329V14.9667ZM2.36663 12.36L3.30663 13.3L4.49996 12.1L3.55996 11.16L2.36663 12.36Z'
                   fill='#FFFFFF'
@@ -92,23 +89,16 @@ const Header: React.FC = () => {
               </svg>
               <svg
                 viewBox='0 0 23 23'
-                className={`h-8 w-8 text-dark dark:hidden ${!sticky && pathUrl === '/' && 'text-white'
-                  }`}>
+                className='h-8 w-8 text-midnight_text dark:hidden'>
                 <path d='M16.6111 15.855C17.591 15.1394 18.3151 14.1979 18.7723 13.1623C16.4824 13.4065 14.1342 12.4631 12.6795 10.4711C11.2248 8.47905 11.0409 5.95516 11.9705 3.84818C10.8449 3.9685 9.72768 4.37162 8.74781 5.08719C5.7759 7.25747 5.12529 11.4308 7.29558 14.4028C9.46586 17.3747 13.6392 18.0253 16.6111 15.855Z' />
               </svg>
             </button>
-            <Link
-              href={'/privacy'}
-              className='hidden lg:block bg-error text-sm hover:bg-error/90 text-white px-4 py-3.5 leading-none rounded-lg font-medium text-nowrap'
+            <button
+              onClick={() => donationInfo?.setIsDonationOpen(true)}
+              className='hidden rounded-md bg-primary px-5 py-3 text-sm font-semibold leading-none text-white transition hover:bg-darkprimary sm:block'
             >
-              Privacy
-            </Link>
-            <Link
-              href={'/terms'}
-              className='hidden lg:block text-sm bg-black hover:bg-black/80 text-white px-4 py-3.5 leading-none rounded-lg font-medium text-nowrap'
-            >
-              Terms
-            </Link>
+              Request visit
+            </button>
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
               className='block lg:hidden p-2 rounded-lg'
@@ -154,75 +144,16 @@ const Header: React.FC = () => {
             {headerData.map((item, index) => (
               <MobileHeaderLink key={index} item={item} />
             ))}
-            <div className='mt-4 flex flex-col space-y-4 w-full'>
-              <Link
-                href={'/privacy'}
-                className='bg-transparent border border-primary text-primary px-4 py-2 text-nowrap rounded-lg hover:bg-darkprimary hover:text-white'
-                onClick={() => {
-                  setNavbarOpen(false)
-                }}>
-                Privacy
-              </Link>
-              <Link
-                href={'/terms'}
-                className='bg-primary text-white px-4 py-2 rounded-lg text-nowrap hover:bg-darkprimary'
-                onClick={() => {
-                  setNavbarOpen(false)
-                }}>
-                Terms
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div className='dark:bg-dark'>
-        <div className='px-4 container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) sm:flex lg:justify-between justify-center py-5 hidden'>
-          <div className='lg:block hidden'>
-            <Logo />
-          </div>
-          <div className='flex items-center'>
-            <div className='flex gap-3 py-2 pr-6 border-r dark:border-dark_border'>
-              <Image
-                src='/images/icons/icon-mail.svg'
-                alt='icon'
-                width={32}
-                height={32}
-              />
-              <div className=''>
-                <p className='text-sm font-normal text-muted dark:text-white/85 mb-0'>
-                  Email us at
-                </p>
-                <Link
-                  href='mailto:projectshieldourelders@gmail.com'
-                  className='text-base font-semibold mb-0 hover:text-primary'>
-                  projectshieldourelders@gmail.com
-                </Link>
-              </div>
-            </div>
-            <div className='flex gap-3 py-2 pl-6'>
-              <Image
-                src='/images/icons/icon-phone.svg'
-                alt='icon'
-                width={32}
-                height={32}
-              />
-              <div className=''>
-                <p className='text-sm font-normal text-muted dark:text-white/85 mb-0'>
-                  Program area
-                </p>
-                <Link
-                  href='/contact'
-                  className='text-base font-semibold mb-0 hover:text-primary'>
-                  Brevard County, FL
-                </Link>
-              </div>
-            </div>
             <button
-              onClick={() => donationInfo?.setIsDonationOpen(true)}
-              className='text-error text-base font-semibold border border-error py-4 px-7 rounded-md ml-8 hover:bg-error hover:text-white cursor-pointer'>
+              onClick={() => {
+                setNavbarOpen(false)
+                donationInfo?.setIsDonationOpen(true)
+              }}
+              className='mt-5 w-full rounded-md bg-primary px-4 py-3 text-left text-base font-semibold text-white hover:bg-darkprimary'
+            >
               Request visit
             </button>
-          </div>
+          </nav>
         </div>
       </div>
       {/* Request Popup */}

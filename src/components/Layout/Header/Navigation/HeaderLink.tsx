@@ -35,8 +35,8 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     >
       <Link
         href={item.href}
-        className={`text-[15px] flex font-medium hover:text-midnight_text dark:hover:text-white/90 py-[15px] ${item.submenu ? "-my-[1px]" : ''} px-6 ${path.startsWith(`/${navString}`) ? "text-midnight_text! bg-white dark:bg-dark dark:text-white!" : null} ${
-          path === item.href ? "text-midnight_text bg-white dark:bg-dark dark:text-white" : " text-white "
+        className={`flex rounded-full px-4 py-2.5 text-[15px] font-semibold transition ${item.submenu ? "-my-[1px]" : ''} ${path.startsWith(`/${navString}`) ? "bg-primary/10 text-primary dark:bg-white/10 dark:text-white" : null} ${
+          path === item.href ? "bg-primary/10 text-primary dark:bg-white/10 dark:text-white" : "text-dustGray hover:bg-primary/10 hover:text-primary dark:text-white/85 dark:hover:bg-white/10 dark:hover:text-white"
         }`}
       >
         {item.label}

@@ -1,149 +1,50 @@
-import React, { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Logo from "../Header/Logo";
-import { footerLinks } from "@/app/api/data";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
-const Footer: FC = () => {
+const footerLinks = [
+  { label: "System", href: "/cause" },
+  { label: "Workshops", href: "/events" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+];
+
+const Footer = () => {
   return (
-    <footer className="pt-16 dark:bg-dark">
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 pb-10 ">
-          <div className="lg:col-span-3 md:col-span-4 col-span-6">
+    <footer className="border-t border-border bg-white py-10 dark:border-dark_border dark:bg-dark">
+      <div className="container mx-auto px-4 md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-xl)">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-md">
             <Logo />
-            <div className="mt-6">
-              <p className="text-base font-normal text-dustGray dark:text-white/85 mb-6">
-                A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.
-              </p>
-            </div>
+            <p className="mt-5 text-base leading-7 text-dustGray dark:text-white/85">
+              A student-led program helping older adults slow down, verify urgent claims, and ask someone trusted before acting.
+            </p>
           </div>
-          <div className="lg:col-span-3 md:col-span-4 col-span-6">
-            <div className="lg:pl-10">
-              <div className="flex items-start mb-8 gap-4">
-                <Image
-                  src="/images/icons/icon-pin.svg"
-                  alt="icon"
-                  width={24}
-                  height={24}
-                />
-                <div className="">
-                  <h5 className="text-base font-normal text-black dark:text-white mb-4">
-                    Community focus
-                  </h5>
-                  <p className="text-base text-dustGray dark:text-white/85">
-                    Built for older adults and trusted helpers in Brevard County and beyond.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center mb-8 gap-4">
-                <Image
-                  src="/images/icons/icon-phone.svg"
-                  alt="icon"
-                  width={24}
-                  height={24}
-                />
-                <div className="">
-                  <Link
-                    href="/contact"
-                    className="text-base text-black dark:text-white mb-0 hover:text-primary!"
-                  >
-                    Request a workshop
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/images/icons/icon-mail.svg"
-                  alt="icon"
-                  width={24}
-                  height={24}
-                />
-                <div className="">
-                  <Link
-                    href="mailto:projectshieldourelders@gmail.com"
-                    className="text-base text-black dark:text-white mb-0 hover:text-primary!"
-                  >
-                    projectshieldourelders@gmail.com
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-3 md:col-span-4 col-span-6">
-            <h4 className="text-base text-black dark:text-white mb-4">
-              Program Areas
-            </h4>
-            <ul className="pl-5">
-              {footerLinks.slice(0, 5).map((item, index) => (
-                <li key={index} className="mb-5">
-                  <Link
-                    href={item.href}
-                    className="text-base relative text-dustGray dark:text-white/85 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45"
-                  >
-                    {item.link}
-                  </Link>
-                </li>
+
+          <div className="flex flex-col gap-5 md:items-end">
+            <nav className="flex flex-wrap gap-x-6 gap-y-3">
+              {footerLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-base font-semibold text-midnight_text hover:text-primary dark:text-white dark:hover:text-primary"
+                >
+                  {item.label}
+                </Link>
               ))}
-            </ul>
-          </div>
-          <div className="lg:col-span-3 md:col-span-4 col-span-6">
-            <h4 className="text-base text-black dark:text-white mb-4">
-              Other Links
-            </h4>
-            <ul className="pl-5">
-              {footerLinks.slice(5).map((item, index) => (
-                <li key={index} className="mb-5">
-                  <Link
-                    href={item.href}
-                    className="text-base relative text-dustGray dark:text-white/85 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45">
-                    {item.link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-border dark:border-dark_border">
-        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 flex items-center justify-between py-6 lg:flex-nowrap flex-wrap lg:gap-0 gap-4">
-          <p className="text-base text-dustGray dark:text-white">
-            © All Rights Reserved by{" "}
+            </nav>
             <Link
-              href="/"
-              className="hover:text-primary!"
+              href="mailto:projectshieldourelders@gmail.com"
+              className="text-base text-dustGray hover:text-primary dark:text-white/85 dark:hover:text-primary"
             >
-              Shield Our Elders
-            </Link>
-            .
-          </p>
-          <div className="flex items-center gap-6">
-            <Link href="#">
-              <Icon
-                icon="ri:facebook-fill"
-                className="text-xl text-midnight_text dark:text-white hover:text-primary! cursor-pointer"
-              />
-            </Link>
-            <Link href="#">
-              <Icon
-                icon="mdi:instagram"
-                className="text-xl text-midnight_text dark:text-white hover:text-primary! cursor-pointer"
-              />
-            </Link>
-            <Link href="#">
-              <Icon
-                icon="ri:linkedin-fill"
-                className="text-xl text-midnight_text dark:text-white hover:text-primary! cursor-pointer"
-              />
-            </Link>
-            <Link href="#">
-              <Icon
-                icon="line-md:twitter-x-alt"
-                className="text-base text-midnight_text dark:text-white hover:text-primary! cursor-pointer"
-              />
+              projectshieldourelders@gmail.com
             </Link>
           </div>
         </div>
+
+        <p className="mt-10 border-t border-border pt-6 text-sm text-dustGray dark:border-dark_border dark:text-white/75">
+          © Shield Our Elders. All rights reserved.
+        </p>
       </div>
     </footer>
   );
