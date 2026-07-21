@@ -1,27 +1,23 @@
-import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import ScrollToTop from '@/components/ScrollToTop';
+import Aoscompo from "@/utils/aos";
+import { DonationProvider } from "./context/donationContext";
+import { ThemeProvider } from "./context/themeContext";
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
+import NextTopLoader from 'nextjs-toploader';
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  display: "swap",
-});
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://projectshieldourelders.org"),
-  title: "Shield Our Elders | Scam safety for older adults",
-  description:
-    "A simple app that helps older adults slow down, check suspicious calls and messages, and ask someone trusted before money leaves their hands.",
-  icons: {
-    icon: "/images/app/icon.png",
-    apple: "/images/app/icon.png",
+export const metadata = {
+  title: {
+    default: "Shield Our Elders",
+    template: "%s | Shield Our Elders",
   },
-  openGraph: {
-    title: "Shield Our Elders",
-    description:
-      "Scam safety for older adults, families, caregivers, libraries, and senior centers.",
-    type: "website",
-    images: ["/images/app/app-home.png"],
+  description: "A scam-safety app and community program for older adults, families, caregivers, libraries, and senior centers.",
+  icons: {
+    icon: "/images/app-icon.png",
+    apple: "/images/app-icon.png",
   },
 };
 
@@ -31,8 +27,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={bricolage.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={bricolage.className}>
+      <NextTopLoader color="#FF4D7E" />
+      <DonationProvider>
+        <ThemeProvider>
+          <Aoscompo>
+            <Header />
+            
+            {children}
+            
+            <Footer />
+          </Aoscompo>
+          <ScrollToTop />
+        </ThemeProvider>
+        </DonationProvider>
+      </body>
     </html>
   );
 }
