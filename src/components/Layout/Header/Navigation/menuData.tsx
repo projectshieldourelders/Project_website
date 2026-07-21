@@ -3,19 +3,19 @@ import { HeaderItem } from "@/types/menu";
 export const headerData: HeaderItem[] = [
   { label: "Home", href: "/" },
   {
-    label: "Features",
+    label: "System",
     href: "#",
     submenu: [
-      { label: "All features", href: "/cause" },
-      { label: "Message check", href: "/cause/scam-check" },
+      { label: "Full system", href: "/cause" },
+      { label: "Local snapshot", href: "/cause/scam-check" },
     ],
   },
   {
     label: "Workshops",
     href: "#",
     submenu: [
-      { label: "Workshop list", href: "/events" },
-      { label: "Senior center session", href: "/events/senior-center-workshop" },
+      { label: "Workshop sequence", href: "/events" },
+      { label: "Baseline session", href: "/events/senior-center-workshop" },
     ],
   },
   {

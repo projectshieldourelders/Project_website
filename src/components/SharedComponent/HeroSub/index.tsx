@@ -6,7 +6,7 @@ interface HeroSubProps {
 }
 
 const HeroSub: FC<HeroSubProps> = ({ title, bgImage }) => {
-  const backgroundImage = bgImage || "/images/background/hero-sub-banner.avif"
+  const backgroundImage = bgImage || "/images/background/hero-sub-banner.jpg"
 
   return (
     <section

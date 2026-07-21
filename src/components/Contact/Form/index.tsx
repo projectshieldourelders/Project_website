@@ -24,7 +24,7 @@ const ContactForm = () => {
   const reset = () => {
     formData.firstname = "";
     formData.lastname = "";
-    formData.email = "design & branding";
+    formData.email = "";
     formData.specialist = "";
     formData.date = "";
     formData.time = "";
@@ -63,7 +63,7 @@ const ContactForm = () => {
         <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
           <div className="grid lg:grid-cols-12 grid-cols-1 gap-8">
             <div className="lg:col-span-6 lg:order-1 order-2">
-              <h2 className="max-w-72 text-[40px] leading-tight font-bold mb-9 text-midnight_text dark:text-white">Request a workshop or app demo</h2>
+              <h2 className="max-w-72 text-[40px] leading-tight font-bold mb-9 text-midnight_text dark:text-white">Request a workshop or partner visit</h2>
               <form onSubmit={handleSubmit} className="flex flex-wrap w-full m-auto justify-between">
                 <div className="sm:flex gap-3 w-full">
                   <div className="mx-0 my-2.5 flex-1">
@@ -113,7 +113,7 @@ const ContactForm = () => {
                         Senior center workshop
                       </option>
                       <option value="Library session">Library session</option>
-                      <option value="Family demo">Family demo</option>
+                      <option value="Family session">Family session</option>
                       <option value="Caregiver training">
                         Caregiver training
                       </option>

@@ -220,7 +220,7 @@ const Header: React.FC = () => {
             <button
               onClick={() => donationInfo?.setIsDonationOpen(true)}
               className='text-error text-base font-semibold border border-error py-4 px-7 rounded-md ml-8 hover:bg-error hover:text-white cursor-pointer'>
-              Request demo
+              Request visit
             </button>
           </div>
         </div>

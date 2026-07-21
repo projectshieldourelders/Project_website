@@ -11,13 +11,13 @@ const UrgentDonation = () => {
             <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <div className="bg-white dark:bg-dark max-w-xl w-full px-10 py-14 rounded-lg text-center mx-auto" data-aos="fade-right">
                     <h3 className="sm:text-3xl text-lg font-medium mb-5">
-                        Someone is asking for money right now?
+                        Scam pressure happening right now?
                     </h3>
                     <p className="text-dustGray dark:text-white/60 sm:text-base text-sm mb-7">
-                    Hang up, do not click links, do not send money, and ask a trusted person before responding.
+                    Stop the conversation, avoid links, do not send money, and verify with a trusted contact or official number.
                     </p>
                     <button onClick={() => donationInfo?.setIsDonationOpen(true)} className="text-white text-base bg-primary px-7 py-4 border font-semibold border-primary hover:border-primary hover:bg-transparent hover:text-primary rounded-md cursor-pointer">
-                        Get safety steps
+                        Get help planning
                     </button>
                 </div>
             </div>

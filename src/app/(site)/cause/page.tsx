@@ -3,14 +3,14 @@ import CauseList from "@/components/Cause/CauseList";
 import Volunteer from "@/components/SharedComponent/Volunteer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "App Features",
+    title: "The System",
 };
 
 const Page = () => {
     return (
         <>
             <HeroSub
-                title="App Features"
+                title="The System"
             />
             <CauseList />
             <Volunteer />

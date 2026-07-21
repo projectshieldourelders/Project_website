@@ -12,7 +12,7 @@ const BlogPage = () => {
         <>
             <HeroSub
                 title="Scam News"
-                bgImage="/images/background/blog-banner-img.avif"
+                bgImage="/images/background/blog-banner-img.jpg"
             />
             <BlogList />
             <Volunteer />

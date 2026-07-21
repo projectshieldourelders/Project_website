@@ -1,7 +1,7 @@
 import CauseDetail from "@/components/Home/Causes/CauseDetail";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Feature Detail",
+    title: "System Detail",
 };
 
 const Page = () => {

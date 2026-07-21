@@ -7,13 +7,13 @@ const FormPart = () => {
         <>
             <div className="bg-grey dark:bg-darkmode py-5 px-8 rounded-sm border border-border dark:border-dark_border mb-8 ">
                 <p className="mb-0 text-base text-muted dark:text-white/60">
-                    <span className="text-midnight_text dark:text-white">Note:</span> This feature is for education and safety planning. It is not legal, financial, banking, or emergency advice.
+                    <span className="text-midnight_text dark:text-white">Note:</span> This program is for education and safety planning. It is not legal, financial, banking, or emergency advice.
                 </p>
             </div>
             <div className="bg-grey dark:bg-darkmode px-8 py-14 rounded-sm border border-border dark:border-dark_border mb-8 ">
                 <div className="border border-border dark:border-dark_border py-5 px-10 rounded-md mb-11">
                     <p className="text-sm text-muted dark:text-white/60">
-                        Want to use this feature in a workshop? Send a request and we will follow up.
+                        Want to bring this program to a workshop site? Send a request and we will follow up.
                     </p>
                 </div>
                 <form className="">
@@ -38,7 +38,7 @@ const FormPart = () => {
                     <button onClick={(e) => {
                         e.preventDefault();
                         donationInfo?.setIsDonationOpen(true)
-                    } } className="text-white text-sm bg-linear-to-r from-primary to-secondary font-semibold border border-transparent py-4 px-7 rounded-md hover:text-primary hover:border-primary hover:from-transparent hover:to-transparent cursor-pointer">Request demo</button>
+                    } } className="text-white text-sm bg-linear-to-r from-primary to-secondary font-semibold border border-transparent py-4 px-7 rounded-md hover:text-primary hover:border-primary hover:from-transparent hover:to-transparent cursor-pointer">Request visit</button>
                 </form>
             </div>
         </>

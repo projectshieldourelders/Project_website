@@ -14,7 +14,7 @@ export const metadata = {
     default: "Shield Our Elders",
     template: "%s | Shield Our Elders",
   },
-  description: "A scam-safety app and community program for older adults, families, caregivers, libraries, and senior centers.",
+  description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
   icons: {
     icon: "/images/app-icon.png",
     apple: "/images/app-icon.png",

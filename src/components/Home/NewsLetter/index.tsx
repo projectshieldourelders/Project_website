@@ -11,13 +11,13 @@ const Newsletter = () => {
                     <div className="" data-aos="fade-left">
                         <div className="mb-8">
                             <p className="text-base text-primary mb-3">
-                                Scam updates
+                                Local scam-defense notes
                             </p>
                             <h2 className="text-3xl font-semibold mb-6">
-                                Short updates families can actually read
+                                Short updates sites and families can actually use
                             </h2>
                             <p className="text-base text-dustGray dark:text-white/60">
-                            Get brief notes about common scam patterns, new lessons, and workshop updates from Shield Our Elders.
+                            Get brief notes about workshop progress, common scam patterns, app updates, and local evidence.
                             </p>
                         </div>
                         <form>

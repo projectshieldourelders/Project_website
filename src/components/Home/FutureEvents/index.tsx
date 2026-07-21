@@ -8,9 +8,9 @@ const FutureEvents = () => {
     <section className="lg:py-28 py-16 dark:bg-dark">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold mb-3">Workshops and scam-safety sessions</h2>
+          <h2 className="text-3xl font-semibold mb-3">Repeated-site workshop sequence</h2>
           <p className="text-base text-dustGray dark:text-white/60 mx-auto lg:max-w-60%">
-            Bring the app into senior centers, libraries, family meetings, and caregiver trainings.
+            A depth-first model for senior centers, assisted-living communities, retirement communities, and libraries.
           </p>
         </div>
         <div className="flex flex-col items-center gap-12">

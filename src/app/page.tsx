@@ -10,7 +10,7 @@ import Testimonial from '@/components/Home/Testimonial';
 import Volunteer from '@/components/SharedComponent/Volunteer';
 export const metadata: Metadata = {
   title: "Shield Our Elders",
-  description: "A scam-safety app and community program for older adults, families, caregivers, and senior centers.",
+  description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
 };
 
 export default function Home() {

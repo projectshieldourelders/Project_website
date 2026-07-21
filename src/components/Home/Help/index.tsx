@@ -7,10 +7,10 @@ const Help = () => {
             <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <div className="text-center">
                     <h2 className="text-3xl mb-3 font-semibold">
-                        How the app helps
+                        What the program does
                     </h2>
                     <p className="text-dustGray dark:text-white/60 text-base">
-                        A calmer way to handle suspicious calls, texts, emails, links, QR codes, and payments.<br className="lg:block hidden" /> Simple enough to use while someone is under pressure.
+                        Built for Brevard County seniors, caregivers, libraries, and senior-serving sites.<br className="lg:block hidden" /> The goal is to turn awareness into measured local protection.
                     </p>
                     <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-8">
                         {helpdata.map((item, index) => (

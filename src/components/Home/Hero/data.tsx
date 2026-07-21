@@ -2,21 +2,21 @@ export const HerosectionData = [
     {
         id: 1,
         image: "/images/hero/banner-bg-1.jpg",
-        tag_name: "Scam safety app",
-        left_days: 15,
-        title: "Help older adults stop, check, and ask first",
-        descp:"Shield Our Elders reviews suspicious calls, messages, links, QR codes, and payment requests in plain language.",
-        raised: "Checks",
-        goal: "Calm steps"
+        tag_name: "Brevard County program",
+        left_days: 4,
+        title: "A local defense system against scam pressure",
+        descp:"Project Shield Our Elders helps older adults pause, verify, ask a trusted person, and avoid rushed payments before harm happens.",
+        raised: "Workshops",
+        goal: "Local proof"
     },
     {
         id: 2,
         image: "/images/hero/banner-bg-2.jpg",
-        tag_name: "Community program",
-        left_days: 60,
-        title: "Short lessons for real scam moments",
-        descp:"Built for senior centers, libraries, caregivers, and families who need a simple way to verify before money leaves.",
-        raised: "Minutes",
-        goal: "Better habits"
+        tag_name: "Repeated-site model",
+        left_days: 4,
+        title: "Teach it, test it, revisit it, leave it behind",
+        descp:"Each partner site can receive a baseline check, full workshop, follow-up retention check, and staff handoff kit.",
+        raised: "Anchor sites",
+        goal: "Retained skills"
     }
 ]

@@ -49,7 +49,7 @@ const Hero = () => {
                           {value?.tag_name}
                         </p>
                       </div>
-                      <p className="text-black/70 dark:text-white/60 text-base font-medium">{value?.left_days} min setup</p>
+                      <p className="text-black/70 dark:text-white/60 text-base font-medium">{value?.left_days} step system</p>
                     </div>
                     <h3 className="text-black dark:text-white text-4xl font-bold mb-6">
                       {value?.title}
@@ -72,7 +72,7 @@ const Hero = () => {
                         onClick={() => donationInfo?.setIsDonationOpen(true)}
                         className="text-white text-base bg-error px-7 py-4 border font-semibold border-error hover:border-error hover:bg-transparent hover:text-error rounded-md cursor-pointer"
                       >
-                        Request demo
+                        Request visit
                       </button>
                       <Test />
                     </div>

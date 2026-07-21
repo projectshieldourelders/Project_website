@@ -7,15 +7,15 @@ const textPart = () => {
                         Why this matters
                     </h2>
                     <p className="text-base text-dustGray dark:text-white/60">
-                        Most scams work because they create panic. Shield Our Elders gives older adults a calm checklist, a clear explanation, and a safer next step before they reply, click, or pay.
+                        Most scams work because they create panic. Shield Our Elders gives older adults a calm routine, trusted support, and a safer next step before they reply, click, share a code, or pay.
                     </p>
                 </div>
                 <div className="mb-10">
                     <h2 className="text-3xl font-medium mb-3">
-                        How it works in the app
+                        How the site sequence works
                     </h2>
                     <p className="text-base text-dustGray dark:text-white/60">
-                        The user checks a message, call, link, QR code, payment request, screenshot, or voicemail. The app explains warning signs in plain language and reminds the user to verify through an official number or trusted person.
+                        Partner sites can start with a baseline check, host a full workshop, invite the team back for a follow-up retention check, and keep using staff handoff materials after the visit.
                     </p>
                 </div>
                 <div className="mb-10">
@@ -23,7 +23,7 @@ const textPart = () => {
                         Built for stressful moments
                     </h2>
                     <p className="text-base text-dustGray dark:text-white/60">
-                        The app uses large buttons, short prompts, and simple labels because the person using it may already feel rushed or scared. The goal is to reduce pressure, not add more steps.
+                        The materials and app use large buttons, short prompts, and simple labels because the person using them may already feel rushed or scared. The goal is to reduce pressure, not add more steps.
                     </p>
                 </div>
                 <div className="mb-10">
@@ -31,7 +31,7 @@ const textPart = () => {
                         Family and caregiver support
                     </h2>
                     <p className="text-base text-dustGray dark:text-white/60">
-                        Trusted contacts and a family verification phrase help families create a repeatable safety habit, especially for voice clone and grandparent scams.
+                        Trusted-contact cards and a family verification phrase help families create a repeatable safety habit, especially for voice-clone and grandparent scams.
                     </p>
                 </div>
                 <div className="mb-10">
@@ -39,7 +39,7 @@ const textPart = () => {
                         Simple recovery steps
                     </h2>
                     <p className="text-base text-dustGray dark:text-white/60">
-                        If someone already clicked, paid, or shared information, the app points to practical steps: call the bank, freeze cards, change passwords, report the scam, and watch for recovery scams.
+                        If someone already clicked, paid, or shared information, the recovery guide points to practical steps: call the bank, freeze cards, change passwords, report the scam, and watch for recovery scams.
                     </p>
                 </div>
             </div>

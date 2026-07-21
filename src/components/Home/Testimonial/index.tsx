@@ -27,10 +27,10 @@ const Testimonial = () => {
         <section className="lg:py-28 py-16 bg-grey dark:bg-darkmode">
             <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <h2 className="text-3xl font-medium mb-3 text-center">
-                    What families and community helpers say
+                    What the work is designed to prove
                 </h2>
                 <p className="text-base text-center text-dustGray dark:text-white/60 lg:max-w-60% mx-auto">
-                The goal is not to scare older adults. It is to give them a simple routine they can remember when pressure starts.
+                The project focuses on practical behavior change: pause, verify, ask, avoid risky payments, and recover quickly.
                 </p>
                 <div className="mt-20">
                     <Slider {...settings}>

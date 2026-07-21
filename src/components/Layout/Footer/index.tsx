@@ -14,7 +14,7 @@ const Footer: FC = () => {
             <Logo />
             <div className="mt-6">
               <p className="text-base font-normal text-dustGray dark:text-white/60 mb-6">
-                A scam-safety app and workshop program for older adults, families, caregivers, libraries, and senior centers.
+                A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.
               </p>
             </div>
           </div>
@@ -72,7 +72,7 @@ const Footer: FC = () => {
           </div>
           <div className="lg:col-span-3 md:col-span-4 col-span-6">
             <h4 className="text-base text-black dark:text-white mb-4">
-              App Features
+              Program Areas
             </h4>
             <ul className="pl-5">
               {footerLinks.slice(0, 5).map((item, index) => (
