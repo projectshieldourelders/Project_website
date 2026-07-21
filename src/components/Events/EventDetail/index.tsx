@@ -47,7 +47,7 @@ const EventDetails: FC<EventProps> = ({
               </div>
             </div>
             <h2 className="text-4xl font-medium text-darktext">{title}</h2>
-            <p className="text-dustGray dark:text-white/60 text-base my-8">{detail}</p>
+            <p className="text-dustGray dark:text-white/85 text-base my-8">{detail}</p>
           </div>
           <div className="lg:col-span-3 md:col-span-5 sm:col-span-6 col-span-12 lg:mt-0 mt-8">
             <h4 className="text-darktext text-lg font-medium mb-6">Info</h4>
@@ -56,52 +56,52 @@ const EventDetails: FC<EventProps> = ({
                 <tbody>
                   <tr className="">
                     <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Category:</h5>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Category:</h5>
                     </td>
                     <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">{category}</p>
-                    </td>
-                  </tr>
-                  <tr className="">
-                    <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Location:</h5>
-                    </td>
-                    <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">{location}</p>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{category}</p>
                     </td>
                   </tr>
                   <tr className="">
                     <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Date:</h5>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Location:</h5>
                     </td>
                     <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{location}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Date:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">
                         {formattedDate}
                       </p>
                     </td>
                   </tr>
                   <tr className="">
                     <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Duration:</h5>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Duration:</h5>
                     </td>
                     <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">{duration}</p>
-                    </td>
-                  </tr>
-                  <tr className="">
-                    <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Type:</h5>
-                    </td>
-                    <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">{type}</p>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{duration}</p>
                     </td>
                   </tr>
                   <tr className="">
                     <td>
-                      <h5 className="text-black dark:text-white/60 text-base pb-4">Entrants:</h5>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Type:</h5>
                     </td>
                     <td>
-                      <p className="text-dustGray dark:text-white/60 text-base pb-4 pl-4">{entrants}</p>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{type}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Entrants:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{entrants}</p>
                     </td>
                   </tr>
                 </tbody>

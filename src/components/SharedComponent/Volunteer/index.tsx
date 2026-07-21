@@ -6,8 +6,9 @@ import { useContext } from "react";
 const Volunteer = () => {
     const donationInfo = useContext(DonationFormContext);
     return (
-        <section className="lg:py-28 py-16 bg-[url('/images/background/volunteer-bg.jpg')] bg-no-repeat bg-cover overflow-hidden">
-            <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
+        <section className="relative lg:py-28 py-16 bg-[url('/images/background/volunteer-bg.jpg')] bg-no-repeat bg-cover overflow-hidden">
+            <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
+            <div className="relative z-10 container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <div className="text-center">
                     <h2 className="text-3xl font-semibold text-white mb-6">
                         Bring Shield Our Elders to an anchor site

@@ -16,7 +16,7 @@ const Newsletter = () => {
                             <h2 className="text-3xl font-semibold mb-6">
                                 Short updates sites and families can actually use
                             </h2>
-                            <p className="text-base text-dustGray dark:text-white/60">
+                            <p className="text-base text-dustGray dark:text-white/85">
                             Get brief notes about workshop progress, common scam patterns, app updates, and local evidence.
                             </p>
                         </div>

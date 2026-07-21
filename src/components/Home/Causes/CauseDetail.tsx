@@ -48,13 +48,13 @@ const CauseDetail = () => {
                             </div>
                             <div className='grid grid-cols-2 max-w-96 mt-7 border dark:border-dark_border rounded-md'>
                                 <div className='border-r dark:border-dark_border p-3'>
-                                    <h4 className='text-dustGray dark:text-white/60 text-base font-medium'>
+                                    <h4 className='text-dustGray dark:text-white/85 text-base font-medium'>
                                         Area
                                     </h4>
                                     <h5 className='text-2xl font-medium text-primary'>{item.raised}</h5>
                                 </div>
                                 <div className='p-3'>
-                                    <h4 className='text-dustGray dark:text-white/60 text-base font-medium'>
+                                    <h4 className='text-dustGray dark:text-white/85 text-base font-medium'>
                                         Outcome
                                     </h4>
                                     <h5 className='text-2xl font-medium'>{item.goal}</h5>

@@ -12,7 +12,7 @@ const PrivacyPage = () => {
       <section className="lg:py-24 py-16 dark:bg-dark">
         <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
           <div className="max-w-4xl">
-            <p className="text-lg leading-8 text-muted dark:text-white/70">
+            <p className="text-lg leading-8 text-muted dark:text-white/90">
               Shield Our Elders helps people review suspicious calls, messages,
               links, QR codes, emails, payment requests, and scam situations.
               The app may process text, screenshots, links, phone numbers, QR
@@ -29,7 +29,7 @@ const PrivacyPage = () => {
               Users can contact us to request help, corrections, or deletion of
               information where required by law.
             </p>
-            <p className="text-lg leading-8 text-muted dark:text-white/70 mt-7">
+            <p className="text-lg leading-8 text-muted dark:text-white/90 mt-7">
               Shield Our Elders is a safety support tool, not a bank, police
               department, law firm, credit bureau, or emergency service. If money
               was sent, an account was accessed, or personal information was

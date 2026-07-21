@@ -9,7 +9,7 @@ const FutureEvents = () => {
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-3">Repeated-site workshop sequence</h2>
-          <p className="text-base text-dustGray dark:text-white/60 mx-auto lg:max-w-60%">
+          <p className="text-base text-dustGray dark:text-white/85 mx-auto lg:max-w-60%">
             A depth-first model for senior centers, assisted-living communities, retirement communities, and libraries.
           </p>
         </div>
@@ -40,7 +40,7 @@ const FutureEvents = () => {
                   </div>
                 </div>
                 <h4 className="text-lg font-medium mb-3.5 text-midnight_text dark:text-white group-hover:text-primary">{item.title}</h4>
-                <p className="text-dustGray dark:text-white/60 text-base mb-6">{item.text}</p>
+                <p className="text-dustGray dark:text-white/85 text-base mb-6">{item.text}</p>
               </Link>
             ))}
           </div>

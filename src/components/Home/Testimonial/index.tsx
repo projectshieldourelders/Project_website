@@ -29,7 +29,7 @@ const Testimonial = () => {
                 <h2 className="text-3xl font-medium mb-3 text-center">
                     What the work is designed to prove
                 </h2>
-                <p className="text-base text-center text-dustGray dark:text-white/60 lg:max-w-60% mx-auto">
+                <p className="text-base text-center text-dustGray dark:text-white/85 lg:max-w-60% mx-auto">
                 The project focuses on practical behavior change: pause, verify, ask, avoid risky payments, and recover quickly.
                 </p>
                 <div className="mt-20">
@@ -51,7 +51,7 @@ const Testimonial = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <p className="text-base text-dustGray dark:text-white/60 mt-16">
+                                    <p className="text-base text-dustGray dark:text-white/85 mt-16">
                                         {item.review}
                                     </p>
                                     <h5 className="text-base pt-5 mt-5 relative before:content-[''] before:absolute before:w-28 before:h-px before:bg-border dark:before:bg-dark_border before:top-0 before:left-0">

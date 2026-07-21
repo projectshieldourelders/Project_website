@@ -37,22 +37,25 @@
   --z-index-2: 2;
   --z-index-999: 999;
 
-  --color-primary: #1AB7BA;
-  --color-darkprimary: #28cf91;
-  --color-secondary: #1dc8cd;
-  --color-midnight_text: #263238;
-  --color-muted: #8d97b7;
-  --color-error: #ff4d7e;
-  --color-warning: #ff6a5b;
+  --color-primary: #0b6f74;
+  --color-darkprimary: #084f53;
+  --color-secondary: #087e83;
+  --color-midnight_text: #111827;
+  --color-muted: #4b5565;
+  --color-error: #b42318;
+  --color-warning: #b54708;
   --color-light_grey: #e9ecef;
   --color-grey: #f5f7fa;
-  --color-border: #e1e1e1;
-  --color-success: #3cd278;
-  --color-darkmode: #0a2219;
-  --color-darklight: #000f30;
-  --color-dark_border: #203535;
-  --color-dark: #00180f;
-  --color-dustGray: #464A59;
+  --color-border: #cbd5e1;
+  --color-success: #067647;
+  --color-darkmode: #071a14;
+  --color-darklight: #0f172a;
+  --color-dark_border: #35524d;
+  --color-dark: #06170f;
+  --color-dustGray: #344054;
+  --color-body-color: #344054;
+  --color-black-6: #344054;
+  --color-dark-6: #cbd5e1;
 }
 
 /*
@@ -79,6 +82,7 @@ html {
 html,
 body {
   @apply overflow-x-hidden;
+  @apply bg-white text-midnight_text dark:bg-dark dark:text-white;
 }
 
 .blog-details p,

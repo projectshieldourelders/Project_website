@@ -34,7 +34,7 @@ const EventList = () => {
               <h4 className="text-lg font-medium mb-3.5 group-hover:text-primary">
                 {item.title}
               </h4>
-              <p className="text-muted dark:text-white/60 text-base mb-6">{item.text}</p>
+              <p className="text-muted dark:text-white/85 text-base mb-6">{item.text}</p>
 
             </Link>
           ))}

@@ -9,7 +9,7 @@ const Help = () => {
                     <h2 className="text-3xl mb-3 font-semibold">
                         What the program does
                     </h2>
-                    <p className="text-dustGray dark:text-white/60 text-base">
+                    <p className="text-dustGray dark:text-white/85 text-base">
                         Built for Brevard County seniors, caregivers, libraries, and senior-serving sites.<br className="lg:block hidden" /> The goal is to turn awareness into measured local protection.
                     </p>
                     <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-8">
@@ -22,7 +22,7 @@ const Help = () => {
                                     <h4 className="text-2xl font-medium">
                                         {item.title}
                                     </h4>
-                                    <p className="text-dustGray dark:text-white/60 text-base">
+                                    <p className="text-dustGray dark:text-white/85 text-base">
                                         {item.text}
                                     </p>
                                 </div>

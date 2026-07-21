@@ -13,7 +13,7 @@ const Footer: FC = () => {
           <div className="lg:col-span-3 md:col-span-4 col-span-6">
             <Logo />
             <div className="mt-6">
-              <p className="text-base font-normal text-dustGray dark:text-white/60 mb-6">
+              <p className="text-base font-normal text-dustGray dark:text-white/85 mb-6">
                 A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.
               </p>
             </div>
@@ -31,7 +31,7 @@ const Footer: FC = () => {
                   <h5 className="text-base font-normal text-black dark:text-white mb-4">
                     Community focus
                   </h5>
-                  <p className="text-base text-dustGray dark:text-white/60">
+                  <p className="text-base text-dustGray dark:text-white/85">
                     Built for older adults and trusted helpers in Brevard County and beyond.
                   </p>
                 </div>
@@ -79,7 +79,7 @@ const Footer: FC = () => {
                 <li key={index} className="mb-5">
                   <Link
                     href={item.href}
-                    className="text-base relative text-dustGray dark:text-white/60 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45"
+                    className="text-base relative text-dustGray dark:text-white/85 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45"
                   >
                     {item.link}
                   </Link>
@@ -96,7 +96,7 @@ const Footer: FC = () => {
                 <li key={index} className="mb-5">
                   <Link
                     href={item.href}
-                    className="text-base relative text-dustGray dark:text-white/60 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45">
+                    className="text-base relative text-dustGray dark:text-white/85 hover:text-primary dark:hover:text-primary before:border-dustGray/60 hover:before:border-dustGray before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-1 before:border-r-1 before:top-1 before:-left-5 before:rotate-45">
                     {item.link}
                   </Link>
                 </li>

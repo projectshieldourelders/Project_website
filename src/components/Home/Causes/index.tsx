@@ -38,7 +38,7 @@ const Causes = () => {
           className='text-center text-3xl font-semibold mb-3'>
           The Shield system
         </h2>
-        <p className='text-dustGray dark:text-white/60 text-center'>
+        <p className='text-dustGray dark:text-white/85 text-center'>
           The project combines original local data, repeated workshops,
           trusted-contact planning, <br className='lg:block hidden' /> app checks,
           staff handoff materials, and follow-up measurement.
@@ -66,13 +66,13 @@ const Causes = () => {
                     </h4>
                     <div className='grid grid-cols-2 mt-4 border dark:border-dark_border rounded-md'>
                       <div className='border-r dark:border-dark_border p-3'>
-                        <h4 className=' text-black dark:text-white/60 text-base font-medium'>
+                        <h4 className=' text-black dark:text-white/85 text-base font-medium'>
                           Area
                         </h4>
                         <h5 className='text-2xl font-medium text-primary'>{item.raised}</h5>
                       </div>
                       <div className='p-3'>
-                        <h4 className=' text-black dark:text-white/60 text-base font-medium'>
+                        <h4 className=' text-black dark:text-white/85 text-base font-medium'>
                           Outcome
                         </h4>
                         <h5 className='text-2xl font-medium'>{item.goal}</h5>

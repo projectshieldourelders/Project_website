@@ -20,7 +20,7 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
                     <h4 className="font-medium text-lg text-midnight_text dark:text-white group-hover:text-primary mb-3">
                         {title}
                     </h4>
-                    <p className="text-dustGray dark:text-white/60 text-base">
+                    <p className="text-dustGray dark:text-white/85 text-base">
                         Shield Our Elders - 2026
                     </p>
                 </div>

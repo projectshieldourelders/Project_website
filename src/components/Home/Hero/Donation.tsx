@@ -48,15 +48,15 @@ export const Donation = () => {
           <div className="flex gap-4 flex-wrap">
             <div className="flex gap-2">
               <input type="radio" name="request-type" id="senior-center" onChange={(e) => setType(e.target.value)} value="Senior center" defaultChecked />
-              <label htmlFor="senior-center" className="text-muted dark:text-white/60">Senior center</label>
+              <label htmlFor="senior-center" className="text-muted dark:text-white/85">Senior center</label>
             </div>
             <div className="flex gap-2">
               <input type="radio" name="request-type" id="library" onChange={(e) => setType(e.target.value)} value="Library" />
-              <label htmlFor="library" className="text-muted dark:text-white/60">Library</label>
+              <label htmlFor="library" className="text-muted dark:text-white/85">Library</label>
             </div>
             <div className="flex gap-2">
               <input type="radio" name="request-type" id="family" onChange={(e) => setType(e.target.value)} value="Family group" />
-              <label htmlFor="family" className="text-muted dark:text-white/60">Family group</label>
+              <label htmlFor="family" className="text-muted dark:text-white/85">Family group</label>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const Donation = () => {
 
         <div className="flex gap-2 items-center">
           <input type="checkbox" id="updates" name="updates" />
-          <label htmlFor="updates" className="text-muted dark:text-white/60 text-base">Send me scam-safety updates</label>
+          <label htmlFor="updates" className="text-muted dark:text-white/85 text-base">Send me scam-safety updates</label>
         </div>
 
         <div className="mb-0 mt-6">

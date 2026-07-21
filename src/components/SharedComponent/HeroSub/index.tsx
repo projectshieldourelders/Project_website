@@ -14,12 +14,12 @@ const HeroSub: FC<HeroSubProps> = ({ title, bgImage }) => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="absolute inset-0 bg-black/70 z-0" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto max-w-[var(--breakpoint-xl)] px-4">
         <h2
-          className="text-white md:text-5xl sm:text-4xl text-3xl font-medium"
+          className="text-white md:text-5xl sm:text-4xl text-3xl font-semibold drop-shadow-lg"
           data-aos="fade-right"
         >
           {title}

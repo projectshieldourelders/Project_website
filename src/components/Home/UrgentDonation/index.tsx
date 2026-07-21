@@ -13,7 +13,7 @@ const UrgentDonation = () => {
                     <h3 className="sm:text-3xl text-lg font-medium mb-5">
                         Scam pressure happening right now?
                     </h3>
-                    <p className="text-dustGray dark:text-white/60 sm:text-base text-sm mb-7">
+                    <p className="text-dustGray dark:text-white/85 sm:text-base text-sm mb-7">
                     Stop the conversation, avoid links, do not send money, and verify with a trusted contact or official number.
                     </p>
                     <button onClick={() => donationInfo?.setIsDonationOpen(true)} className="text-white text-base bg-primary px-7 py-4 border font-semibold border-primary hover:border-primary hover:bg-transparent hover:text-primary rounded-md cursor-pointer">

@@ -189,7 +189,7 @@ const Header: React.FC = () => {
                 height={32}
               />
               <div className=''>
-                <p className='text-sm font-normal text-muted dark:text-white/60 mb-0'>
+                <p className='text-sm font-normal text-muted dark:text-white/85 mb-0'>
                   Email us at
                 </p>
                 <Link
@@ -207,7 +207,7 @@ const Header: React.FC = () => {
                 height={32}
               />
               <div className=''>
-                <p className='text-sm font-normal text-muted dark:text-white/60 mb-0'>
+                <p className='text-sm font-normal text-muted dark:text-white/85 mb-0'>
                   Program area
                 </p>
                 <Link
