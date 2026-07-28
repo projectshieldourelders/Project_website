@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
+import { assetPath } from "@/utils/assets";
 
 interface EventProps {
   title?: string;
@@ -112,7 +113,7 @@ const EventDetails: FC<EventProps> = ({
               <div className="flex items-center gap-4">
                 <Link href="#">
                   <Image
-                    src="/images/icons/icon-facebook.svg"
+                    src={assetPath("/images/icons/icon-facebook.svg")}
                     alt="icon"
                     width={16}
                     height={16}
@@ -121,7 +122,7 @@ const EventDetails: FC<EventProps> = ({
                 </Link>
                 <Link href="#">
                   <Image
-                    src="/images/icons/icon-instagram.svg"
+                    src={assetPath("/images/icons/icon-instagram.svg")}
                     alt="icon"
                     width={16}
                     height={16}
@@ -130,7 +131,7 @@ const EventDetails: FC<EventProps> = ({
                 </Link>
                 <Link href="#">
                   <Image
-                    src="/images/icons/icon-linkedin.svg"
+                    src={assetPath("/images/icons/icon-linkedin.svg")}
                     alt="icon"
                     width={16}
                     height={16}
@@ -139,7 +140,7 @@ const EventDetails: FC<EventProps> = ({
                 </Link>
                 <Link href="#">
                   <Image
-                    src="/images/icons/icon-twitter.svg"
+                    src={assetPath("/images/icons/icon-twitter.svg")}
                     alt="icon"
                     width={16}
                     height={16}

@@ -5,6 +5,7 @@ import Volunteer from "@/components/SharedComponent/Volunteer";
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
+import { assetPath } from "@/utils/assets";
 export const metadata: Metadata = {
   title: "Contact",
 };
@@ -14,7 +15,7 @@ const page = () => {
     <>
       <HeroSub
         title="Contact"
-        bgImage="/images/background/contact-banner-img.jpg"
+        bgImage={assetPath("/images/background/contact-banner-img.jpg")}
       />
       <ContactInfo />
       <ContactForm />

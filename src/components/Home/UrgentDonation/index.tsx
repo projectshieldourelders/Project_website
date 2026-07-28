@@ -1,13 +1,17 @@
 "use client"
 
 import DonationFormContext from "@/app/context/donationContext";
+import { assetPath } from "@/utils/assets";
 import Link from "next/link"
 import { useContext } from "react";
 
 const UrgentDonation = () => {
     const donationInfo = useContext(DonationFormContext);
     return (
-        <section className=" bg-[url('/images/background/donate-banner.jpg')] bg-cover bg-center sm:py-52 lg:py-20 py-16 bg-no-repeat">
+        <section
+            className="bg-cover bg-center sm:py-52 lg:py-20 py-16 bg-no-repeat"
+            style={{ backgroundImage: `url(${assetPath("/images/background/donate-banner.jpg")})` }}
+        >
             <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <div className="bg-white dark:bg-dark max-w-xl w-full px-10 py-14 rounded-lg text-center mx-auto" data-aos="fade-right">
                     <h3 className="sm:text-3xl text-lg font-medium mb-5">

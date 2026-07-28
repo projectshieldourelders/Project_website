@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/utils/assets";
 
 const NotFound = () => {
   return (
@@ -10,7 +11,7 @@ const NotFound = () => {
           <div className="w-full px-4 md:w-5/12 lg:w-6/12">
             <div className="relative mx-auto aspect-129/138 max-w-[357px] text-center">
               <Image
-                src="/images/background/404.svg"
+                src={assetPath("/images/background/404.svg")}
                 alt="image"
                 width={0}
                 height={0}

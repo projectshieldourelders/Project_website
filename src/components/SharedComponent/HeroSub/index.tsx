@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { assetPath } from '@/utils/assets'
 
 interface HeroSubProps {
   title: string
@@ -6,7 +7,7 @@ interface HeroSubProps {
 }
 
 const HeroSub: FC<HeroSubProps> = ({ title, bgImage }) => {
-  const backgroundImage = bgImage || "/images/background/hero-sub-banner.jpg"
+  const backgroundImage = bgImage || assetPath("/images/background/hero-sub-banner.jpg")
 
   return (
     <section

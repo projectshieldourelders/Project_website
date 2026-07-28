@@ -60,7 +60,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b border-border/80 bg-white/95 backdrop-blur-md transition-all dark:border-dark_border dark:bg-dark/95 ${sticky
+      className={`fixed top-0 z-50 w-full border-b border-[#d5dfd8]/90 bg-[#fffdf8]/95 backdrop-blur-md transition-all dark:border-dark_border dark:bg-dark/95 ${sticky
         ? 'shadow-sm dark:shadow-darkmd'
         : 'shadow-none'
         }`}>

@@ -40,7 +40,9 @@ const Hero = () => {
             return (
               <div
                 key={index}
-                className={`relative h-[700px] bg-cover text-white md:pt-40 md:pb-28 py-20 bg-no-repeat ${index == 0 ? 'bg-[url("/images/hero/banner-bg-2.jpg")]' : 'bg-[url("/images/hero/banner-bg-1.jpg")]'} lg:mt-40 sm:mt-44 mt-20`}>
+                className="relative h-[700px] bg-cover text-white md:pt-40 md:pb-28 py-20 bg-no-repeat lg:mt-40 sm:mt-44 mt-20"
+                style={{ backgroundImage: `url(${value.image})` }}
+              >
                 <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4 grid grid-cols-12">
                   <div className="bg-white rounded-md p-5 shadow-2xl ring-1 ring-black/10 lg:col-span-4 md:col-span-7 sm:col-span-10 col-span-12 dark:bg-dark dark:ring-white/10" data-aos="fade-right">
                     <div className="flex justify-between items-center mb-6">

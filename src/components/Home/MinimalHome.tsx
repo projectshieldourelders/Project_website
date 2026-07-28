@@ -1,6 +1,7 @@
 "use client";
 
 import DonationFormContext from "@/app/context/donationContext";
+import { assetPath } from "@/utils/assets";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
@@ -39,11 +40,11 @@ const MinimalHome = () => {
   const donationInfo = useContext(DonationFormContext);
 
   return (
-    <main className="bg-[#fbfaf7] text-midnight_text dark:bg-dark dark:text-white">
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+    <main className="bg-[#f4f7f2] text-midnight_text dark:bg-dark dark:text-white">
+      <section className="bg-[#f4f7f2] pt-32 pb-16 dark:bg-dark md:pt-40 md:pb-24">
         <div className="container mx-auto grid items-center gap-12 px-4 lg:max-w-(--breakpoint-xl) lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <p className="mb-5 w-fit rounded-full border border-border bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm dark:border-dark_border dark:bg-darkmode dark:text-white">
+            <p className="mb-5 w-fit rounded-full border border-[#d5dfd8] bg-[#fffdf8] px-4 py-2 text-sm font-semibold text-primary shadow-sm dark:border-dark_border dark:bg-darkmode dark:text-white">
               Brevard County elder scam defense
             </p>
             <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-normal text-midnight_text dark:text-white md:text-7xl">
@@ -61,7 +62,7 @@ const MinimalHome = () => {
               </button>
               <Link
                 href="/cause"
-                className="rounded-md border border-border bg-white px-7 py-4 text-center text-base font-semibold text-midnight_text transition hover:border-primary hover:text-primary dark:border-dark_border dark:bg-darkmode dark:text-white"
+                className="rounded-md border border-[#d5dfd8] bg-[#fffdf8] px-7 py-4 text-center text-base font-semibold text-midnight_text transition hover:border-primary hover:text-primary dark:border-dark_border dark:bg-darkmode dark:text-white"
               >
                 See the system
               </Link>
@@ -69,9 +70,9 @@ const MinimalHome = () => {
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[28px] bg-white shadow-2xl ring-1 ring-black/10 dark:bg-darkmode dark:ring-white/10">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#fffdf8] shadow-2xl ring-1 ring-black/10 dark:bg-darkmode dark:ring-white/10">
               <Image
-                src="/images/hero/banner-bg-1.jpg"
+                src={assetPath("/images/hero/banner-bg-1.jpg")}
                 alt="Older adults learning together around a laptop"
                 width={1200}
                 height={900}
@@ -80,15 +81,15 @@ const MinimalHome = () => {
               />
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-border bg-white p-4 dark:border-dark_border dark:bg-darkmode">
+              <div className="rounded-2xl border border-[#d5dfd8] bg-[#fffdf8] p-4 dark:border-dark_border dark:bg-darkmode">
                 <p className="text-3xl font-semibold text-primary">4</p>
                 <p className="mt-1 text-sm text-dustGray dark:text-white/85">visit sequence</p>
               </div>
-              <div className="rounded-2xl border border-border bg-white p-4 dark:border-dark_border dark:bg-darkmode">
+              <div className="rounded-2xl border border-[#d5dfd8] bg-[#fffdf8] p-4 dark:border-dark_border dark:bg-darkmode">
                 <p className="text-3xl font-semibold text-primary">1</p>
                 <p className="mt-1 text-sm text-dustGray dark:text-white/85">trusted contact plan</p>
               </div>
-              <div className="rounded-2xl border border-border bg-white p-4 dark:border-dark_border dark:bg-darkmode">
+              <div className="rounded-2xl border border-[#d5dfd8] bg-[#fffdf8] p-4 dark:border-dark_border dark:bg-darkmode">
                 <p className="text-3xl font-semibold text-primary">0</p>
                 <p className="mt-1 text-sm text-dustGray dark:text-white/85">rushed payments</p>
               </div>
@@ -97,9 +98,9 @@ const MinimalHome = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="bg-[#fffdf8] py-16 dark:bg-[#081d16]">
         <div className="container mx-auto px-4 lg:max-w-(--breakpoint-xl)">
-          <div className="grid gap-10 border-y border-border py-12 dark:border-dark_border lg:grid-cols-[0.7fr_1.3fr]">
+          <div className="grid gap-10 border-y border-[#d8e0dc] py-12 dark:border-dark_border lg:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 The main rule
@@ -115,7 +116,7 @@ const MinimalHome = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="bg-[#edf6f4] py-16 dark:bg-[#09251f]">
         <div className="container mx-auto px-4 lg:max-w-(--breakpoint-xl)">
           <div className="mb-10 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -126,7 +127,7 @@ const MinimalHome = () => {
             </h2>
           </div>
 
-          <div className="divide-y divide-border border-y border-border dark:divide-dark_border dark:border-dark_border">
+          <div className="divide-y divide-[#cadbd6] border-y border-[#cadbd6] dark:divide-dark_border dark:border-dark_border">
             {steps.map((step) => (
               <div key={step.number} className="grid gap-5 py-8 md:grid-cols-[120px_0.8fr_1.2fr] md:items-start">
                 <p className="text-2xl font-semibold text-primary">{step.number}</p>
@@ -138,11 +139,11 @@ const MinimalHome = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="bg-[#f8f4ee] py-16 dark:bg-[#071a14]">
         <div className="container mx-auto grid gap-12 px-4 lg:max-w-(--breakpoint-xl) lg:grid-cols-[1fr_0.85fr]">
           <div className="relative overflow-hidden rounded-[28px]">
             <Image
-              src="/images/event/event-img-2.jpg"
+              src={assetPath("/images/event/event-img-2.jpg")}
               alt="Seniors in a workshop learning digital safety"
               width={1200}
               height={900}
@@ -168,12 +169,12 @@ const MinimalHome = () => {
         </div>
       </section>
 
-      <section className="py-16 pb-24">
+      <section className="bg-[#f4f7f2] py-16 pb-24 dark:bg-dark">
         <div className="container mx-auto px-4 lg:max-w-(--breakpoint-xl)">
-          <div className="overflow-hidden rounded-[28px] bg-midnight_text text-white dark:bg-darkmode">
+          <div className="overflow-hidden rounded-[28px] bg-[#103532] text-white shadow-2xl dark:bg-darkmode">
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
               <Image
-                src="/images/contact-page/contact.jpg"
+                src={assetPath("/images/contact-page/contact.jpg")}
                 alt="Caregiver helping an older adult use a phone"
                 width={1000}
                 height={760}

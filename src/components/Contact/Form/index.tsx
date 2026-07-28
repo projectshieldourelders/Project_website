@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { assetPath } from "@/utils/assets";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -153,7 +154,7 @@ const ContactForm = () => {
               {submitted && (
                 <div className="flex gap-1.5 mt-3.5">
                   <div>
-                    <Image src={"/images/icons/icon-right.svg"} alt="right-icon" width={20} height={20} />
+                    <Image src={assetPath("/images/icons/icon-right.svg")} alt="right-icon" width={20} height={20} />
                   </div>
                   <p className="text-secondary">Thanks. Your request was sent and we will get in touch soon.</p>
                 </div>
@@ -161,7 +162,7 @@ const ContactForm = () => {
             </div>
             <div className="lg:col-span-6 lg:order-2 order-1 h-[600px]">
               <Image
-                src="/images/contact-page/contact.jpg"
+                src={assetPath("/images/contact-page/contact.jpg")}
                 alt="Contact"
                 width={1300}
                 height={0}

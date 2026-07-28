@@ -4,6 +4,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from '@/components/ScrollToTop';
 import Aoscompo from "@/utils/aos";
+import { assetPath } from "@/utils/assets";
 import { DonationProvider } from "./context/donationContext";
 import { ThemeProvider } from "./context/themeContext";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
@@ -16,8 +17,8 @@ export const metadata = {
   },
   description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
   icons: {
-    icon: "/images/app-icon.png",
-    apple: "/images/app-icon.png",
+    icon: assetPath("/images/app-icon.png"),
+    apple: assetPath("/images/app-icon.png"),
   },
 };
 

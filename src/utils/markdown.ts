@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { assetPath } from "./assets";
 
 const postsDirectory = join(process.cwd(), "markdown/blog");
 
@@ -14,17 +15,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  type Items = {
-    // [key: string]: string;
-    [key: string]: string | object;
-  };
-
   const items: any = {};
 
   function processImages(content: string) {
-    // You can modify this function to handle image processing
-    // For example, replace image paths with actual HTML image tags
-    return content.replace(/!\[.*?\]\((.*?)\)/g, '<img src="$1" alt="" />');
+    return content.replace(/!\[.*?\]\((.*?)\)/g, (_match, src) => `<img src="${assetPath(src)}" alt="" />`);
   }
 
   // Ensure only the minimal needed data is exposed
@@ -38,12 +32,16 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
 
     if (field === "metadata") {
-      // Include metadata, including the image information
-      items[field] = { ...data, coverImage: data.coverImage || null };
+      items[field] = {
+        ...data,
+        coverImage: typeof data.coverImage === "string" ? assetPath(data.coverImage) : data.coverImage || null,
+      };
     }
 
     if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
+      items[field] = typeof data[field] === "string" && data[field].startsWith("/images/")
+        ? assetPath(data[field])
+        : data[field];
     }
   });
 

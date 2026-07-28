@@ -1,12 +1,16 @@
 "use client"
 
 import DonationFormContext from "@/app/context/donationContext";
+import { assetPath } from "@/utils/assets";
 import { useContext } from "react";
 
 const Volunteer = () => {
     const donationInfo = useContext(DonationFormContext);
     return (
-        <section className="relative lg:py-28 py-16 bg-[url('/images/background/volunteer-bg.jpg')] bg-no-repeat bg-cover overflow-hidden">
+        <section
+            className="relative lg:py-28 py-16 bg-no-repeat bg-cover overflow-hidden"
+            style={{ backgroundImage: `url(${assetPath("/images/background/volunteer-bg.jpg")})` }}
+        >
             <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
             <div className="relative z-10 container mx-auto lg:max-w-(--breakpoint-xl) px-4">
                 <div className="text-center">

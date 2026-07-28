@@ -1,7 +1,9 @@
+import { assetPath } from "@/utils/assets";
+
 export const HerosectionData = [
     {
         id: 1,
-        image: "/images/hero/banner-bg-1.jpg",
+        image: assetPath("/images/hero/banner-bg-1.jpg"),
         tag_name: "Brevard County program",
         left_days: 4,
         title: "A local defense system against scam pressure",
@@ -11,7 +13,7 @@ export const HerosectionData = [
     },
     {
         id: 2,
-        image: "/images/hero/banner-bg-2.jpg",
+        image: assetPath("/images/hero/banner-bg-2.jpg"),
         tag_name: "Repeated-site model",
         left_days: 4,
         title: "Teach it, test it, revisit it, leave it behind",

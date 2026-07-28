@@ -4,14 +4,14 @@ import Logo from "../Header/Logo";
 const footerLinks = [
   { label: "System", href: "/cause" },
   { label: "Workshops", href: "/events" },
-  { label: "Contact", href: "/contact" },
+  { label: "Support", href: "/support" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-white py-10 dark:border-dark_border dark:bg-dark">
+    <footer className="border-t border-[#d5dfd8] bg-[#eef3ee] py-10 dark:border-dark_border dark:bg-dark">
       <div className="container mx-auto px-4 md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-xl)">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-10 border-t border-border pt-6 text-sm text-dustGray dark:border-dark_border dark:text-white/75">
+        <p className="mt-10 border-t border-[#d5dfd8] pt-6 text-sm text-dustGray dark:border-dark_border dark:text-white/75">
           © Shield Our Elders. All rights reserved.
         </p>
       </div>
