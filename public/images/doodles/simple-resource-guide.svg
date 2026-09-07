@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Checklist, phone, and shield</title>
+  <desc id="desc">A simple checklist beside a mobile phone and a safety shield.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M102 82h374v436H102z" fill="#fffdf7"/>
+    <path d="M386 82h90v90" fill="#e9c96c"/>
+    <path d="m386 82 90 90"/>
+    <rect x="151" y="194" width="42" height="42" rx="4" fill="#e3efec"/>
+    <rect x="151" y="288" width="42" height="42" rx="4" fill="#e3efec"/>
+    <rect x="151" y="382" width="42" height="42" rx="4" fill="#e3efec"/>
+    <path d="m160 213 10 10 18-22m-28 106 10 10 18-22m-28 106 10 10 18-22M232 215h166m-166 94h166m-166 94h128"/>
+    <rect x="491" y="190" width="188" height="314" rx="28" fill="#2f756b"/>
+    <rect x="519" y="235" width="132" height="205" rx="8" fill="#fffdf7"/>
+    <circle cx="585" cy="470" r="8" fill="#183b36" stroke="none"/>
+    <path d="M602 321c43 7 80 19 110 37v60c0 56-42 91-110 113-68-22-110-57-110-113v-60c30-18 67-30 110-37Z" fill="#e9c96c"/>
+    <path d="m557 417 30 31 61-74"/>
+  </g>
+</svg>

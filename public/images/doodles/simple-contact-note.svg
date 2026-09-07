@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Sending a note</title>
+  <desc id="desc">A hand writes a short note beside an envelope and phone.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="102" y="104" width="396" height="386" rx="10" fill="#fffdf7"/>
+    <path d="M164 186h260m-260 68h208m-208 68h234"/>
+    <path d="M516 326 692 150l50 50-176 176-82 32Z" fill="#e9c96c"/>
+    <path d="m516 326 50 50m126-226 50 50"/>
+    <rect x="468" y="402" width="224" height="120" rx="8" fill="#e3efec"/>
+    <path d="m480 417 100 76 100-76"/>
+    <path d="m480 507 78-67m122 67-78-67"/>
+  </g>
+</svg>

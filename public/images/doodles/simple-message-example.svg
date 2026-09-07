@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Suspicious message example</title>
+  <desc id="desc">A phone shows a message beside a magnifying glass and a pause symbol.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="120" y="62" width="300" height="476" rx="38" fill="#fffdf7"/>
+    <path d="M185 160h170m-170 60h130m-130 60h166"/>
+    <rect x="174" y="336" width="192" height="86" rx="18" fill="#e9c96c"/>
+    <path d="M214 380h112"/>
+    <circle cx="270" cy="493" r="9" fill="#183b36" stroke="none"/>
+    <circle cx="548" cy="254" r="116" fill="#e3efec"/>
+    <path d="M631 338l91 91"/>
+    <circle cx="548" cy="254" r="58" fill="#fffdf7"/>
+    <path d="M526 220v68m44-68v68"/>
+    <path d="M450 474h214"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Family checking a phone together</title>
+  <desc id="desc">A simple drawing of an older woman and a younger woman looking at a phone across a table.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#e9c96c" d="M113 438c14-105 66-157 150-157s137 52 151 157"/>
+    <path fill="#2f756b" d="M386 438c14-105 67-157 151-157s136 52 150 157"/>
+    <circle cx="264" cy="209" r="87" fill="#fffdf7"/>
+    <circle cx="537" cy="209" r="87" fill="#fffdf7"/>
+    <path d="M185 191c5-78 66-116 130-87 26 12 42 34 45 63-22-9-44-25-58-47-20 40-65 63-117 71Z" fill="#f7f8f5"/>
+    <path d="M465 182c12-62 66-91 121-66 31 14 51 43 51 78-27-8-57-26-74-52-18 31-53 43-98 40Z" fill="#183b36"/>
+    <circle cx="238" cy="214" r="5" fill="#183b36" stroke="none"/>
+    <circle cx="290" cy="214" r="5" fill="#183b36" stroke="none"/>
+    <circle cx="512" cy="214" r="5" fill="#183b36" stroke="none"/>
+    <circle cx="560" cy="214" r="5" fill="#183b36" stroke="none"/>
+    <path d="M244 246c14 12 28 12 42 0M517 246c13 12 27 12 40 0"/>
+    <circle cx="236" cy="210" r="24"/>
+    <circle cx="294" cy="210" r="24"/>
+    <path d="M260 210h10m-58-4-23-4m129 4 20-5"/>
+    <rect x="355" y="268" width="88" height="154" rx="14" fill="#fffdf7" transform="rotate(-5 399 345)"/>
+    <circle cx="399" cy="391" r="7" fill="#183b36" stroke="none"/>
+    <path d="M75 442h650M137 442v72m526-72v72"/>
+    <path d="M331 336c-28 12-44 30-51 55m190-57c25 13 41 31 48 54"/>
+  </g>
+</svg>

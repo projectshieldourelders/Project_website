@@ -1,4 +1,3 @@
-import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,40 +36,37 @@ const sections = [
   },
 ];
 
-const TermsPage = () => {
-  return (
-    <>
-      <HeroSub title="Terms of Service" />
-      <section className="bg-[#fffdf8] py-16 dark:bg-dark lg:py-24">
-        <div className="container mx-auto px-4 md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-xl)">
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              Effective July 28, 2026
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-midnight_text dark:text-white md:text-5xl">
-              Terms of Service
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-dustGray dark:text-white/85">
-              By using Shield Our Elders, you agree to these terms.
-            </p>
-
-            <div className="mt-12 divide-y divide-[#d5dfd8] border-y border-[#d5dfd8] dark:divide-dark_border dark:border-dark_border">
-              {sections.map((section) => (
-                <div key={section.title} className="py-8">
-                  <h2 className="text-2xl font-semibold text-midnight_text dark:text-white">
-                    {section.title}
-                  </h2>
-                  <p className="mt-4 text-lg leading-8 text-dustGray dark:text-white/85">
-                    {section.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+const TermsPage = () => (
+  <main className="bg-[#f7f8f5] px-5 pb-24 pt-36 text-[#183b36] sm:px-8 lg:px-12 lg:pt-44">
+    <div className="mx-auto max-w-[90rem]">
+      <div className="flex flex-col gap-8 border-b border-[#a9b9cd] pb-12 lg:flex-row lg:[&>*]:flex-1">
+        <p className="text-base text-[#526661]">Effective July 28, 2026</p>
+        <div>
+          <h1 className="font-display text-6xl leading-none sm:text-7xl">
+            Terms of Service
+          </h1>
+          <p className="mt-6 max-w-2xl text-xl leading-8 text-[#526661]">
+            By using Shield Our Elders, you agree to these terms.
+          </p>
         </div>
-      </section>
-    </>
-  );
-};
+      </div>
+      <div className="ml-auto mt-4 max-w-4xl">
+        {sections.map((section) => (
+          <section
+            key={section.title}
+            className="flex flex-col gap-5 border-b border-[#c7d3e1] py-8 sm:flex-row sm:gap-10 sm:py-10 sm:[&>*]:flex-1"
+          >
+            <h2 className="font-display text-3xl leading-tight">
+              {section.title}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-[#526661] sm:mt-0">
+              {section.body}
+            </p>
+          </section>
+        ))}
+      </div>
+    </div>
+  </main>
+);
 
 export default TermsPage;

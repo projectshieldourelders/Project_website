@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">A phone call checked at home</title>
+  <desc id="desc">An older man sets down a phone while a neighbor points to an official number.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 470h612"/>
+    <path d="M130 470c8-118 54-188 129-188s121 70 129 188" fill="#e9c96c"/>
+    <circle cx="259" cy="206" r="78" fill="#fffdf7"/>
+    <path d="M192 192c8-53 48-79 91-69 29 7 50 31 53 61-25-5-46-19-59-39-17 27-45 42-85 47Z" fill="#f7f8f5"/>
+    <circle cx="235" cy="212" r="21"/><circle cx="286" cy="212" r="21"/><path d="M256 212h9"/>
+    <path d="M245 246c11 9 23 9 34 0"/>
+    <path d="M429 470c8-118 54-188 129-188s121 70 129 188" fill="#2f756b"/>
+    <circle cx="558" cy="206" r="78" fill="#fffdf7"/>
+    <path d="M489 194c7-55 49-84 96-70 26 8 44 31 47 59-23-4-46-18-59-39-17 28-45 44-84 50Z" fill="#183b36"/>
+    <circle cx="535" cy="214" r="5" fill="#183b36" stroke="none"/><circle cx="579" cy="214" r="5" fill="#183b36" stroke="none"/>
+    <path d="M542 247c11 9 22 9 33 0"/>
+    <rect x="350" y="282" width="98" height="162" rx="16" fill="#fffdf7" transform="rotate(5 399 363)"/>
+    <path d="M484 339c-28 4-49 18-66 40m-119-34c26 3 46 14 62 34"/>
+  </g>
+</svg>

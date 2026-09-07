@@ -1,21 +1,46 @@
-import { Bricolage_Grotesque } from "next/font/google";
+import { Atkinson_Hyperlegible, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
-import ScrollToTop from '@/components/ScrollToTop';
-import Aoscompo from "@/utils/aos";
+import PageMotion from "@/components/Common/PageMotion";
 import { assetPath } from "@/utils/assets";
-import { DonationProvider } from "./context/donationContext";
-import { ThemeProvider } from "./context/themeContext";
-const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
-import NextTopLoader from 'nextjs-toploader';
+
+const bodyFont = Atkinson_Hyperlegible({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const displayFont = Source_Serif_4({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      "https://shield-our-elders.peithiv.chatgpt.site",
+  ),
   title: {
     default: "Shield Our Elders",
     template: "%s | Shield Our Elders",
   },
-  description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
+  description:
+    "Student-led scam-defense workshops and practical tools for adults 60+ in Brevard County, Florida.",
+  openGraph: {
+    title: "Shield Our Elders",
+    description: "Pause. Verify. Protect. Practical scam defense for older adults and their communities.",
+    images: [{ url: "/og.png", width: 1733, height: 908 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shield Our Elders",
+    description: "Pause. Verify. Protect. Practical scam defense for older adults and their communities.",
+    images: ["/og.png"],
+  },
   icons: {
     icon: assetPath("/images/app-icon.png"),
     apple: assetPath("/images/app-icon.png"),
@@ -28,21 +53,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={bricolage.className}>
-      <NextTopLoader color="#FF4D7E" />
-      <DonationProvider>
-        <ThemeProvider>
-          <Aoscompo>
-            <Header />
-            
-            {children}
-            
-            <Footer />
-          </Aoscompo>
-          <ScrollToTop />
-        </ThemeProvider>
-        </DonationProvider>
+    <html lang="en">
+      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <Header />
+        <PageMotion />
+        <div id="main-content">{children}</div>
+        <Footer />
       </body>
     </html>
   );

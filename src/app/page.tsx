@@ -1,14 +1,12 @@
-import React from 'react'
 import { Metadata } from "next";
-import MinimalHome from '@/components/Home/MinimalHome';
+import MinimalHome from "@/components/Home/MinimalHome";
 
 export const metadata: Metadata = {
   title: "Shield Our Elders",
-  description: "A repeated-site elder scam defense program for Brevard County seniors, caregivers, libraries, and senior-serving sites.",
+  description:
+    "Partner with Shield Our Elders to bring practical, repeated scam-prevention workshops and tools to older adults in Brevard County.",
 };
 
 export default function Home() {
-  return (
-    <MinimalHome />
-  )
+  return <MinimalHome />;
 }

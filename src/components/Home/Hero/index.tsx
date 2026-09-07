@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useContext } from "react";
 import { Test } from "./Test";
 import DonationFormContext from "@/app/context/donationContext";
@@ -30,7 +30,7 @@ const Hero = () => {
         },
       },
     ],
-  }
+  };
 
   return (
     <>
@@ -43,15 +43,20 @@ const Hero = () => {
                 className="relative h-[700px] bg-cover text-white md:pt-40 md:pb-28 py-20 bg-no-repeat lg:mt-40 sm:mt-44 mt-20"
                 style={{ backgroundImage: `url(${value.image})` }}
               >
-                <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4 grid grid-cols-12">
-                  <div className="bg-white rounded-md p-5 shadow-2xl ring-1 ring-black/10 lg:col-span-4 md:col-span-7 sm:col-span-10 col-span-12 dark:bg-dark dark:ring-white/10" data-aos="fade-right">
+                <div className="container mx-auto flex px-4 lg:max-w-(--breakpoint-xl)">
+                  <div
+                    className="w-full max-w-xl rounded-md bg-white p-5 shadow-2xl ring-1 ring-black/10 dark:bg-dark dark:ring-white/10"
+                    data-aos="fade-right"
+                  >
                     <div className="flex justify-between items-center mb-6">
                       <div className="px-4 py-2 bg-midnight_text rounded-full">
                         <p className=" text-white text-sm font-semibold">
                           {value?.tag_name}
                         </p>
                       </div>
-                      <p className="text-midnight_text dark:text-white/85 text-base font-medium">{value?.left_days} step system</p>
+                      <p className="text-midnight_text dark:text-white/85 text-base font-medium">
+                        {value?.left_days} step system
+                      </p>
                     </div>
                     <h3 className="text-black dark:text-white text-4xl font-bold mb-6">
                       {value?.title}
@@ -59,14 +64,22 @@ const Hero = () => {
                     <p className="text-dustGray dark:text-white/85 text-base leading-7 font-normal mb-5">
                       {value?.descp}
                     </p>
-                    <div className="grid grid-cols-2 rounded-md border border-border dark:border-dark_border mb-5">
-                      <div className="col-span-1 border-r border-border dark:border-dark_border px-3 py-3">
-                        <p className="text-base font-medium text-black dark:text-white/85 ">Covers</p>
-                        <h4 className="text-2xl text-secondary">{value?.raised}</h4>
+                    <div className="mb-5 flex rounded-md border border-border dark:border-dark_border [&>*]:flex-1">
+                      <div className="border-r border-border px-3 py-3 dark:border-dark_border">
+                        <p className="text-base font-medium text-black dark:text-white/85 ">
+                          Covers
+                        </p>
+                        <h4 className="text-2xl text-secondary">
+                          {value?.raised}
+                        </h4>
                       </div>
-                      <div className="col-span-1 px-3 py-3">
-                        <p className="text-base font-medium text-black dark:text-white/85">Goal</p>
-                        <h4 className="text-2xl text-midnight_text dark:text-white">{value?.goal}</h4>
+                      <div className="px-3 py-3">
+                        <p className="text-base font-medium text-black dark:text-white/85">
+                          Goal
+                        </p>
+                        <h4 className="text-2xl text-midnight_text dark:text-white">
+                          {value?.goal}
+                        </h4>
                       </div>
                     </div>
                     <div className="flex justify-center">
@@ -81,13 +94,11 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </Slider>
       </section>
-
     </>
-
   );
 };
 

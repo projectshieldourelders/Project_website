@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Community workshop room</title>
+  <desc id="desc">An open community room has chairs, a screen, and a printed safety guide ready for visitors.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 236 400 74l288 162v294H112Z" fill="#e3efec"/>
+    <path d="M72 246 400 60l328 186"/>
+    <rect x="328" y="302" width="144" height="228" rx="6" fill="#fffdf7"/>
+    <path d="M444 420h2"/>
+    <rect x="164" y="274" width="116" height="92" rx="6" fill="#fffdf7"/>
+    <path d="M184 300h76m-76 36h50"/>
+    <path d="M512 430h116m-92 0v70m68-70v70m-80 0h92"/>
+    <path d="M175 454h104m-82 0v64m60-64v64m-72 0h84"/>
+    <rect x="505" y="250" width="132" height="108" rx="8" fill="#e9c96c"/>
+    <path d="M533 282h76m-76 38h58"/>
+    <path d="M400 302v228" stroke="#2f756b"/>
+  </g>
+</svg>

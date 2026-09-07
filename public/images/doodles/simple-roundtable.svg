@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Conversation around a table</title>
+  <desc id="desc">Three people sit around a table with a phone and printed guide.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="400" cy="410" rx="280" ry="70" fill="#e3efec"/>
+    <path d="M220 410v102m360-102v102"/>
+    <circle cx="194" cy="230" r="64" fill="#fffdf7"/><path d="M140 221c4-48 40-75 83-63 22 6 38 24 41 46-22-3-41-15-52-32-15 25-39 41-72 49Z" fill="#f7f8f5"/>
+    <path d="M108 394c8-92 37-139 86-139s79 47 86 139" fill="#e9c96c"/>
+    <circle cx="606" cy="230" r="64" fill="#fffdf7"/><path d="M552 217c6-46 42-70 82-58 22 7 38 27 38 51-20-5-39-17-50-34-15 23-38 36-70 41Z" fill="#183b36"/>
+    <path d="M520 394c8-92 37-139 86-139s79 47 86 139" fill="#2f756b"/>
+    <circle cx="400" cy="154" r="61" fill="#fffdf7"/><path d="M349 143c5-45 38-68 78-57 21 6 36 24 38 47-19-4-37-15-48-31-14 23-36 36-68 41Z" fill="#183b36"/>
+    <path d="M325 338c7-94 32-142 75-142s68 48 75 142" fill="#d4c9e8"/>
+    <rect x="352" y="348" width="96" height="60" rx="8" fill="#fffdf7"/>
+    <rect x="461" y="339" width="55" height="88" rx="9" fill="#2f756b"/>
+    <path d="M245 330c34 2 64 13 94 39m216-39c-34 2-64 13-94 39"/>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Small scam-safety workshop</title>
+  <desc id="desc">A presenter stands beside a board while two older adults take part.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="310" y="70" width="360" height="300" rx="8" fill="#fffdf7"/>
+    <rect x="424" y="115" width="132" height="214" rx="20" fill="#e3efec"/>
+    <path d="M450 175h80m-80 42h80"/>
+    <path d="M490 264v15"/>
+    <circle cx="490" cy="296" r="5" fill="#183b36" stroke="none"/>
+    <circle cx="176" cy="182" r="66" fill="#fffdf7"/>
+    <path d="M117 173c6-56 49-82 91-64 23 10 36 31 36 56-22-5-42-18-54-38-15 28-40 43-73 46Z" fill="#183b36"/>
+    <path fill="#2f756b" d="M85 500c9-145 40-237 91-237s83 92 91 237"/>
+    <path d="M234 303c52 8 92 4 135-36"/>
+    <circle cx="635" cy="445" r="59" fill="#fffdf7"/>
+    <circle cx="771" cy="445" r="59" fill="#fffdf7"/>
+    <path d="M586 433c5-49 43-74 84-58 18 7 32 23 35 43-20-5-39-17-49-34-14 26-37 41-70 49Z" fill="#f7f8f5"/>
+    <path d="M720 429c6-46 42-68 81-53 20 8 34 27 34 49-19-5-36-17-47-33-13 23-36 35-68 37Z" fill="#e9c96c"/>
+    <path d="M568 558c7-48 30-73 67-73s60 25 67 73m2 0c7-48 30-73 67-73s60 25 67 73" fill="#e3efec"/>
+    <path d="M619 455c11 9 22 9 33 0m103 0c11 9 22 9 33 0"/>
+    <path d="M345 370v134m290-134v34"/>
+  </g>
+</svg>

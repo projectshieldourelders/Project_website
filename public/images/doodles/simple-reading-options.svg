@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Reading settings</title>
+  <desc id="desc">A large letter, contrast switch, and motion control illustrate reading options.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="88" y="90" width="624" height="420" rx="28" fill="#fffdf7"/>
+    <circle cx="154" cy="148" r="10" fill="#de8877" stroke="none"/><circle cx="190" cy="148" r="10" fill="#e9c96c" stroke="none"/><circle cx="226" cy="148" r="10" fill="#2f756b" stroke="none"/>
+    <path d="M154 232h210m-210 58h150m-150 58h180"/>
+    <path d="M504 222 430 402m28-68h92"/>
+    <path d="M520 222l74 180"/>
+    <rect x="146" y="420" width="214" height="52" rx="26" fill="#e3efec"/>
+    <circle cx="326" cy="446" r="18" fill="#2f756b"/>
+    <path d="M431 455h164m-139-32 32 32-32 32m114-64-32 32 32 32"/>
+  </g>
+</svg>

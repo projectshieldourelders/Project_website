@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Workshop message board</title>
+  <desc id="desc">A suspicious message is pinned to a workshop board beside a marker and speech bubbles.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="128" y="78" width="544" height="378" rx="10" fill="#fffdf7"/>
+    <path d="M198 158h252m-252 62h206m-206 62h238"/>
+    <path d="M524 144h84v84h-84z" fill="#e9c96c"/>
+    <path d="m548 184 16 17 28-36"/>
+    <path d="M226 456v74m348-74v74M164 530h472"/>
+    <path d="M90 350c0-46 39-83 88-83h24c49 0 88 37 88 83s-39 83-88 83h-18l-54 45 12-55c-31-13-52-40-52-73Z" fill="#e3efec"/>
+    <path d="M510 370c0-42 36-76 81-76h18c45 0 81 34 81 76s-36 76-81 76h-14l-42 37 8-44c-30-12-51-38-51-69Z" fill="#de8877"/>
+    <path d="M150 347h80m330 20h76"/>
+  </g>
+</svg>

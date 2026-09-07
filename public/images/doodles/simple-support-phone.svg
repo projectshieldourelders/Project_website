@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">App support</title>
+  <desc id="desc">A phone, simple tool, and question mark represent technical support.</desc>
+  <g fill="none" stroke="#183b36" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="182" y="62" width="294" height="476" rx="38" fill="#fffdf7"/>
+    <rect x="218" y="122" width="222" height="332" rx="10" fill="#e3efec"/>
+    <circle cx="329" cy="494" r="9" fill="#183b36" stroke="none"/>
+    <path d="M285 226c4-42 36-70 78-70 45 0 78 29 78 70 0 32-18 48-44 64-22 13-34 28-34 51"/>
+    <circle cx="363" cy="391" r="8" fill="#183b36" stroke="none"/>
+    <path d="M500 370c70 8 125 46 161 112l-48 48c-67-35-105-90-113-160Z" fill="#e9c96c"/>
+    <path d="m525 395 112 112"/>
+    <path d="M112 452h110"/>
+  </g>
+</svg>
