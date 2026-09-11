@@ -15,35 +15,25 @@ const links = [
 ];
 
 const Footer = () => (
-  <footer className="site-footer relative overflow-hidden py-14 text-white">
+  <footer className="relative overflow-hidden border-t-[3px] border-[#17345c] bg-[#17345c] py-14 text-white">
+    <div className="absolute -bottom-20 -right-10 h-60 w-60 rounded-full border-[3px] border-white/30 bg-[#3977f6]" aria-hidden="true" />
+    <div className="absolute right-16 top-7 hidden rotate-12 text-7xl font-black text-[#f3b83f] lg:block" aria-hidden="true">〰</div>
     <div className="relative mx-auto max-w-[92rem] px-5 sm:px-8 lg:px-10">
-      <div className="flex flex-col gap-12 pb-12 lg:flex-row lg:[&>*]:flex-1">
+      <div className="grid gap-12 border-b-2 border-white/30 pb-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <Logo inverted />
-          <p className="mt-10 max-w-2xl text-2xl leading-9 text-white/85 sm:text-3xl sm:leading-10">
-            Scam-safety workshops for older adults, families, and the people who support them.
-          </p>
+          <p className="mt-10 max-w-2xl text-2xl leading-9 text-white/85 sm:text-3xl sm:leading-10">In-person scam-safety workshops in Brevard County, Florida.</p>
         </div>
         <div className="lg:pl-12">
-          <nav
-            className="flex flex-wrap gap-x-7 gap-y-4"
-            aria-label="Footer navigation"
-          >
+          <nav className="grid grid-cols-2" aria-label="Footer navigation">
             {links.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-base font-extrabold hover:text-[#e9c96c]"
-              >
+              <Link key={item.href} href={item.href} className="border-b border-white/25 py-4 text-base font-extrabold hover:text-[#f3b83f]">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <p className="mt-8 font-bold text-white/60">Email</p>
-          <Link
-            href="mailto:projectshieldourelders@gmail.com"
-            className="mt-2 block break-all text-lg font-bold text-[#dc9a65] underline underline-offset-4"
-          >
+          <p className="mt-8 font-black uppercase text-white/60">Email</p>
+          <Link href="mailto:projectshieldourelders@gmail.com" className="mt-2 block break-all text-lg font-black text-[#f3b83f] underline underline-offset-4">
             projectshieldourelders@gmail.com
           </Link>
         </div>

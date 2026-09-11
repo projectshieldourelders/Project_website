@@ -1,19 +1,34 @@
-import Link from "next/link";
+"use client"
 
-const Volunteer = () => (
-  <section className="site-ink py-20 sm:py-28">
-    <div className="mx-auto grid max-w-[92rem] gap-8 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-10">
-      <div className="max-w-3xl">
-        <h2 className="font-display text-5xl leading-none sm:text-6xl">Make room for a useful conversation.</h2>
-        <p className="mt-6 text-lg leading-8 text-white/75 sm:text-xl">
-          We can shape a session around the scam concerns your members, residents, patients, clients, or families are already bringing up.
-        </p>
-      </div>
-      <Link href="/contact" className="action-button action-button--primary min-h-14 justify-center px-7 text-base font-bold">
-        Ask about a workshop
-      </Link>
-    </div>
-  </section>
-);
+import DonationFormContext from "@/app/context/donationContext";
+import { assetPath } from "@/utils/assets";
+import { useContext } from "react";
+
+const Volunteer = () => {
+    const donationInfo = useContext(DonationFormContext);
+    return (
+        <section
+            className="relative lg:py-28 py-16 bg-no-repeat bg-cover overflow-hidden"
+            style={{ backgroundImage: `url(${assetPath("/images/background/volunteer-bg.jpg")})` }}
+        >
+            <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
+            <div className="relative z-10 container mx-auto lg:max-w-(--breakpoint-xl) px-4">
+                <div className="text-center">
+                    <h2 className="text-3xl font-semibold text-white mb-6">
+                        Bring Shield Our Elders to an anchor site
+                    </h2>
+                    <p className="text-base text-white lg:max-w-60% mx-auto mb-6">
+                    Host a baseline check, full workshop, follow-up retention visit, and staff handoff for older adults in your community.
+                    </p>
+                    <div className="flex justify-center ">
+                        <button onClick={() => donationInfo?.setIsDonationOpen(true)} className="text-white text-base bg-error px-7 py-4 border font-semibold border-error hover:border-error hover:bg-transparent hover:text-error rounded-md cursor-pointer">
+                            Request visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
 
 export default Volunteer;

@@ -1,6 +1,8 @@
-import Image from "next/image";
+import React, { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
+import { assetPath } from "@/utils/assets";
 
 interface EventProps {
   title?: string;
@@ -11,39 +13,146 @@ interface EventProps {
   duration?: string;
   type?: string;
   entrants?: string;
-  image?: string;
+  image?: any;
 }
 
-const EventDetails = ({ title, detail, category, location, eventdate, duration, type, entrants, image }: EventProps) => {
-  const formattedDate = eventdate ? format(new Date(eventdate), "MMMM d, yyyy") : "Date to be confirmed";
-
+const EventDetails: FC<EventProps> = ({
+  title,
+  detail,
+  category,
+  location,
+  eventdate,
+  duration,
+  type,
+  entrants,
+  image
+}) => {
+  const formattedDate = eventdate
+    ? format(new Date(eventdate), "MMM dd, yyyy")
+    : "Date not available";
   return (
-    <main className="site-paper pt-[82px] text-[#193832]">
-      <section className="mx-auto max-w-[92rem] px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
-        <Link href="/events" className="text-base font-bold text-[#3f6d60] underline underline-offset-4">Back to workshops</Link>
-        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,.9fr)] lg:items-end">
-          <div>
-            <p className="text-sm font-bold text-[#bb715a]">{type}</p>
-            <h1 className="mt-3 font-display text-[clamp(3.2rem,5vw,5.6rem)] leading-[.98]">{title}</h1>
-            <p className="mt-7 max-w-3xl text-xl leading-8 text-[#52645d]">{detail}</p>
+    <section className="sm:mt-28 pt-32 sm:pb-28 pb-12 dark:bg-dark">
+      <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="lg:col-span-9 col-span-12">
+            <div className="flex  gap-6 col-span-4 pt-4 md:pt-0">
+              <div className="h-[500px] w-full mb-10">
+                <Image
+                  src={image}
+                  alt="image"
+                  className="w-full h-full object-cover rounded-lg"
+                  width={1170}
+                  height={766}
+                  quality={100}
+                />
+              </div>
+            </div>
+            <h2 className="text-4xl font-medium text-darktext">{title}</h2>
+            <p className="text-dustGray dark:text-white/85 text-base my-8">{detail}</p>
           </div>
-          <dl className="border-y border-[#c6d3cb] py-5 text-base">
-            <div className="flex justify-between gap-6 py-3"><dt className="text-[#52645d]">Date</dt><dd className="font-bold text-right">{formattedDate}</dd></div>
-            <div className="flex justify-between gap-6 border-t border-[#c6d3cb] py-3"><dt className="text-[#52645d]">Location</dt><dd className="font-bold text-right">{location}</dd></div>
-            <div className="flex justify-between gap-6 border-t border-[#c6d3cb] py-3"><dt className="text-[#52645d]">Length</dt><dd className="font-bold text-right">{duration}</dd></div>
-            <div className="flex justify-between gap-6 border-t border-[#c6d3cb] py-3"><dt className="text-[#52645d]">Format</dt><dd className="font-bold text-right">{category}</dd></div>
-          </dl>
+          <div className="lg:col-span-3 md:col-span-5 sm:col-span-6 col-span-12 lg:mt-0 mt-8">
+            <h4 className="text-darktext text-lg font-medium mb-6">Info</h4>
+            <div className="pb-6 border-b border-border mb-6 dark:border-dark_border">
+              <table>
+                <tbody>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Category:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{category}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Location:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{location}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Date:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">
+                        {formattedDate}
+                      </p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Duration:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{duration}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Type:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{type}</p>
+                    </td>
+                  </tr>
+                  <tr className="">
+                    <td>
+                      <h5 className="text-black dark:text-white/85 text-base pb-4">Entrants:</h5>
+                    </td>
+                    <td>
+                      <p className="text-dustGray dark:text-white/85 text-base pb-4 pl-4">{entrants}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="flex items-center justify-between">
+              <h5 className="text-lg font-medium text-darktext">Share</h5>
+              <div className="flex items-center gap-4">
+                <Link href="#">
+                  <Image
+                    src={assetPath("/images/icons/icon-facebook.svg")}
+                    alt="icon"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 hover:opacity-70"
+                  />
+                </Link>
+                <Link href="#">
+                  <Image
+                    src={assetPath("/images/icons/icon-instagram.svg")}
+                    alt="icon"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 hover:opacity-70"
+                  />
+                </Link>
+                <Link href="#">
+                  <Image
+                    src={assetPath("/images/icons/icon-linkedin.svg")}
+                    alt="icon"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 hover:opacity-70"
+                  />
+                </Link>
+                <Link href="#">
+                  <Image
+                    src={assetPath("/images/icons/icon-twitter.svg")}
+                    alt="icon"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 hover:opacity-70"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-      {image ? <figure className="mx-auto max-w-[92rem] px-5 sm:px-8 lg:px-10"><div className="relative aspect-[16/8] overflow-hidden border border-[#c6d3cb] bg-[#e8eee9]"><Image src={image} alt="" fill priority sizes="(max-width: 1536px) 100vw, 92rem" className="object-cover" /></div></figure> : null}
-      <section className="mx-auto grid max-w-[92rem] gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[minmax(0,.75fr)_minmax(0,1.25fr)] lg:px-10">
-        <h2 className="font-display text-5xl leading-none sm:text-6xl">What the group can expect</h2>
-        <div className="space-y-6 text-lg leading-8 text-[#52645d] sm:text-xl">
-          <p>The session is conversation-led and paced for questions. Participants are never asked to share private financial details or tell a personal story in front of the group.</p>
-          <p>We focus on practical choices people can use later: ending an unexpected contact, checking the story through an official source, and bringing in a trusted person before money or account information is involved.</p>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 

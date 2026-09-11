@@ -2,192 +2,28 @@ import { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/Site/PageHero";
 
-export const metadata: Metadata = {
-  title: "Scam Examples",
-  description:
-    "Practice spotting suspicious calls, messages, links, and payment requests.",
-};
+export const metadata: Metadata = { title: "Scam Examples", description: "Practice spotting suspicious calls, messages, links, and payment requests." };
 
-const signals = [
-  [
-    "Pressure",
-    "The sender wants an answer before you have time to think or speak with anyone else. Urgency, fear, and secrecy matter more than whether the message looks polished.",
-  ],
-  [
-    "Access",
-    "Requests for passwords, verification codes, remote control, or private details can give another person control of an account. A legitimate employee should not need you to read back a security code.",
-  ],
-  [
-    "Payment",
-    "The sender chooses the payment method and makes an ordinary purchase feel urgent. Gift cards, cryptocurrency, wire transfers, and cash are difficult to recover once they have been sent.",
-  ],
-];
+const signals = ["Unexpected contact", "Pressure to act now", "A request for money or a code", "Secrecy", "A link or number supplied by the sender"];
 
 export default function ExamplesPage() {
   return (
-    <main className="bg-[#f7f8f5] text-[#183b36]">
-      <PageHero
-        title="Recognize the pressure before you respond"
-        intro="These fictional examples show the tactics that turn an ordinary message or call into a rushed decision."
-        tone="paper"
-        layout="centered"
-      />
+    <main className="bg-[#f4f7fb] text-[#17345c]">
+      <PageHero title="Practice with the pause button on" intro="These examples are fictional, but the pressure tactics are common." image="/images/doodles/simple-resource-guide.svg" imageAlt="A checklist beside a phone and safety shield" />
 
-      <section className="bg-[#f8f5fc] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-          <div>
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              Look for pressure, not perfect spelling
-            </h2>
-            <p className="mt-6 text-xl leading-8 text-[#526661]">
-              A polished message can still be a scam. Start with what the sender
-              wants you to do.
-            </p>
-          </div>
-          <dl className="space-y-8">
-            {signals.map(([term, detail]) => (
-              <div
-                key={term}
-                className="flex flex-col gap-2 sm:flex-row sm:gap-8 sm:[&>*]:flex-1"
-              >
-                <dt className="font-display text-2xl text-[#2f756b]">{term}</dt>
-                <dd className="text-xl leading-8">{detail}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"><div><h2 className="font-display text-5xl leading-tight sm:text-6xl">Look for pressure, not perfect spelling</h2><p className="mt-6 text-xl leading-8 text-[#51657f]">A polished message can still be a scam. Start with what the sender wants you to do.</p></div><ul className="divide-y-2 divide-[#17345c] border-y-2 border-[#17345c]">{signals.map((signal, index) => <li key={signal} className="flex gap-5 py-5 text-xl font-bold"><span className="text-[#3977f6]">0{index + 1}</span>{signal}</li>)}</ul></div></section>
 
-      <section
-        id="calls"
-        className="scroll-mt-28 bg-[#e9c96c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"
-      >
-        <div className="mx-auto max-w-[86rem]">
-          <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-            Situations worth practicing
-          </h2>
-          <p className="mt-6 max-w-4xl text-xl leading-8">
-            The words change from one scam to another, but the safer response is
-            usually familiar: end the contact, find an independent source, and
-            bring in another person before taking action.
-          </p>
-          <div className="mt-14 space-y-16">
-            <article className="flex flex-col gap-10 lg:flex-row lg:gap-20 lg:[&>*]:flex-1">
-              <div className="doodle-card bg-white p-7 sm:p-9">
-                <p className="font-bold">Unknown caller</p>
-                <blockquote className="font-display mt-7 text-3xl leading-tight">
-                  “Your grandson has been arrested. Send bail money today and do
-                  not tell anyone.”
-                </blockquote>
-              </div>
-              <div>
-                <h3 className="font-display text-4xl">A family emergency</h3>
-                <p className="mt-5 text-xl leading-8">
-                  The caller combines a loved one, an urgent deadline, immediate
-                  payment, and secrecy. Hang up and call the family member or
-                  another relative directly. A real emergency will still exist
-                  after that independent call.
-                </p>
-              </div>
-            </article>
-            <article
-              id="messages"
-              className="scroll-mt-28 flex flex-col gap-10 pt-14 lg:flex-row lg:gap-20 lg:[&>*]:flex-1"
-            >
-              <div>
-                <h3 className="font-display text-4xl">A package text</h3>
-                <p className="mt-5 text-xl leading-8">
-                  The message says a delivery cannot be completed until a small
-                  fee is paid through its link. Do not use the supplied link.
-                  Open the carrier’s official app or type an address you already
-                  know, then check the tracking information there.
-                </p>
-              </div>
-              <div className="doodle-card bg-white p-7 sm:p-9">
-                <p className="font-bold">New message</p>
-                <blockquote className="font-display mt-7 text-3xl leading-tight">
-                  “Your package is on hold. Confirm your address and pay 30¢
-                  now.”
-                </blockquote>
-              </div>
-            </article>
-            <article className="flex flex-col gap-10 pt-14 lg:flex-row lg:gap-20 lg:[&>*]:flex-1">
-              <div>
-                <h3 className="font-display text-4xl">A bank alert</h3>
-                <p className="mt-5 text-xl leading-8">
-                  Knowing the bank’s name does not prove who sent the message.
-                  Never read back a verification code or move money to a “safe”
-                  account. Call the number on the back of the card and explain
-                  what the message requested.
-                </p>
-              </div>
-              <blockquote className="border-l-[5px] border-[#183b36] pl-6 font-display text-3xl leading-tight">
-                “Reply with the six-digit code we just sent so we can stop the
-                transfer.”
-              </blockquote>
-            </article>
-            <article className="flex flex-col gap-10 pt-14 lg:flex-row lg:gap-20 lg:[&>*]:flex-1">
-              <h3 className="font-display text-4xl">
-                A voice that sounds familiar
-              </h3>
-              <div className="space-y-5 text-xl leading-8">
-                <p>
-                  A caller may sound like family and still be impersonating
-                  them. Voice cloning and ordinary acting can both make a rushed
-                  story feel personal and believable.
-                </p>
-                <p>
-                  Ask for a private family phrase chosen in advance, then end
-                  the call and contact the person through a number you already
-                  know. The phrase helps, but the independent callback is still
-                  the strongest check.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <section id="calls" className="scroll-mt-28 border-b-[3px] border-[#17345c] bg-[#f3b83f] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-10 lg:grid-cols-2 lg:gap-20"><div className="doodle-card bg-white p-7 sm:p-9"><p className="font-bold">Unknown caller</p><blockquote className="font-display mt-7 text-3xl leading-tight">“Your grandson has been arrested. Send bail money today and do not tell anyone.”</blockquote></div><div><h2 className="font-display text-5xl">What stands out</h2><ul className="mt-7 space-y-4 text-xl"><li>• A sudden family emergency</li><li>• Money requested immediately</li><li>• An instruction to keep it secret</li></ul><p className="mt-8 border-l-[5px] border-[#17345c] pl-5 text-xl font-bold">Safer step: hang up and call the family member directly.</p></div></div></section>
 
-      <section className="bg-[#d4c9e8] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-          <div>
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              Before any unusual payment
-            </h2>
-            <div className="mt-6 space-y-5 text-xl leading-8">
-              <p>
-                Stop when someone chooses the payment method for you, stays on
-                the phone while you pay, or tells you to hide the real reason
-                from a cashier or bank employee.
-              </p>
-              <p>
-                Gift cards, cryptocurrency, wire transfers, cash couriers,
-                payment apps, and precious metals are common requests because
-                they can be difficult to reverse. The payment method does not
-                prove a scam by itself, but pressure and secrecy are reasons to
-                stop and verify.
-              </p>
-            </div>
-          </div>
-          <div className="border-l-[5px] border-[#183b36] pl-7">
-            <h3 className="font-display text-4xl">
-              Practice without the pressure
-            </h3>
-            <p className="mt-5 text-xl leading-8">
-              A group workshop gives people time to discuss these situations
-              before a real caller is waiting for an answer. Participants can
-              compare responses, ask questions, and leave with language they are
-              comfortable using.
-            </p>
-            <Link
-              href="/program"
-              className="doodle-button mt-8 inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold"
-            >
-              See the workshop
-            </Link>
-          </div>
-        </div>
-      </section>
+      <section id="messages" className="scroll-mt-28 border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-10 lg:grid-cols-2 lg:gap-20"><div><h2 className="font-display text-5xl">A package text</h2><p className="mt-6 text-xl leading-8 text-[#51657f]">The message says a delivery cannot be completed until a small fee is paid through its link.</p><p className="mt-8 border-l-[5px] border-[#3977f6] pl-5 text-xl font-bold">Safer step: do not use the link. Open the carrier’s official app or type its known address yourself.</p></div><div className="doodle-card bg-[#dce9f7] p-7 sm:p-9"><p className="font-bold">New message</p><blockquote className="font-display mt-7 text-3xl leading-tight">“Your package is on hold. Confirm your address and pay 30¢ now.”</blockquote></div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#17345c] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><div><h2 className="font-display text-5xl">A bank alert</h2><p className="mt-6 text-xl leading-8 text-[#dce9f7]">The sender knows the bank’s name and says an account will be locked.</p></div><div><blockquote className="border-l-[5px] border-[#f3b83f] pl-6 font-display text-3xl leading-tight">“Reply with the six-digit code we just sent so we can stop the transfer.”</blockquote><p className="mt-8 text-xl font-bold text-[#f3b83f]">Safer step: never read back a verification code. Call the number on the card.</p></div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#b7a7e8] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl leading-tight sm:text-6xl">A voice that sounds familiar</h2><div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]"><p className="text-xl leading-8">A caller may sound like family and still be impersonating them. Voice cloning and ordinary acting can both create doubt.</p><div className="border-l-[5px] border-[#17345c] pl-6"><p className="font-display text-3xl">Use the family phrase</p><p className="mt-4 text-xl leading-8">Ask for a private phrase chosen in advance, then call the person back on a number you already know.</p></div></div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl leading-tight sm:text-6xl">Before any unusual payment</h2><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{["Gift card", "Cryptocurrency", "Wire transfer", "Cash by courier", "Payment app", "Gold or precious metals"].map((method) => <div key={method} className="border-[3px] border-[#17345c] bg-white p-6 text-2xl font-bold">{method}</div>)}</div><p className="mt-9 max-w-4xl text-xl leading-8 text-[#51657f]">Stop when someone insists on an unusual payment method or tells you how to lie about the reason for the payment.</p></div></section>
+
+      <section className="bg-[#f47b6a] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><h2 className="font-display max-w-4xl text-4xl leading-tight sm:text-6xl">Want to practice with a group?</h2><Link href="/program" className="doodle-button inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold">See the workshop</Link></div></section>
     </main>
   );
 }

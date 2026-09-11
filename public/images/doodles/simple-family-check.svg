@@ -6,7 +6,8 @@
     <path fill="#2f756b" d="M386 438c14-105 67-157 151-157s136 52 150 157"/>
     <circle cx="264" cy="209" r="87" fill="#fffdf7"/>
     <circle cx="537" cy="209" r="87" fill="#fffdf7"/>
-    <path d="M185 191c5-78 66-116 130-87 26 12 42 34 45 63-22-9-44-25-58-47-20 40-65 63-117 71Z" fill="#f7f8f5"/>
+    <path d="M185 191c5-78 66-116 130-87 26 12 42 34 45 63-22-9-44-25-58-47-20 40-65 63-117 71Z" fill="#aebdb7" transform="translate(-8 0)"/>
+    <path d="M223 126c22-17 47-25 73-23m-54 1c20-8 43-8 63-1m-102 53c4-16 11-29 21-40" fill="none" stroke="#183b36" stroke-width="7" transform="translate(-8 0)"/>
     <path d="M465 182c12-62 66-91 121-66 31 14 51 43 51 78-27-8-57-26-74-52-18 31-53 43-98 40Z" fill="#183b36"/>
     <circle cx="238" cy="214" r="5" fill="#183b36" stroke="none"/>
     <circle cx="290" cy="214" r="5" fill="#183b36" stroke="none"/>

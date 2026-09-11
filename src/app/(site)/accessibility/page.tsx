@@ -2,138 +2,26 @@ import { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/Site/PageHero";
 
-export const metadata: Metadata = {
-  title: "Accessibility",
-  description: "Accessibility features and commitments for Shield Our Elders.",
-};
+export const metadata: Metadata = { title: "Accessibility", description: "Accessibility features and commitments for Shield Our Elders." };
 
 export default function AccessibilityPage() {
   return (
-    <main className="bg-[#f7f8f5] text-[#183b36]">
-      <PageHero
-        title="Reading and accessibility"
-        intro="This site is designed for clear language, larger type, comfortable spacing, and predictable controls."
-        tone="mist"
-        layout="centered"
-      />
+    <main className="bg-[#f4f7fb] text-[#17345c]">
+      <PageHero title="Made to be easier to use" intro="Clear words, large controls, strong contrast, and fewer surprises." image="/images/doodles/simple-workshop.svg" imageAlt="Older adults learning together at an accessible workshop" imagePosition="center bottom" />
 
-      <section className="bg-[#f2f8f6] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="flex flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              Reading options stay with you
-            </h2>
-            <div className="space-y-6 text-xl leading-8 text-[#526661]">
-              <p>
-                The Reading options button in the header can enlarge the text,
-                increase contrast, or reduce motion. The choice is saved on the
-                device, so it does not need to be set again on every page.
-              </p>
-              <p>
-                The controls use familiar labels instead of technical settings.
-                Changes appear immediately, and the standard view can be
-                restored from the same menu.
-              </p>
-            </div>
-          </div>
-          <div className="mt-20 pt-14">
-            <h2 className="font-display text-5xl sm:text-6xl">
-              How the site is built
-            </h2>
-            <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:[&>*]:flex-1">
-              <article className="pt-6">
-                <h3 className="font-display text-3xl">Reading</h3>
-                <p className="mt-4 text-lg leading-8 text-[#526661]">
-                  Atkinson Hyperlegible body text, generous line spacing, plain
-                  language, and restrained line lengths make longer explanations
-                  easier to follow without crowding the page.
-                </p>
-              </article>
-              <article className="pt-6">
-                <h3 className="font-display text-3xl">Interaction</h3>
-                <p className="mt-4 text-lg leading-8 text-[#526661]">
-                  Buttons have large tap areas, keyboard focus remains visible,
-                  and links, menus, forms, and carousels can be used without
-                  relying on a mouse.
-                </p>
-              </article>
-              <article className="pt-6">
-                <h3 className="font-display text-3xl">Comfort</h3>
-                <p className="mt-4 text-lg leading-8 text-[#526661]">
-                  Information is not communicated by color alone. Higher
-                  contrast and reduced motion are available, and animation stops
-                  when the device requests less movement.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24"><div><h2 className="font-display text-5xl leading-tight sm:text-6xl">Reading options stay with you</h2><p className="mt-6 text-xl leading-8 text-[#51657f]">Use the Reading options button in the header to enlarge text, increase contrast, or reduce motion. Your choices are saved on this device.</p></div><div className="doodle-card bg-[#f3b83f] p-7 sm:p-9"><p className="font-display text-3xl">Try it now</p><ol className="mt-7 space-y-5 text-xl"><li>1. Open “Reading options.”</li><li>2. Choose A, A+, or A++.</li><li>3. Turn on higher contrast or reduced motion.</li></ol></div></div></section>
 
-      <section className="bg-[#183b36] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="flex flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              Access continues beyond the screen
-            </h2>
-            <div className="space-y-6 text-xl leading-8 text-[#e3efec]">
-              <p>
-                Hosts can tell us about hearing, vision, mobility, language, or
-                seating needs before a workshop. We can slow the pace, repeat
-                instructions, describe visual examples, and provide large-print
-                materials without asking participants to explain private medical
-                details.
-              </p>
-              <p>
-                The website also works with browser zoom up to 200%, device text
-                and contrast settings, reduced-motion preferences, screen
-                readers, and keyboard navigation. We test common tasks and
-                revise unclear language as new barriers are found.
-              </p>
-              <Link
-                href="/contact"
-                className="doodle-button inline-flex bg-white px-7 py-4 font-bold text-[#183b36]"
-              >
-                Tell us what would help
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] bg-[#dce9f7] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl sm:text-6xl">Website choices</h2><div className="mt-12 grid gap-7 md:grid-cols-3">{[["Readable type", "Atkinson Hyperlegible body text with generous spacing."], ["Large targets", "Buttons and controls are designed to be easier to tap."], ["Keyboard access", "Links, menus, and forms can be used without a mouse."], ["Visible focus", "A strong outline shows where keyboard focus is."], ["Plain language", "Short instructions and familiar words come first."], ["Motion control", "Animations stop when Reduce Motion is requested."]].map(([title, text], index) => <article key={title} className={`border-t-[3px] border-[#17345c] pt-6 ${index > 2 ? "md:mt-5" : ""}`}><h3 className="font-display text-3xl">{title}</h3><p className="mt-4 text-lg leading-7 text-[#51657f]">{text}</p></article>)}</div></div></section>
 
-      <section className="bg-[#d4c9e8] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-10 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-          <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-            Found a barrier?
-          </h2>
-          <div>
-            <p className="text-xl leading-8">
-              Tell us which page or activity was difficult, what device or
-              assistive technology you used, and what you expected to happen. A
-              short description is enough, and you do not need to know the
-              technical cause.
-            </p>
-            <p className="mt-5 text-xl leading-8">
-              You can also open the resource library to use printable guides
-              instead of reading the material on screen.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="mailto:projectshieldourelders@gmail.com?subject=Accessibility%20feedback"
-                className="doodle-button inline-flex bg-white px-7 py-4 font-bold"
-              >
-                Email accessibility feedback
-              </Link>
-              <Link
-                href="/resources"
-                className="doodle-button inline-flex bg-[#2f756b] px-7 py-4 font-bold text-white"
-              >
-                Open resources
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><h2 className="font-display text-5xl leading-tight sm:text-6xl">Workshop access</h2><div><p className="text-xl leading-8 text-[#51657f]">Hosts can tell us about hearing, vision, mobility, language, or seating needs before the session. We can slow the pace, repeat instructions, describe visual examples, and provide large-print materials.</p><Link href="/contact" className="doodle-button mt-8 inline-flex bg-[#3977f6] px-7 py-4 font-bold text-white">Tell us what you need</Link></div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#17345c] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl sm:text-6xl">Works with personal settings</h2><div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{["Browser zoom up to 200%", "Device text and contrast settings", "Reduced Motion preferences", "Screen readers and keyboard navigation"].map((item) => <p key={item} className="border-t-2 border-[#f3b83f] pt-5 text-xl font-bold">{item}</p>)}</div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#f3b83f] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-4xl sm:text-5xl">Accessibility is ongoing work</h2><p className="mt-5 max-w-4xl text-xl leading-8">We test common tasks, improve unclear language, and fix barriers as we find them. The goal is not a label. It is a site and program people can actually use.</p></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-10 lg:grid-cols-[0.8fr_1.2fr]"><h2 className="font-display text-5xl leading-tight">Found a barrier?</h2><div><p className="text-xl leading-8 text-[#51657f]">Tell us which page or activity was difficult, what device you used, and what you expected to happen.</p><Link href="mailto:projectshieldourelders@gmail.com?subject=Accessibility%20feedback" className="mt-7 inline-flex border-b-2 border-[#17345c] pb-1 text-xl font-bold">Email accessibility feedback</Link></div></div></section>
+
+      <section className="bg-[#b7a7e8] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><h2 className="font-display max-w-4xl text-4xl leading-tight sm:text-6xl">Use the format that works for you</h2><Link href="/resources" className="doodle-button inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold">Open resources</Link></div></section>
     </main>
   );
 }

@@ -2,138 +2,24 @@ import { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/Site/PageHero";
 
-export const metadata: Metadata = {
-  title: "App Support",
-  description:
-    "Get help with the Shield Our Elders app or send a privacy request.",
-};
+export const metadata: Metadata = { title: "App Support", description: "Get help with the Shield Our Elders app or send a privacy request." };
 
 export default function SupportPage() {
   return (
-    <main className="bg-[#f7f8f5] text-[#183b36]">
-      <PageHero
-        title="Help with the Shield Our Elders app"
-        intro="Describe what happened and the device you are using. We will help you find the next step."
-        tone="ink"
-        layout="centered"
-      />
+    <main className="bg-[#f4f7fb] text-[#17345c]">
+      <PageHero title="Need help with the app?" intro="Start with the problem you are seeing. We will point you to the right next step." image="/images/doodles/simple-resource-guide.svg" imageAlt="A checklist, phone, and safety shield" imagePosition="center bottom" />
 
-      <section className="bg-[#f2f6f5] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="flex flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-            <div>
-              <h2 className="font-display text-5xl leading-tight">
-                Email is the quickest way to reach us
-              </h2>
-              <p className="mt-6 text-xl leading-8 text-[#526661]">
-                Describe the device you are using, the screen or feature you
-                opened, what you expected, and what happened instead. Include
-                the app version if it is visible, and attach a screenshot only
-                after removing private messages, account details, and phone
-                numbers.
-              </p>
-              <Link
-                href="mailto:projectshieldourelders@gmail.com?subject=App%20support"
-                className="doodle-button mt-8 inline-flex bg-[#2f756b] px-7 py-4 font-bold text-white"
-              >
-                Email app support
-              </Link>
-            </div>
-            <div className="doodle-card bg-[#e9c96c] p-7 sm:p-9">
-              <h3 className="font-display text-3xl">Before writing</h3>
-              <p className="mt-6 text-xl leading-8">
-                Confirm that the device is online, close the app, and open it
-                once more. If the camera or microphone is blocked, open the
-                device settings and review the permissions for Shield Our
-                Elders.
-              </p>
-              <p className="mt-5 text-xl leading-8">
-                If a result seems wrong, do not act on the result alone. Verify
-                the situation through an official source or a trusted person,
-                then tell us what the app missed.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><div><h2 className="font-display text-5xl leading-tight">Email is the quickest way to reach us</h2><p className="mt-6 text-xl leading-8 text-[#51657f]">Include your device type, the screen you were using, what you expected, and what happened instead.</p><Link href="mailto:projectshieldourelders@gmail.com?subject=App%20support" className="doodle-button mt-8 inline-flex bg-[#3977f6] px-7 py-4 font-bold text-white">Email app support</Link></div><div className="doodle-card bg-[#f3b83f] p-7 sm:p-9"><h3 className="font-display text-3xl">Helpful details</h3><ul className="mt-7 space-y-4 text-xl"><li>• iPhone, iPad, or Android</li><li>• App version, if visible</li><li>• The feature you opened</li><li>• A screenshot without private information</li></ul></div></div></section>
 
-      <section className="bg-[#de8877] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-          <div>
-            <h2 className="font-display text-5xl leading-tight">
-              Something already happened?
-            </h2>
-            <p className="mt-6 text-xl leading-8">
-              If money was sent or account details were shared, call the bank or
-              card issuer now using the number on the card or statement. Ask
-              whether the payment can be stopped and what needs to be secured.
-              Shield Our Elders is not an emergency service and cannot recover
-              funds.
-            </p>
-            <Link
-              href="/resources#recovery"
-              className="doodle-button mt-8 inline-flex bg-white px-7 py-4 font-bold text-[#183b36]"
-            >
-              Open the recovery guide
-            </Link>
-          </div>
-          <div>
-            <h2 className="font-display text-5xl leading-tight">
-              Privacy requests
-            </h2>
-            <p className="mt-6 text-xl leading-8">
-              Email us with a privacy question, correction, or deletion request
-              and include the email address used when you contacted us. Do not
-              send passwords, full account numbers, Social Security numbers, or
-              complete card numbers.
-            </p>
-            <Link
-              href="mailto:projectshieldourelders@gmail.com?subject=Privacy%20request"
-              className="doodle-button mt-8 inline-flex bg-white px-7 py-4 font-bold text-[#183b36]"
-            >
-              Email a privacy request
-            </Link>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] bg-[#dce9f7] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl sm:text-6xl">Common first steps</h2><div className="mt-12 grid gap-7 md:grid-cols-3">{[["A check will not start", "Confirm the device is online, close the app, reopen it, and try once more."], ["Camera or microphone is blocked", "Open device Settings, find Shield Our Elders, and review permissions."], ["A result seems wrong", "Do not act on the result alone. Verify through an official source or trusted person."]].map(([title, text]) => <article key={title} className="border-t-[3px] border-[#17345c] pt-6"><h3 className="font-display text-3xl">{title}</h3><p className="mt-4 text-lg leading-7 text-[#51657f]">{text}</p></article>)}</div></div></section>
 
-      <section className="bg-[#183b36] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-12 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-          <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-            Understand the app’s limits
-          </h2>
-          <div>
-            <div className="space-y-6 text-xl leading-8 text-[#e3efec]">
-              <p>
-                The app can help someone slow down, identify warning signs, and
-                find a safer next step. It cannot guarantee that a message is
-                safe or fraudulent, and a result may be incomplete or wrong.
-              </p>
-              <p>
-                Important decisions still need independent verification through
-                an official source or a trusted person. The privacy policy
-                explains how submitted content is handled, while the terms
-                describe what the service provides and where its responsibility
-                ends.
-              </p>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/privacy"
-                className="doodle-button inline-flex min-h-14 items-center bg-white px-7 font-bold text-[#183b36]"
-              >
-                Privacy
-              </Link>
-              <Link
-                href="/terms"
-                className="doodle-button inline-flex min-h-14 items-center bg-[#e9c96c] px-7 font-bold text-[#183b36]"
-              >
-                Terms
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] bg-[#f47b6a] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-4xl sm:text-5xl">Something already happened?</h2><p className="mt-5 max-w-4xl text-xl leading-8">If money was sent or account details were shared, call the bank or card issuer now using the number on the card or statement. Shield Our Elders is not an emergency service.</p><Link href="/resources#recovery" className="mt-7 inline-flex border-b-2 border-[#17345c] pb-1 text-xl font-bold">Open the recovery guide</Link></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><div><h2 className="font-display text-5xl">Privacy requests</h2><p className="mt-6 text-xl leading-8 text-[#51657f]">Email us with a privacy question, correction, or deletion request. Include the email address you used when you contacted us.</p></div><div><Link href="mailto:projectshieldourelders@gmail.com?subject=Privacy%20request" className="doodle-button inline-flex bg-white px-7 py-4 font-bold">Email a privacy request</Link><p className="mt-7 text-lg leading-7 text-[#51657f]">Do not send passwords, full account numbers, Social Security numbers, or complete card numbers.</p></div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#17345c] px-5 py-20 text-white sm:px-8 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl sm:text-6xl">Understand what the app can and cannot do</h2><div className="mt-10 grid gap-8 lg:grid-cols-2"><div className="border-t-2 border-[#f3b83f] pt-6"><h3 className="font-display text-3xl">It can help you slow down</h3><p className="mt-4 text-xl leading-8 text-[#dce9f7]">The app can explain warning signs and suggest safer next steps.</p></div><div className="border-t-2 border-[#f3b83f] pt-6"><h3 className="font-display text-3xl">It cannot guarantee safety</h3><p className="mt-4 text-xl leading-8 text-[#dce9f7]">A result may be incomplete or wrong. Important decisions still need independent verification.</p></div></div></div></section>
+
+      <section className="bg-[#b7a7e8] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="font-display text-4xl sm:text-5xl">Policies in plain view</h2><p className="mt-4 text-xl">Read how information is handled and what the service provides.</p></div><div className="flex flex-wrap gap-4"><Link href="/privacy" className="doodle-button inline-flex min-h-14 items-center bg-white px-7 font-bold">Privacy</Link><Link href="/terms" className="doodle-button inline-flex min-h-14 items-center bg-white px-7 font-bold">Terms</Link></div></div></section>
     </main>
   );
 }

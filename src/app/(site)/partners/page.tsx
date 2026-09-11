@@ -2,195 +2,33 @@ import { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/Site/PageHero";
 
-export const metadata: Metadata = {
-  title: "Partners",
-  description: "Host or support a scam-safety workshop in Brevard County.",
-};
+export const metadata: Metadata = { title: "Partners", description: "Host or support a scam-safety workshop in Brevard County." };
 
 const partners = [
-  [
-    "Senior living",
-    "A session can be built for residents, relatives, staff, or a mixed room. We coordinate with the host so examples, print size, seating, and pacing fit the people attending.",
-  ],
-  [
-    "Banks and credit unions",
-    "Front-line teams can help customers pause before a rushed transfer or account takeover. A workshop gives staff and community members the same vocabulary for checking an urgent request.",
-  ],
-  [
-    "Care teams",
-    "Caregivers often hear about a suspicious call after it has already created fear. Shared language helps staff and families respond calmly, preserve dignity, and verify the story together.",
-  ],
-  [
-    "Libraries and community groups",
-    "A familiar, easy-to-reach place makes it simpler for people to attend and ask questions. We bring the lesson and printable materials while the host brings local knowledge and trust.",
-  ],
-];
-
-const hostDetails = [
-  [
-    "The room",
-    "We need chairs, a screen or clear wall, and an entrance participants can use comfortably. Before the visit, we can talk through sound, lighting, seating, and mobility needs.",
-  ],
-  [
-    "The people",
-    "One arrival contact and a rough group size are enough to plan the session. Nobody has to register for an account or disclose whether they have personally lost money.",
-  ],
-  [
-    "The context",
-    "Tell us which scams people have mentioned lately and which topics feel most useful. We will choose examples that fit the room without using anyone’s private story as a lesson.",
-  ],
-];
-
-const sponsorship = [
-  [
-    "Guides",
-    "Large-print pages give participants something useful to keep beside the phone after the workshop ends. Funding helps us print readable copies rather than asking everyone to use a small screen.",
-  ],
-  [
-    "Contact cards",
-    "A simple card creates one dependable place for trusted names, phone numbers, and a family verification phrase. Participants fill it in privately and take it home.",
-  ],
-  [
-    "Practice materials",
-    "Realistic examples make the session feel connected to ordinary life. Support helps us update those materials and return to the community for another round of practice.",
-  ],
+  ["Senior living", "Host a session for residents, families, or staff."],
+  ["Banks and credit unions", "Help customers pause before a rushed transfer or account takeover."],
+  ["Care teams", "Give staff and families a shared way to check an urgent request."],
+  ["Libraries and community groups", "Offer the workshop in a familiar, easy-to-reach place."],
 ];
 
 export default function PartnersPage() {
   return (
-    <main className="bg-[#f7f8f5] text-[#183b36]">
-      <PageHero
-        title="Host a workshop in your community"
-        intro="We work with local groups that want to give older adults and families time to talk through scam situations before a real call arrives."
-        tone="mist"
-        layout="centered"
-      />
+    <main className="bg-[#f4f7fb] text-[#17345c]">
+      <PageHero title="Bring us to your community" intro="We work with organizations that already know and serve older adults." image="/images/doodles/simple-partner-guide.svg" imageAlt="Two people sharing a printed safety guide" />
 
-      <section className="bg-[#fff6f2] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="flex flex-col gap-10 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              A partnership can start small
-            </h2>
-            <div className="space-y-6 text-xl leading-8 text-[#526661]">
-              <p>
-                You do not need a scam-prevention department or a finished event
-                plan. A meeting room, an introduction, local context, or help
-                printing handouts can be enough to begin.
-              </p>
-              <p>
-                We work out the format with you, including who the session is
-                for, what the group has been seeing, and how the room can be
-                made comfortable. The goal is a useful visit, not a complicated
-                partnership package.
-              </p>
-              <Link
-                href="/contact"
-                className="doodle-button inline-flex bg-[#2f756b] px-7 py-4 font-bold text-white"
-              >
-                Tell us about your group
-              </Link>
-            </div>
-          </div>
-          <div className="mt-20 pt-14">
-            <h2 className="font-display text-5xl sm:text-6xl">
-              Who we work with
-            </h2>
-            <div className="mt-12 flex flex-col gap-10">
-              {partners.map(([title, text]) => (
-                <article
-                  key={title}
-                  className="flex flex-col gap-3 py-3 sm:flex-row sm:gap-16"
-                >
-                  <h3 className="font-display text-3xl leading-tight sm:w-2/5">
-                    {title}
-                  </h3>
-                  <p className="max-w-2xl flex-1 text-lg leading-8 text-[#526661]">
-                    {text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div className="mt-20 flex flex-col gap-10 pt-14 lg:flex-row lg:gap-24 lg:[&>*]:flex-1">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              How organizations help
-            </h2>
-            <p className="text-xl leading-8 text-[#526661]">
-              Some partners host a room and invite the community. Others cover
-              large-print guides, wallet cards, and the materials used during a
-              return visit. A simple introduction to a senior community,
-              caregiver group, library, or local expert can be just as valuable.
-              We can begin with whichever kind of support is realistic for your
-              organization.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20"><h2 className="font-display text-5xl leading-tight sm:text-6xl">A partnership can start small</h2><div><p className="max-w-2xl text-xl leading-8 text-[#51657f]">You do not need a scam-prevention department. A meeting room, an introduction, or help printing handouts is enough to begin.</p><Link href="/contact" className="doodle-button mt-8 inline-flex bg-[#3977f6] px-7 py-4 font-bold text-white">Tell us about your group</Link></div></div></section>
 
-      <section className="bg-[#183b36] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="flex flex-col gap-10 lg:flex-row lg:[&>*]:flex-1">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              What makes a visit possible
-            </h2>
-            <p className="max-w-2xl text-xl leading-8 text-[#e3efec]">
-              We handle the lesson and materials. The host helps us understand
-              the place and the people before we arrive, while sponsors help
-              make the printed materials and return visits possible.
-            </p>
-          </div>
-          <dl className="mt-12 flex flex-col gap-9 lg:flex-row lg:[&>*]:flex-1">
-            {hostDetails.map(([term, detail]) => (
-              <div key={term} className="pt-6">
-                <dt className="font-display text-3xl text-[#e9c96c]">{term}</dt>
-                <dd className="mt-4 text-lg leading-8 text-[#e3efec]">
-                  {detail}
-                </dd>
-              </div>
-            ))}
-          </dl>
-          <div className="mt-20 pt-14">
-            <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-              Where sponsorship goes
-            </h2>
-            <dl className="mt-12 flex flex-col gap-9 lg:flex-row lg:[&>*]:flex-1">
-              {sponsorship.map(([term, detail]) => (
-                <div key={term} className="pt-6">
-                  <dt className="font-display text-3xl text-[#e9c96c]">
-                    {term}
-                  </dt>
-                  <dd className="mt-4 text-lg leading-8 text-[#e3efec]">
-                    {detail}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl sm:text-6xl">Who we work with</h2><div className="mt-14 grid gap-6 sm:grid-cols-2">{partners.map(([title, text], index) => <article key={title} className={`doodle-card min-h-64 p-7 sm:p-9 ${index === 0 ? "bg-[#f3b83f]" : index === 1 ? "bg-[#3977f6] text-white" : index === 2 ? "bg-[#b7a7e8]" : "bg-[#f47b6a]"}`}><p className="font-extrabold">0{index + 1}</p><h3 className="font-display mt-7 text-4xl leading-tight">{title}</h3><p className={`mt-4 max-w-lg text-lg leading-7 ${index === 1 ? "text-white" : "text-[#2b4669]"}`}>{text}</p></article>)}</div></div></section>
 
-      <section className="bg-[#e9c96c] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto flex max-w-[86rem] flex-col gap-10 lg:flex-row lg:items-end lg:gap-24 lg:[&>*]:flex-1">
-          <h2 className="font-display text-5xl leading-tight sm:text-6xl">
-            Not sure where your organization fits?
-          </h2>
-          <div>
-            <p className="text-xl leading-8">
-              Send a short note about the people you serve and the kind of
-              support you can offer. We can usually tell within one conversation
-              whether a workshop, a resource table, a sponsored print run, or an
-              introduction makes sense.
-            </p>
-            <Link
-              href="/contact"
-              className="doodle-button mt-8 inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <section className="border-b-[3px] border-[#17345c] bg-[#dce9f7] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display max-w-3xl text-5xl leading-tight sm:text-6xl">Three ways to help</h2><div className="mt-12 grid gap-10 lg:grid-cols-3">{[["Host", "Provide a room, invite the group, and tell us what would be useful."], ["Sponsor", "Cover large-print guides, wallet cards, and take-home materials."], ["Introduce", "Connect us with a community, caregiver group, or local expert."]].map(([title, text]) => <article key={title} className="border-t-[3px] border-[#17345c] pt-7"><h3 className="font-display text-4xl">{title}</h3><p className="mt-5 text-lg leading-7 text-[#2b4669]">{text}</p></article>)}</div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#17345c] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><div><h2 className="font-display text-5xl leading-tight sm:text-6xl">What we ask from a host</h2><p className="mt-6 text-xl leading-8 text-[#dce9f7]">A quiet, accessible room and one person who can help us understand the audience.</p></div><ul className="divide-y border-y border-white/50 text-xl">{["A room with chairs and a screen", "A clear arrival contact", "An estimated group size", "Any hearing, vision, or mobility needs", "The scams people have mentioned lately"].map((item) => <li key={item} className="py-5">✓ <span className="ml-3">{item}</span></li>)}</ul></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto max-w-[86rem]"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]"><h2 className="font-display text-5xl leading-tight sm:text-6xl">What sponsorship supports</h2><p className="text-xl leading-8 text-[#51657f]">Sponsorship keeps workshops and take-home materials easier for community groups to offer.</p></div><div className="mt-12 grid border-y-[3px] border-[#17345c] sm:grid-cols-3">{["Large-print guides", "Trusted-contact cards", "Practice materials"].map((item, index) => <p key={item} className={`min-h-36 p-7 font-display text-3xl ${index < 2 ? "border-b-[3px] border-[#17345c] sm:border-b-0 sm:border-r-[3px]" : ""}`}>{item}</p>)}</div></div></section>
+
+      <section className="border-b-[3px] border-[#17345c] bg-[#f3b83f] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-4xl sm:text-6xl">Not sure where you fit?</h2><p className="mt-5 max-w-3xl text-xl leading-8">Send a short note. We can usually tell within one conversation whether a workshop or another resource makes sense.</p></div></section>
+
+      <section className="bg-[#f47b6a] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><h2 className="font-display max-w-4xl text-4xl leading-tight sm:text-6xl">Let’s make the next step simple</h2><Link href="/contact" className="doodle-button inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold">Contact us</Link></div></section>
     </main>
   );
 }

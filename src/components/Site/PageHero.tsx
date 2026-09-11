@@ -4,96 +4,29 @@ import Image from "next/image";
 type PageHeroProps = {
   title: string;
   intro: string;
-  image?: string;
-  imageAlt?: string;
+  image: string;
+  imageAlt: string;
   imagePosition?: string;
-  tone?: "paper" | "mist" | "ink";
-  layout?: "split" | "reverse" | "centered" | "compact";
 };
 
-const tones = {
-  paper: "site-paper",
-  mist: "site-mist",
-  ink: "site-ink",
-};
-
-const layouts = {
-  split: {
-    section: "min-h-[68svh]",
-    inner: "min-h-[calc(68svh-82px)] flex-col items-center gap-8 lg:flex-row",
-    copy: "max-w-3xl lg:min-w-0 lg:flex-1",
-    image:
-      "min-h-[300px] w-full sm:min-h-[410px] lg:min-h-[520px] lg:w-1/2 lg:min-w-0",
-    intro: "max-w-xl",
-  },
-  reverse: {
-    section: "min-h-[70svh]",
-    inner:
-      "min-h-[calc(70svh-82px)] flex-col gap-10 lg:flex-row-reverse lg:items-center lg:justify-between",
-    copy: "max-w-2xl lg:min-w-0 lg:flex-1",
-    image:
-      "min-h-[320px] w-full sm:min-h-[430px] lg:min-h-[540px] lg:w-[52%] lg:min-w-0",
-    intro: "max-w-xl",
-  },
-  centered: {
-    section: "min-h-[78svh]",
-    inner:
-      "min-h-[calc(78svh-82px)] flex-col items-center justify-center gap-4 text-center",
-    copy: "max-w-5xl",
-    image: "min-h-[280px] w-full max-w-3xl sm:min-h-[360px] lg:min-h-[390px]",
-    intro: "mx-auto max-w-2xl",
-  },
-  compact: {
-    section: "min-h-[56svh]",
-    inner:
-      "min-h-[calc(56svh-82px)] flex-col gap-8 lg:flex-row lg:items-center lg:justify-between",
-    copy: "max-w-3xl lg:min-w-0 lg:flex-1",
-    image:
-      "min-h-[250px] w-full sm:min-h-[320px] lg:min-h-[390px] lg:w-[32%] lg:min-w-0",
-    intro: "max-w-2xl",
-  },
-};
-
-const PageHero = ({
-  title,
-  intro,
-  image,
-  imageAlt,
-  imagePosition = "center",
-  tone = "mist",
-  layout = "split",
-}: PageHeroProps) => (
-  <section
-    className={`page-hero relative overflow-hidden pt-[82px] ${layouts[layout].section} ${tone === "ink" ? "text-white" : "text-[#183b36]"} ${tones[tone]}`}
-  >
-    <div
-      className={`mx-auto flex max-w-[94rem] px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-10 ${layouts[layout].inner}`}
-    >
-      <div className={`relative z-10 ${layouts[layout].copy}`}>
-        <h1 className="font-display text-[clamp(3.4rem,5vw,5.6rem)] leading-[0.97] [text-wrap:balance]">
-          {title}
-        </h1>
-        <p
-          className={`mt-7 text-xl leading-8 sm:text-2xl sm:leading-9 ${layouts[layout].intro} ${tone === "ink" ? "text-white/80" : "text-[#53645e]"}`}
-        >
-          {intro}
-        </p>
+const PageHero = ({ title, intro, image, imageAlt, imagePosition = "center" }: PageHeroProps) => (
+  <section className="relative min-h-[68svh] overflow-hidden border-b-[3px] border-[#17345c] bg-[#f4f7fb] pt-[82px] text-[#17345c]">
+    <div className="mx-auto grid min-h-[calc(68svh-82px)] max-w-[94rem] items-center gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-10">
+      <div className="relative z-10 max-w-3xl">
+        <h1 className="font-display text-[clamp(3.4rem,5vw,5.6rem)] leading-[0.97] [text-wrap:balance]">{title}</h1>
+        <p className="mt-7 max-w-xl text-xl leading-8 text-[#51657f] sm:text-2xl sm:leading-9">{intro}</p>
       </div>
-      {image && imageAlt ? (
-        <figure
-          className={`page-hero__photo relative overflow-hidden ${layouts[layout].image}`}
-        >
-          <Image
-            src={assetPath(image)}
-            alt={imageAlt}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 58vw"
-            className="object-cover"
-            style={{ objectPosition: imagePosition }}
-          />
-        </figure>
-      ) : null}
+      <div className="relative min-h-[300px] sm:min-h-[410px] lg:min-h-[520px]">
+        <Image
+          src={assetPath(image)}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 58vw"
+          className="object-contain"
+          style={{ objectPosition: imagePosition }}
+        />
+      </div>
     </div>
   </section>
 );

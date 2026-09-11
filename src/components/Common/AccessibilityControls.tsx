@@ -12,54 +12,27 @@ const AccessibilityControls = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let storedSize: TextSize | null = null;
-    let storedContrast = false;
-    let storedMotion = false;
+    const storedSize = window.localStorage.getItem("soe-text-size") as TextSize | null;
+    const storedContrast = window.localStorage.getItem("soe-high-contrast") === "true";
+    const storedMotion = window.localStorage.getItem("soe-reduce-motion") === "true";
 
-    try {
-      const storage = window.localStorage;
-      if (storage && typeof storage.getItem === "function") {
-        storedSize = storage.getItem("soe-text-size") as TextSize | null;
-        storedContrast = storage.getItem("soe-high-contrast") === "true";
-        storedMotion = storage.getItem("soe-reduce-motion") === "true";
-      }
-    } catch {
-      // Reading preferences are optional when storage is unavailable.
-    }
-
-    if (storedSize === "large" || storedSize === "xlarge")
-      setTextSize(storedSize);
+    if (storedSize === "large" || storedSize === "xlarge") setTextSize(storedSize);
     setHighContrast(storedContrast);
     setReduceMotion(storedMotion);
   }, []);
 
   useEffect(() => {
     document.documentElement.dataset.textSize = textSize;
-    document.documentElement.dataset.contrast = highContrast
-      ? "high"
-      : "standard";
-    document.documentElement.dataset.motion = reduceMotion
-      ? "reduce"
-      : "standard";
-    try {
-      const storage = window.localStorage;
-      if (storage && typeof storage.setItem === "function") {
-        storage.setItem("soe-text-size", textSize);
-        storage.setItem("soe-high-contrast", String(highContrast));
-        storage.setItem("soe-reduce-motion", String(reduceMotion));
-      }
-    } catch {
-      // The controls still work for the current visit without persistence.
-    }
+    document.documentElement.dataset.contrast = highContrast ? "high" : "standard";
+    document.documentElement.dataset.motion = reduceMotion ? "reduce" : "standard";
+    window.localStorage.setItem("soe-text-size", textSize);
+    window.localStorage.setItem("soe-high-contrast", String(highContrast));
+    window.localStorage.setItem("soe-reduce-motion", String(reduceMotion));
   }, [textSize, highContrast, reduceMotion]);
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      )
-        setOpen(false);
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) setOpen(false);
     };
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
@@ -81,22 +54,15 @@ const AccessibilityControls = () => {
         aria-controls="reading-options-panel"
         onClick={() => setOpen((value) => !value)}
       >
-        <span aria-hidden="true" className="text-xl font-black">
-          Aa
-        </span>
+        <span aria-hidden="true" className="text-xl font-black">Aa</span>
         <span>Reading options</span>
       </button>
 
       {open && (
-        <div
-          id="reading-options-panel"
-          className="reading-options__panel"
-          role="region"
-          aria-label="Reading options"
-        >
+        <div id="reading-options-panel" className="reading-options__panel" role="region" aria-label="Reading options">
           <div>
             <p className="reading-options__label">Text size</p>
-            <div className="mt-3 flex gap-2 [&>*]:flex-1">
+            <div className="mt-3 grid grid-cols-3 gap-2">
               {(["standard", "large", "xlarge"] as TextSize[]).map((size) => (
                 <button
                   key={size}
@@ -116,11 +82,7 @@ const AccessibilityControls = () => {
               <strong>Higher contrast</strong>
               <small>Darken text and borders</small>
             </span>
-            <input
-              type="checkbox"
-              checked={highContrast}
-              onChange={(event) => setHighContrast(event.target.checked)}
-            />
+            <input type="checkbox" checked={highContrast} onChange={(event) => setHighContrast(event.target.checked)} />
           </label>
 
           <label className="reading-options__toggle">
@@ -128,11 +90,7 @@ const AccessibilityControls = () => {
               <strong>Reduce motion</strong>
               <small>Turn off site animation</small>
             </span>
-            <input
-              type="checkbox"
-              checked={reduceMotion}
-              onChange={(event) => setReduceMotion(event.target.checked)}
-            />
+            <input type="checkbox" checked={reduceMotion} onChange={(event) => setReduceMotion(event.target.checked)} />
           </label>
         </div>
       )}

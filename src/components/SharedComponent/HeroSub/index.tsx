@@ -1,16 +1,30 @@
 import React, { FC } from 'react'
+import { assetPath } from '@/utils/assets'
 
 interface HeroSubProps {
   title: string
+  bgImage?: string
 }
 
-const HeroSub: FC<HeroSubProps> = ({ title }) => {
+const HeroSub: FC<HeroSubProps> = ({ title, bgImage }) => {
+  const backgroundImage = bgImage || assetPath("/images/background/hero-sub-banner.jpg")
+
   return (
-    <section className="site-mist mt-[82px] border-b border-[#c6d3cb] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-      <div className="mx-auto max-w-[86rem]">
-        <h1 className="font-display max-w-4xl text-[clamp(3.3rem,5vw,5.8rem)] leading-[0.96] text-[#183b36]">
+    <section
+      className="relative mt-20 bg-cover bg-center bg-no-repeat py-10 sm:py-20"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70 z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto max-w-[var(--breakpoint-xl)] px-4">
+        <h2
+          className="text-white md:text-5xl sm:text-4xl text-3xl font-semibold drop-shadow-lg"
+          data-aos="fade-right"
+        >
           {title}
-        </h1>
+        </h2>
       </div>
     </section>
   )
