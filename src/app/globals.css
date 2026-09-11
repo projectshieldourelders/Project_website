@@ -83,7 +83,7 @@ html,
 body {
   @apply bg-[#f4f7fb] text-[#17345c];
   overflow-x: clip;
-  font-family: var(--font-body), Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   letter-spacing: 0;
 }
 
@@ -120,7 +120,7 @@ textarea {
 }
 
 .font-display {
-  font-family: var(--font-display), Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   letter-spacing: 0;
 }

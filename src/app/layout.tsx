@@ -1,24 +1,9 @@
-import { Archivo, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import PageMotion from "@/components/Common/PageMotion";
 import { assetPath } from "@/utils/assets";
-
-const bodyFont = Atkinson_Hyperlegible({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const displayFont = Archivo({
-  weight: ["600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 export const metadata = {
   title: {
@@ -39,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+      <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <NextTopLoader
           color="#2f756b"
