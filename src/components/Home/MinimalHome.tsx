@@ -1,106 +1,162 @@
-import { assetPath } from "@/utils/assets";
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/utils/assets";
+import SafetySequence from "./SafetySequence";
 
 const audiences = [
-  "Senior living communities",
+  "Older adults",
+  "Families and caregivers",
+  "Senior communities",
+  "Libraries",
   "Banks and credit unions",
-  "Libraries and community groups",
-  "Healthcare and caregiving teams",
+  "Care teams",
+];
+
+const services = [
+  {
+    title: "Community workshops",
+    body: "A 45–60 minute session built around the calls, texts, and payment requests people are seeing now.",
+    href: "/program",
+    link: "See how a session works",
+  },
+  {
+    title: "Help in the moment",
+    body: "Short, plain-language guides for checking a caller, reading a strange message, or acting after money was sent.",
+    href: "/resources",
+    link: "Open the free guides",
+  },
+  {
+    title: "A safer second opinion",
+    body: "The Shield Our Elders app helps people slow down, notice pressure, and choose an independent way to verify.",
+    href: "/support",
+    link: "Learn about the app",
+  },
 ];
 
 const resources = [
-  ["A suspicious call", "Five questions to ask before you do anything.", "/examples#calls"],
-  ["A strange message", "How to check the sender, request, and link.", "/examples#messages"],
-  ["Money already sent", "The first calls to make and records to save.", "/resources#recovery"],
+  ["Suspicious call checklist", "Five questions to ask before doing anything.", "/guides/suspicious-call-checklist.pdf"],
+  ["Strange message checklist", "Check the sender, request, link, and pressure.", "/guides/suspicious-message-checklist.pdf"],
+  ["After a scam", "The first calls to make and the records to save.", "/guides/after-a-scam-recovery-guide.pdf"],
 ];
 
-const MinimalHome = () => (
-  <main className="bg-[#f4f7fb] text-[#17345c]">
-    <section className="relative overflow-hidden border-b-[3px] border-[#17345c] bg-[#f4f7fb] pt-[82px]">
-      <div className="mx-auto grid min-h-[calc(88svh-82px)] max-w-[94rem] items-center gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[0.88fr_1.12fr] lg:px-10 lg:py-10">
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="font-display text-[clamp(3.7rem,6vw,7rem)] leading-[0.9]">Pause.<br />Verify.<br /><span className="doodle-highlight">Protect.</span></h1>
-          <p className="mt-8 max-w-xl text-xl leading-8 text-[#51657f] sm:text-2xl sm:leading-9">Practical scam-safety workshops for older adults and the people who look out for them.</p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link href="/program" className="doodle-button inline-flex min-h-14 items-center bg-[#3977f6] px-7 font-extrabold text-white">See the workshop</Link>
-            <Link href="/contact" className="doodle-button inline-flex min-h-14 items-center bg-white px-7 font-extrabold text-[#17345c]">Bring us to your group</Link>
+export default function MinimalHome() {
+  return (
+    <main className="home-page">
+      <section className="home-hero">
+        <div className="home-hero__signals" aria-hidden="true">
+          <span className="signal-chip signal-chip--call"><i />Unknown caller</span>
+          <span className="signal-chip signal-chip--code"><i />Verification code</span>
+          <span className="signal-chip signal-chip--money"><i />Urgent payment</span>
+          <span className="signal-chip signal-chip--message"><i />Delivery message</span>
+        </div>
+
+        <div className="home-hero__copy">
+          <h1>A calmer way to handle suspicious calls and messages.</h1>
+          <p>Shield Our Elders teaches people how to pause, check the story, and involve someone they trust before money or personal information changes hands.</p>
+          <div className="home-hero__actions">
+            <Link href="/program" className="primary-button">See the workshop</Link>
+            <Link href="/resources" className="secondary-button">Get help right now</Link>
           </div>
         </div>
-        <div className="relative min-h-[300px] sm:min-h-[520px] lg:min-h-[680px]">
-          <Image src={assetPath("/images/doodles/simple-family-check.svg")} alt="An older woman checking a phone with her daughter" fill priority sizes="(max-width: 1024px) 100vw, 58vw" className="object-contain" />
-        </div>
-      </div>
-    </section>
 
-    <section className="border-b-[3px] border-[#17345c] bg-[#f3b83f] px-5 py-12 sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-[92rem] gap-7 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-        <h2 className="font-display text-3xl sm:text-4xl">Something feels wrong?</h2>
-        <ol className="grid gap-4 sm:grid-cols-3">
-          {[["1", "Hang up or stop replying"], ["2", "Do not send money"], ["3", "Call someone you trust"]].map(([number, text]) => (
-            <li key={number} className="flex min-h-16 items-center gap-4 border-l-[3px] border-[#17345c] pl-4 text-lg font-bold"><span className="font-display text-3xl">{number}</span>{text}</li>
-          ))}
-        </ol>
-      </div>
-    </section>
-
-    <section className="overflow-hidden border-b-[3px] border-[#17345c] bg-[#3977f6] text-white">
-      <div className="mx-auto max-w-[94rem] px-5 pt-20 sm:px-8 sm:pt-28 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-          <h2 className="font-display text-[clamp(3rem,4.3vw,4.8rem)] leading-[0.98]">A workshop built around real decisions</h2>
-          <div className="max-w-xl lg:justify-self-end">
-            <p className="text-xl leading-8 text-white">We put a suspicious call or message on the screen. The group decides what to do, talks it through, and practices the safer next step.</p>
-            <Link href="/program" className="doodle-button mt-8 inline-flex min-h-14 items-center bg-white px-7 font-bold text-[#17345c]">Walk through a session</Link>
+        <div className="hero-console" aria-label="Example suspicious call review">
+          <div className="hero-console__header">
+            <span>Call review</span>
+            <span className="hero-console__live"><i />Active example</span>
+          </div>
+          <div className="hero-console__body">
+            <div className="hero-console__caller">
+              <span className="hero-console__avatar">?</span>
+              <div><strong>Unknown caller</strong><small>“Your account will close today.”</small></div>
+            </div>
+            <div className="hero-console__checks">
+              <span><i>1</i>Unsolicited contact</span>
+              <span><i>2</i>Pressure to act now</span>
+              <span><i>3</i>Request for a private code</span>
+            </div>
+            <div className="hero-console__result"><span>Safer next step</span><strong>Hang up and call the number on your card.</strong></div>
           </div>
         </div>
-        <div className="mt-12 grid border-y-2 border-white/60 sm:grid-cols-3">
-          <p className="py-5 text-lg font-bold sm:border-r-2 sm:border-white/60 sm:px-5 sm:first:pl-0">45–60 minutes</p>
-          <p className="border-t-2 border-white/60 py-5 text-lg font-bold sm:border-r-2 sm:border-t-0 sm:px-5">One return visit</p>
-          <p className="border-t-2 border-white/60 py-5 text-lg font-bold sm:border-t-0 sm:px-5">Large-print take-home guides</p>
-        </div>
-        <div className="relative mx-auto min-h-[390px] max-w-6xl sm:min-h-[620px]">
-          <Image src={assetPath("/images/doodles/simple-workshop.svg")} alt="Two older adults taking part in a small scam-safety workshop" fill sizes="(max-width: 1024px) 100vw, 80vw" className="object-contain object-bottom" />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="border-b-[3px] border-[#17345c] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-      <div className="mx-auto max-w-[92rem]">
-        <h2 className="font-display max-w-4xl text-[clamp(3rem,4.6vw,5.2rem)] leading-[0.98]">One routine that is easy to remember</h2>
-        <div className="mt-12 grid border-y-[3px] border-[#17345c] lg:grid-cols-3">
-          {[["Pause", "Give yourself time. Urgent does not mean real."], ["Verify", "Use a number or website you already trust."], ["Protect", "Bring in a trusted person before money moves."]].map(([title, text], index) => (
-            <article key={title} className={`min-h-64 p-7 sm:p-9 ${index < 2 ? "border-b-[3px] border-[#17345c] lg:border-b-0 lg:border-r-[3px]" : ""}`}>
-              <p className="font-display text-2xl text-[#3977f6]">0{index + 1}</p><h3 className="font-display mt-7 text-4xl">{title}</h3><p className="mt-4 text-xl leading-8 text-[#51657f]">{text}</p>
+      <section className="audience-marquee" aria-label="People and organizations we serve">
+        <div className="audience-marquee__track">
+          {[...audiences, ...audiences].map((audience, index) => <span key={`${audience}-${index}`}>{audience}</span>)}
+        </div>
+      </section>
+
+      <section className="home-services">
+        <div className="section-heading">
+          <h2>Scam prevention works better when people can practice it.</h2>
+          <p>We turn familiar warnings into decisions people can rehearse, remember, and use under pressure.</p>
+        </div>
+        <div className="service-list">
+          {services.map((service, index) => (
+            <article key={service.title}>
+              <span className="service-list__index">0{index + 1}</span>
+              <div><h3>{service.title}</h3><p>{service.body}</p></div>
+              <Link href={service.href}>{service.link}</Link>
             </article>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="border-b-[3px] border-[#17345c] bg-[#dce9f7] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-      <div className="mx-auto grid max-w-[92rem] gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-20">
-        <div className="relative min-h-[360px] lg:min-h-[530px]"><Image src={assetPath("/images/doodles/simple-partner-guide.svg")} alt="Two people sharing a printed safety guide" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain" /></div>
+      <SafetySequence />
+
+      <section id="app" className="app-showcase">
+        <div className="app-showcase__copy">
+          <h2>The app is there when a workshop is not.</h2>
+          <p>Paste a message, check a link, review a caller, or scan a QR code. The result explains the warning signs and gives a safer next step without pretending any automated check is perfect.</p>
+          <Link href="/support" className="secondary-button">See app support</Link>
+        </div>
+        <div className="app-showcase__visual">
+          <div className="app-device">
+            <Image src={assetPath("/images/app-home.png")} alt="Shield Our Elders app home screen with checks for messages, calls, links, numbers, and payments" width={1080} height={2400} sizes="(max-width: 800px) 72vw, 360px" />
+          </div>
+          <span className="app-note app-note--one">Six focused checks</span>
+          <span className="app-note app-note--two">Large controls and plain language</span>
+        </div>
+      </section>
+
+      <section id="workshop" className="workshop-proof">
+        <div className="workshop-proof__image">
+          <Image src={assetPath("/images/photos/presenters-closing.jpg")} alt="Shield Our Elders presenters leading the closing portion of a community workshop" fill sizes="(max-width: 900px) 100vw, 58vw" className="object-cover" />
+        </div>
+        <div className="workshop-proof__copy">
+          <h2>Built in the room, with real questions.</h2>
+          <p>Participants can stop us, ask for an example again, write down a trusted number, or bring a family member. Every session ends with a simple plan people can take home.</p>
+          <dl>
+            <div><dt>Session</dt><dd>45–60 minutes</dd></div>
+            <div><dt>Format</dt><dd>Small-group practice</dd></div>
+            <div><dt>Take-home</dt><dd>Large-print guides</dd></div>
+          </dl>
+          <Link href="/contact" className="primary-button">Request a community session</Link>
+        </div>
+      </section>
+
+      <section id="guides" className="home-resources">
+        <div className="section-heading section-heading--compact">
+          <h2>Keep the next step close by.</h2>
+          <p>Download a guide now, before a stressful call arrives.</p>
+        </div>
+        <div className="home-resource-list">
+          {resources.map(([title, detail, href]) => (
+            <a key={title} href={assetPath(href)} download>
+              <span className="home-resource-list__type">PDF</span>
+              <span><strong>{title}</strong><small>{detail}</small></span>
+              <span className="home-resource-list__download">Download</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-final">
         <div>
-          <h2 className="font-display text-[clamp(3rem,4.3vw,4.8rem)] leading-[0.98]">We come to places people already know</h2>
-          <ul className="mt-10 border-b-2 border-[#17345c]">{audiences.map((audience, index) => <li key={audience} className="flex items-center gap-5 border-t-2 border-[#17345c] py-5 text-lg font-bold sm:text-xl"><span className="text-sm text-[#3977f6]">0{index + 1}</span>{audience}</li>)}</ul>
-          <Link href="/partners" className="mt-8 inline-flex border-b-2 border-[#17345c] pb-1 text-lg font-bold">Ways to partner</Link>
+          <h2>Bring practical scam-safety training to your community.</h2>
+          <p>Tell us who you serve and what people have been seeing. A short note is enough to begin.</p>
         </div>
-      </div>
-    </section>
-
-    <section className="border-b-[3px] border-[#17345c] bg-[#17345c] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-10">
-      <div className="mx-auto max-w-[92rem]">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]"><h2 className="font-display text-[clamp(3rem,4.2vw,4.8rem)] leading-none">Help for the moment you need it</h2><p className="max-w-2xl text-xl leading-8 text-[#dce9f7]">Plain-language guides for calls, messages, payment requests, and recovery. No account required.</p></div>
-        <div className="mt-12 divide-y-2 divide-white/50 border-y-2 border-white/50">
-          {resources.map(([title, text, href]) => <Link key={title} href={href} className="grid min-h-28 gap-3 py-6 text-white sm:grid-cols-[0.7fr_1fr_auto] sm:items-center sm:gap-8"><strong className="font-display text-2xl">{title}</strong><span className="text-lg text-[#dce9f7]">{text}</span><span className="font-bold text-[#f3b83f]">Open guide →</span></Link>)}
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-[#f47b6a] px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-      <div className="mx-auto grid max-w-[92rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><h2 className="font-display max-w-5xl text-[clamp(3rem,4.8vw,5.4rem)] leading-[0.96]">Bring scam-safety practice to your community</h2><Link href="/contact" className="doodle-button inline-flex min-h-14 w-fit items-center bg-white px-8 font-bold text-[#17345c]">Start a conversation</Link></div>
-    </section>
-  </main>
-);
-
-export default MinimalHome;
+        <Link href="/contact" className="light-button">Talk with our team</Link>
+      </section>
+    </main>
+  );
+}

@@ -6,10 +6,10 @@ import chevronForward from "@iconify/icons-ion/chevron-forward";
 import { useRef, useState } from "react";
 
 const slides = [
-  { title: "Notice", prompt: "What is the person asking for?", detail: "Listen for money, passwords, codes, remote access, or secrecy.", color: "#f3b83f" },
-  { title: "Pause", prompt: "What happens if we wait?", detail: "A legitimate organization will let you stop and verify before acting.", color: "#b7a7e8" },
-  { title: "Check", prompt: "Which trusted source can confirm it?", detail: "Use a number, app, or website you already know instead of one the sender provided.", color: "#dce9f7" },
-  { title: "Act", prompt: "What is the safer next step?", detail: "Block, report, call a trusted person, or contact the organization directly.", color: "#f47b6a" },
+  { title: "Notice", prompt: "What is the person asking for?", detail: "Listen for money, passwords, codes, remote access, or secrecy.", color: "#dfe9df" },
+  { title: "Pause", prompt: "What happens if we wait?", detail: "A legitimate organization will let you stop and verify before acting.", color: "#e6eee8" },
+  { title: "Check", prompt: "Which trusted source can confirm it?", detail: "Use a number, app, or website you already know instead of one the sender provided.", color: "#e6eee8" },
+  { title: "Act", prompt: "What is the safer next step?", detail: "Block, report, call a trusted person, or contact the organization directly.", color: "#dfe9df" },
 ];
 
 const WorkshopDeck = () => {

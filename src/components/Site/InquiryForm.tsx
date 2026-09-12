@@ -24,7 +24,7 @@ const InquiryForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t-[3px] border-[#17345c]" aria-label="Partnership inquiry">
+    <form onSubmit={handleSubmit} className="border-t border-[#111815]" aria-label="Partnership inquiry">
       <div className="grid gap-x-8 sm:grid-cols-2">
         <label className="form-field"><span>Your name</span><input name="name" type="text" autoComplete="name" required /></label>
         <label className="form-field"><span>Work email</span><input name="email" type="email" autoComplete="email" required /></label>
@@ -44,10 +44,10 @@ const InquiryForm = () => {
       </div>
       <label className="form-field"><span>How would you like to work together?</span><textarea name="message" rows={5} required /></label>
       <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <button type="submit" className="min-h-14 rounded-full bg-[#173b36] px-8 text-base font-bold text-white transition hover:bg-[#b34f37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#173b36]">
+        <button type="submit" className="min-h-14 rounded-full bg-[#111815] px-8 text-base font-bold text-white transition hover:bg-[#176d5b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111815]">
           Prepare email
         </button>
-        <p aria-live="polite" className="max-w-sm text-sm leading-6 text-[#67756f]">
+        <p aria-live="polite" className="max-w-sm text-sm leading-6 text-[#5f6862]">
           {formStatus || "This opens your email app. The website does not store the form contents."}
         </p>
       </div>

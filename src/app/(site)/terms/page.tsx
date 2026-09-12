@@ -16,20 +16,20 @@ const sections = [
 ];
 
 const TermsPage = () => (
-  <main className="bg-[#f4f7fb] px-5 pb-24 pt-36 text-[#17345c] sm:px-8 lg:px-12 lg:pt-44">
+  <main className="bg-[#f7f6f0] px-5 pb-24 pt-36 text-[#111815] sm:px-8 lg:px-12 lg:pt-44">
     <div className="mx-auto max-w-[90rem]">
       <div className="grid gap-8 border-b border-[#a9b9cd] pb-12 lg:grid-cols-[0.42fr_1fr]">
-        <p className="text-base text-[#51657f]">Effective July 28, 2026</p>
+        <p className="text-base text-[#5f6862]">Effective July 28, 2026</p>
         <div>
           <h1 className="font-display text-6xl leading-none sm:text-7xl">Terms of Service</h1>
-          <p className="mt-6 max-w-2xl text-xl leading-8 text-[#51657f]">By using Shield Our Elders, you agree to these terms.</p>
+          <p className="mt-6 max-w-2xl text-xl leading-8 text-[#5f6862]">By using Shield Our Elders, you agree to these terms.</p>
         </div>
       </div>
       <div className="ml-auto mt-4 max-w-4xl">
         {sections.map((section) => (
           <section key={section.title} className="border-b border-[#c7d3e1] py-8 sm:grid sm:grid-cols-[0.72fr_1.28fr] sm:gap-10 sm:py-10">
             <h2 className="font-display text-3xl leading-tight">{section.title}</h2>
-            <p className="mt-4 text-lg leading-8 text-[#51657f] sm:mt-0">{section.body}</p>
+            <p className="mt-4 text-lg leading-8 text-[#5f6862] sm:mt-0">{section.body}</p>
           </section>
         ))}
       </div>

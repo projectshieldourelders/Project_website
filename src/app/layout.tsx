@@ -2,7 +2,6 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
-import PageMotion from "@/components/Common/PageMotion";
 import { assetPath } from "@/utils/assets";
 
 export const metadata = {
@@ -27,7 +26,7 @@ export default function RootLayout({
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <NextTopLoader
-          color="#2f756b"
+          color="#176d5b"
           initialPosition={0.12}
           crawlSpeed={260}
           height={4}
@@ -39,7 +38,6 @@ export default function RootLayout({
           showForHashAnchor={false}
         />
         <Header />
-        <PageMotion />
         <div id="main-content">{children}</div>
         <Footer />
       </body>
