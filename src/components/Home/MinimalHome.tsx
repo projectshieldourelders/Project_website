@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { assetPath } from "@/utils/assets";
+import HomeHero from "./HomeHero";
 import SafetySequence from "./SafetySequence";
 
 const audiences = [
@@ -42,42 +43,7 @@ const resources = [
 export default function MinimalHome() {
   return (
     <main className="home-page">
-      <section className="home-hero">
-        <div className="home-hero__signals" aria-hidden="true">
-          <span className="signal-chip signal-chip--call"><i />Unknown caller</span>
-          <span className="signal-chip signal-chip--code"><i />Verification code</span>
-          <span className="signal-chip signal-chip--money"><i />Urgent payment</span>
-          <span className="signal-chip signal-chip--message"><i />Delivery message</span>
-        </div>
-
-        <div className="home-hero__copy">
-          <h1>A calmer way to handle suspicious calls and messages.</h1>
-          <p>Shield Our Elders teaches people how to pause, check the story, and involve someone they trust before money or personal information changes hands.</p>
-          <div className="home-hero__actions">
-            <Link href="/program" className="primary-button">See the workshop</Link>
-            <Link href="/resources" className="secondary-button">Get help right now</Link>
-          </div>
-        </div>
-
-        <div className="hero-console" aria-label="Example suspicious call review">
-          <div className="hero-console__header">
-            <span>Call review</span>
-            <span className="hero-console__live"><i />Active example</span>
-          </div>
-          <div className="hero-console__body">
-            <div className="hero-console__caller">
-              <span className="hero-console__avatar">?</span>
-              <div><strong>Unknown caller</strong><small>“Your account will close today.”</small></div>
-            </div>
-            <div className="hero-console__checks">
-              <span><i>1</i>Unsolicited contact</span>
-              <span><i>2</i>Pressure to act now</span>
-              <span><i>3</i>Request for a private code</span>
-            </div>
-            <div className="hero-console__result"><span>Safer next step</span><strong>Hang up and call the number on your card.</strong></div>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       <section className="audience-marquee" aria-label="People and organizations we serve">
         <div className="audience-marquee__track">
