@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./editorial.css";
 import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";

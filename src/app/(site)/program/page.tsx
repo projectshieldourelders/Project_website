@@ -1,106 +1,68 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import AnimatedPageHero from "@/components/Site/AnimatedPageHero";
 import WorkshopDeck from "@/components/Site/WorkshopDeck";
+import { assetPath } from "@/utils/assets";
 
 export const metadata: Metadata = {
   title: "Workshop",
-  description: "See what happens during a Shield Our Elders scam-prevention workshop.",
+  description: "See the agenda, practice exercise, accessibility choices, and take-home materials in a Shield Our Elders workshop.",
 };
-
-const sessionSteps = [
-  ["Before the workshop", "We ask the group what kinds of scams or suspicious messages people have been seeing recently. That helps us choose examples that are relevant to the people in the room."],
-  ["During the workshop", "We go through suspicious calls, texts, links, and payment requests together. Participants look for warning signs and talk through what they would do next."],
-  ["Follow-up", "When possible, we come back and practice the same steps again. We also go over anything that was confusing the first time."],
-  ["What participants take home", "Everyone receives simple guides and reminders they can keep nearby for the next suspicious call or message."],
-];
-
-const topics = [
-  "Bank and account scams",
-  "Family emergency scams",
-  "Remote-access scams",
-  "Romance and investment scams",
-  "Gift card, cryptocurrency, and wire-transfer requests",
-  "Delivery, toll, Medicare, and tax messages",
-];
 
 export default function ProgramPage() {
   return (
-    <main className="story-page story-page--program">
-      <AnimatedPageHero
-        variant="program"
-        title="What happens in a workshop"
-        intro="Our workshops use examples of suspicious calls, texts, websites, and payment requests that people may actually come across. Instead of just talking about scams, we work through them together and practice what to do next."
-      />
-
-      <section className="story-section program-timeline">
-        <div className="story-wrap">
-          <h2>How it works</h2>
-          <ol>
-            {sessionSteps.map(([title, body], index) => (
-              <li key={title}>
-                <span>0{index + 1}</span>
-                <div><h3>{title}</h3><p>{body}</p></div>
-              </li>
-            ))}
-          </ol>
+    <main className="story-page workshop-page">
+      <section className="workshop-hero">
+        <div className="workshop-hero__copy">
+          <h1>A workshop is practice for one difficult minute.</h1>
+          <p>We spend 45–60 minutes examining realistic calls, texts, websites, and payment requests so the first safe response is easier to recall under pressure.</p>
+          <Link href="/contact" className="primary-button">Request a session</Link>
+        </div>
+        <div className="workshop-hero__schedule" aria-label="Workshop schedule">
+          <div><time>0:00</time><span>Hear what the room is seeing</span></div>
+          <div><time>0:10</time><span>Find the pressure tactic</span></div>
+          <div><time>0:25</time><span>Practice an independent check</span></div>
+          <div><time>0:45</time><span>Build a personal response plan</span></div>
         </div>
       </section>
 
-      <section className="story-section familiar-examples">
-        <div className="story-wrap story-split">
-          <div>
-            <h2>We use examples people will recognize</h2>
-            <p>A fake bank alert. A caller pretending to be a family member. A delivery text with a suspicious link. Someone asking to control your computer.</p>
-          </div>
-          <ol>
-            {topics.map((topic, index) => <li key={topic}><span>0{index + 1}</span>{topic}</li>)}
-          </ol>
+      <section className="workshop-photo story-section">
+        <figure>
+          <div><Image src={assetPath("/images/photos/presenters-closing.jpg")} alt="Two Shield Our Elders presenters leading the closing discussion of a workshop" fill sizes="(max-width: 900px) 100vw, 68vw" /></div>
+          <figcaption>A closing review from a recent community session in Brevard County.</figcaption>
+        </figure>
+        <aside>
+          <strong>What changes for each group</strong>
+          <p>Before the date, the host tells us which questions have been coming up. We choose examples that match the room instead of delivering the same presentation everywhere.</p>
+        </aside>
+      </section>
+
+      <section className="workshop-practice story-section">
+        <div className="workshop-practice__heading">
+          <h2>Work through a sample call</h2>
+          <p>Use the controls or the left and right arrow keys. This is the kind of discussion we hold in the room.</p>
+        </div>
+        <WorkshopDeck />
+      </section>
+
+      <section className="workshop-format story-section">
+        <header><h2>Designed around the people attending</h2><p>Accessibility is part of the session plan, not an extra handout at the end.</p></header>
+        <div>
+          <p><strong>We make the details visible.</strong> Examples are enlarged on screen, important lines are read aloud, and unfamiliar terms are explained before the discussion moves on.</p>
+          <p><strong>Participation stays optional.</strong> Activities are seated. No one has to speak to the group, share a personal experience, or use an app to follow the lesson.</p>
+          <p><strong>The material goes home.</strong> Participants receive a large-print checklist, a trusted-contact card, and space to record official phone numbers they use.</p>
         </div>
       </section>
 
-      <section className="story-section practice-round">
-        <div className="story-wrap">
-          <h2>How we work through an example</h2>
-          <p>Use the arrows, swipe, or press the left and right arrow keys.</p>
-          <WorkshopDeck />
-        </div>
+      <section className="workshop-takeaway story-section">
+        <div className="workshop-takeaway__papers" aria-hidden="true"><span>Trusted contacts</span><span>Official numbers</span><span>Warning signs</span></div>
+        <div><h2>The lesson ends with a plan that belongs to the participant.</h2><p>A useful plan names who to call, where to find an official number, and what never to share. It works without remembering the name of every scam.</p><Link href="/resources" className="secondary-button">See the take-home guides</Link></div>
       </section>
 
-      <section className="story-section session-access">
-        <div className="story-wrap story-split">
-          <div><h2>We try to make every session easy to follow</h2><p>We use large examples on screen, read important details aloud, explain unfamiliar words, and give people time to ask questions. Participants do not have to speak in front of the group or share personal experiences.</p></div>
-          <ul>
-            <li>Large-print handouts</li>
-            <li>Clear, simple instructions</li>
-            <li>Time for questions</li>
-            <li>Seated activities</li>
-            <li>No public sharing required</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="story-section take-home-section">
-        <div className="story-wrap story-split">
-          <div className="take-home-stack" aria-hidden="true">
-            <span>Trusted-contact card</span>
-            <span>Warning-sign checklist</span>
-            <span>Large-print scam guide</span>
-          </div>
-          <div>
-            <h2>What participants take home</h2>
-            <p>Everyone leaves with materials they can keep somewhere easy to find. These may include a large-print scam guide, a warning-sign checklist, a trusted-contact card, space for important phone numbers, and space for a family verification phrase.</p>
-            <p>The goal is to make the next suspicious call or message a little easier to handle.</p>
-            <Link href="/resources" className="secondary-button">See the free resources</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="story-section program-cta">
-        <div className="story-wrap story-split">
-          <div><h2>Interested in bringing a workshop to your group?</h2><p>Tell us who the workshop is for and what kinds of scams people have been seeing. We can use that information to make the session more useful for your group.</p></div>
-          <Link href="/contact" className="light-button">Request a workshop</Link>
-        </div>
+      <section className="workshop-book">
+        <p>Tell us who will attend and what they have been asking about.</p>
+        <h2>We will shape the examples before we arrive.</h2>
+        <Link href="/contact" className="light-button">Plan a workshop</Link>
       </section>
     </main>
   );

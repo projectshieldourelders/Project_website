@@ -20,8 +20,8 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__cta">
-        <h2>Make the next suspicious call easier to handle.</h2>
-        <Link href="/resources" className="primary-button">Open the free guides</Link>
+        <h2>Need a checklist you can keep by the phone?</h2>
+        <Link href="/resources" className="primary-button">Choose a printable guide</Link>
       </div>
       <div className="site-footer__main">
       <div className="site-footer__brand">

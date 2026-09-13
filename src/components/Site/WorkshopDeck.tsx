@@ -3,73 +3,75 @@
 import { Icon } from "@iconify/react";
 import chevronBack from "@iconify/icons-ion/chevron-back";
 import chevronForward from "@iconify/icons-ion/chevron-forward";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const slides = [
-  { title: "Notice", prompt: "What are they asking you to do?", detail: "Look for requests involving money, passwords, verification codes, personal information, remote access, or secrecy.", color: "#e7efe9" },
-  { title: "Pause", prompt: "Do you really have to act right now?", detail: "Scammers often try to make something feel urgent. Take a moment before answering, clicking, paying, or sharing information.", color: "#f6f1e7" },
-  { title: "Check", prompt: "Can you confirm the story another way?", detail: "Call a number you already trust, open the official app yourself, or go directly to the organization’s website.", color: "#dcece7" },
-  { title: "Tell someone", prompt: "Who can help you decide what to do next?", detail: "Talk to a family member, friend, caregiver, staff member, or another person you trust before you block, report, or pay.", color: "#f2dfd8" },
+  {
+    label: "Read the request",
+    quote: "I need the six-digit code we just sent so I can secure your account.",
+    prompt: "What does the caller gain if you share it?",
+    answer: "A verification code can let another person enter an account, reset a password, or approve a transfer.",
+  },
+  {
+    label: "Break the urgency",
+    quote: "Stay on the line. This has to be fixed before the account closes.",
+    prompt: "Does this decision really belong to the caller?",
+    answer: "No. Ending the call removes their pressure and gives you time to use an independent contact method.",
+  },
+  {
+    label: "Verify independently",
+    quote: "Call me back at this direct number if we are disconnected.",
+    prompt: "Which phone number should you use instead?",
+    answer: "Use the number printed on your bank card, shown in the official app, or saved before this call began.",
+  },
+  {
+    label: "Choose the next step",
+    quote: "Do not tell anyone about this investigation.",
+    prompt: "Who could hear the story before you act?",
+    answer: "A trusted person can help you call the bank, preserve evidence, block the caller, or make a report.",
+  },
 ];
 
-const WorkshopDeck = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
+export default function WorkshopDeck() {
+  const [active, setActive] = useState(0);
+  const slide = slides[active];
 
-  const moveTo = (index: number) => {
-    const nextIndex = Math.max(0, Math.min(slides.length - 1, index));
-    const track = trackRef.current;
-    const slide = track?.children[nextIndex] as HTMLElement | undefined;
-    if (!track || !slide) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.motion === "reduce";
-    track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: reduceMotion ? "auto" : "smooth" });
-    setActiveSlide(nextIndex);
-  };
-
-  const updateActiveSlide = () => {
-    const track = trackRef.current;
-    if (!track) return;
-    const positions = Array.from(track.children).map((child) => Math.abs((child as HTMLElement).offsetLeft - track.offsetLeft - track.scrollLeft));
-    setActiveSlide(positions.indexOf(Math.min(...positions)));
-  };
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") setActive((value) => Math.max(0, value - 1));
+      if (event.key === "ArrowRight") setActive((value) => Math.min(slides.length - 1, value + 1));
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
-    <div className="workshop-deck" role="region" aria-roledescription="carousel" aria-label="Four steps in a practice round">
-      <button type="button" className="workshop-deck__arrow workshop-deck__arrow--previous" aria-label="Previous slide" title="Previous slide" disabled={activeSlide === 0} onClick={() => moveTo(activeSlide - 1)}>
-        <Icon icon={chevronBack} aria-hidden="true" />
-      </button>
-
-      <div
-        ref={trackRef}
-        className="workshop-deck__track"
-        tabIndex={0}
-        onScroll={updateActiveSlide}
-        onKeyDown={(event) => {
-          if (event.key === "ArrowLeft") moveTo(activeSlide - 1);
-          if (event.key === "ArrowRight") moveTo(activeSlide + 1);
-        }}
-      >
-        {slides.map((slide, index) => (
-          <article key={slide.title} className={`workshop-deck__slide ${activeSlide === index ? "is-active" : ""}`} style={{ backgroundColor: slide.color }} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}>
-            <span className="font-display text-2xl">0{index + 1}</span>
-            <div>
-              <h3 className="font-display text-5xl sm:text-6xl">{slide.title}</h3>
-              <p className="font-display mt-6 max-w-3xl text-2xl leading-tight sm:text-3xl">{slide.prompt}</p>
-              <p className="mt-6 max-w-2xl text-xl leading-8">{slide.detail}</p>
-            </div>
-          </article>
+    <div className="practice-board" role="region" aria-label="Interactive workshop example">
+      <div className="practice-board__rail">
+        {slides.map((item, index) => (
+          <button key={item.label} type="button" aria-current={active === index ? "step" : undefined} onClick={() => setActive(index)}>
+            <i aria-hidden="true" />
+            <span>{item.label}</span>
+          </button>
         ))}
       </div>
 
-      <button type="button" className="workshop-deck__arrow workshop-deck__arrow--next" aria-label="Next slide" title="Next slide" disabled={activeSlide === slides.length - 1} onClick={() => moveTo(activeSlide + 1)}>
-        <Icon icon={chevronForward} aria-hidden="true" />
-      </button>
+      <div className="practice-board__screen" key={slide.label} aria-live="polite">
+        <div className="practice-board__message">
+          <span>Example call</span>
+          <blockquote>“{slide.quote}”</blockquote>
+        </div>
+        <div className="practice-board__question">
+          <h3>{slide.prompt}</h3>
+          <p>{slide.answer}</p>
+        </div>
+      </div>
 
-      <p className="workshop-deck__status" aria-live="polite">Slide {activeSlide + 1} of {slides.length}</p>
-      <div className="workshop-deck__progress" aria-hidden="true"><span style={{ width: `${((activeSlide + 1) / slides.length) * 100}%` }} /></div>
+      <div className="practice-board__footer">
+        <button type="button" aria-label="Previous example" title="Previous example" disabled={active === 0} onClick={() => setActive((value) => value - 1)}><Icon icon={chevronBack} /></button>
+        <span>{active + 1} of {slides.length}</span>
+        <button type="button" aria-label="Next example" title="Next example" disabled={active === slides.length - 1} onClick={() => setActive((value) => value + 1)}><Icon icon={chevronForward} /></button>
+      </div>
     </div>
   );
-};
-
-export default WorkshopDeck;
+}

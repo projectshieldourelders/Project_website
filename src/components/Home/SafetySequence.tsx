@@ -1,188 +1,83 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-const steps = [
+const decisions = [
   {
-    label: "Pause",
-    title: "Do not let someone rush you.",
-    body: "If you do not recognize a caller, let the call go to voicemail. If a message is demanding money, personal information, or immediate action, stop replying for a moment. Legitimate organizations will give you time to check.",
-    detail: "Unknown number",
-    subdetail: "Claims your account closes today",
-    action: "Let it ring",
+    key: "pause",
+    tab: "Pause the call",
+    title: "Give yourself room to think.",
+    body: "Let an unknown call go to voicemail, or end a conversation that has become pushy. A real bank or government office will not punish you for taking time to check.",
+    phoneTitle: "Call ended",
+    phoneDetail: "No information shared",
+    action: "You are in control",
   },
   {
-    label: "Check",
-    title: "Contact the organization yourself.",
-    body: "If someone says they are from your bank, call the number printed on your bank card. If they claim to be from a company or government agency, find the official website or a number you already trust. Do not use the phone number or link sent by the person contacting you.",
-    detail: "Shield Community Bank",
-    subdetail: "Number saved from the back of your card",
-    action: "Call saved number",
+    key: "check",
+    tab: "Check the story",
+    title: "Use contact details you already trust.",
+    body: "Open the bank’s official app or call the number printed on your card. Do not call back using a number supplied by the person who contacted you.",
+    phoneTitle: "Shield Community Bank",
+    phoneDetail: "Number from the back of your card",
+    action: "Official number found",
   },
   {
-    label: "Tell someone",
-    title: "Ask another person before sending anything.",
-    body: "Call a family member, friend, caregiver, neighbor, or staff member and explain what happened. A second person may notice something you missed.",
-    detail: "Maya",
-    subdetail: "Trusted contact",
-    action: "Call Maya",
+    key: "tell",
+    tab: "Bring in someone else",
+    title: "Say the request out loud to another person.",
+    body: "A family member, friend, neighbor, caregiver, or staff member can help you notice pressure and choose the next step without the caller listening.",
+    phoneTitle: "Maya",
+    phoneDetail: "Trusted contact",
+    action: "Ready to call",
   },
 ];
-
-const sceneRanges = [
-  [0.1, 0.42],
-  [0.36, 0.66],
-  [0.6, 0.88],
-];
-
-const clamp = (value: number) => Math.min(1, Math.max(0, value));
-const smoothstep = (start: number, end: number, value: number) => {
-  const position = clamp((value - start) / Math.max(0.001, end - start));
-  return position * position * (3 - 2 * position);
-};
 
 export default function SafetySequence() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [activeScene, setActiveScene] = useState(-1);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const desktopMotion = window.matchMedia("(min-width: 801px)");
-    if (reducedMotion.matches || !desktopMotion.matches) return;
-
-    const scenes = Array.from(section.querySelectorAll<HTMLElement>(".sequence-scene"));
-    const intro = section.querySelector<HTMLElement>(".sequence-intro-scene");
-    const outro = section.querySelector<HTMLElement>(".sequence-outro-scene");
-    let frame = 0;
-
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const bounds = section.getBoundingClientRect();
-        const travel = Math.max(1, section.offsetHeight - window.innerHeight);
-        const progress = clamp(-bounds.top / travel);
-        const draw = smoothstep(0.015, 0.16, progress);
-        const introExit = smoothstep(0.075, 0.19, progress);
-        const outroEnter = smoothstep(0.81, 0.93, progress);
-
-        section.style.setProperty("--sequence-draw", draw.toFixed(3));
-        section.style.setProperty("--sequence-rotate", `${(1 - draw) * 5}deg`);
-        section.style.setProperty("--sequence-scale", `${0.9 + draw * 0.1}`);
-        section.style.setProperty("--sequence-progress", `${progress * 100}%`);
-
-        if (intro) {
-          intro.style.opacity = `${1 - introExit}`;
-          intro.style.transform = `translate3d(0, ${introExit * -24}px, 0) scale(${1 - introExit * 0.04})`;
-        }
-
-        scenes.forEach((scene, index) => {
-          const [start, end] = sceneRanges[index];
-          const enter = smoothstep(start, start + 0.065, progress);
-          const leave = 1 - smoothstep(end - 0.065, end, progress);
-          const opacity = Math.min(enter, leave);
-          const center = (start + end) / 2;
-          const offset = clamp(Math.abs(progress - center) / ((end - start) / 2));
-          const direction = progress < center ? 1 : -1;
-          scene.style.opacity = opacity.toFixed(3);
-          scene.style.transform = `translate3d(0, ${direction * offset * 32}px, 0) scale(${0.975 + opacity * 0.025})`;
-          scene.style.pointerEvents = opacity > 0.75 ? "auto" : "none";
-        });
-
-        if (outro) {
-          outro.style.opacity = `${outroEnter}`;
-          outro.style.transform = `translate3d(0, ${(1 - outroEnter) * 28}px, 0) scale(${0.97 + outroEnter * 0.03})`;
-        }
-
-        const nextScene = progress < 0.14 ? -1 : progress < 0.39 ? 0 : progress < 0.63 ? 1 : progress < 0.86 ? 2 : 3;
-        setActiveScene((current) => current === nextScene ? current : nextScene);
-      });
-    };
-
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    update();
-
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-    };
-  }, []);
+  const [active, setActive] = useState(0);
+  const decision = decisions[active];
 
   return (
-    <section ref={sectionRef} id="how-it-works" className="safety-sequence" data-scene={activeScene}>
-      <div className="safety-sequence__sticky">
-        <div className="sequence-toolbar">
-          <span>Pause. Check. Tell someone.</span>
-          <span>{activeScene < 0 ? "Overview" : activeScene > 2 ? "Ready" : `0${activeScene + 1} / 03`}</span>
-        </div>
-
-        <div className="sequence-frame">
-          <span className="sequence-frame__line sequence-frame__line--top" />
-          <span className="sequence-frame__line sequence-frame__line--right" />
-          <span className="sequence-frame__line sequence-frame__line--bottom" />
-          <span className="sequence-frame__line sequence-frame__line--left" />
-
-          {steps.map((step, index) => (
-            <div key={step.label} aria-hidden="true" className={`sequence-node sequence-node--${index + 1} ${activeScene === index ? "is-active" : ""}`}>
-              <i /><span>{step.label}</span>
-            </div>
-          ))}
-
-          <div className="sequence-intro-scene" aria-hidden={activeScene !== -1}>
-            <p>When something does not feel right</p>
-            <h2>Pause. Check. Tell someone.</h2>
-          </div>
-
-          {steps.map((step, index) => (
-            <div key={step.title} aria-hidden={activeScene !== index} className={`sequence-scene sequence-scene--${index + 1}`}>
-              <div className="sequence-scene__diagram">
-                <div className="sequence-phone-ui">
-                  <div className="sequence-phone-ui__top"><span>9:41</span><span>● ● ●</span></div>
-                  <span className="sequence-phone-ui__label">{index === 0 ? "Incoming call" : index === 1 ? "Independent check" : "Trusted contact"}</span>
-                  <div className="sequence-phone-ui__mark">{index === 0 ? "?" : index === 1 ? "✓" : "M"}</div>
-                  <strong>{step.detail}</strong>
-                  <small>{step.subdetail}</small>
-                  <button type="button" tabIndex={-1}>{step.action}</button>
-                </div>
-              </div>
-              <article className="sequence-scene__copy">
-                <span>0{index + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </article>
-            </div>
-          ))}
-
-          <div className="sequence-outro-scene" aria-hidden={activeScene !== 3}>
-            <span>Pause. Check. Tell someone.</span>
-            <h2>You never have to make a decision while someone is pressuring you.</h2>
-          </div>
-        </div>
-
-        <div className="sequence-progress" aria-hidden="true"><span /></div>
-        <p className="sequence-scroll-cue" aria-hidden="true">Scroll to walk through the routine</p>
+    <section id="how-it-works" className="decision-demo">
+      <div className="decision-demo__intro">
+        <p>Try it with the example above</p>
+        <h2>What would you do after hanging up?</h2>
+        <span>Choose a step. The example changes with you.</span>
       </div>
 
-      <div className="sequence-mobile">
-        <p className="sequence-mobile__intro">When something does not feel right</p>
-        <h2>Pause. Check. Tell someone.</h2>
-        <ol>
-          {steps.map((step, index) => (
-            <li key={step.title}>
-              <span>0{index + 1}</span>
-              <div><h3>{step.title}</h3><p>{step.body}</p></div>
-            </li>
+      <div className="decision-demo__stage">
+        <div className="decision-demo__controls" role="tablist" aria-label="Ways to respond to a suspicious call">
+          {decisions.map((item, index) => (
+            <button
+              key={item.key}
+              type="button"
+              role="tab"
+              aria-selected={active === index}
+              aria-controls="decision-panel"
+              onClick={() => setActive(index)}
+            >
+              <span>{item.tab}</span>
+              <i aria-hidden="true" />
+            </button>
           ))}
-        </ol>
-      </div>
+        </div>
 
-      <p className="sr-only" aria-live="polite">
-        {activeScene >= 0 && activeScene < steps.length ? `${steps[activeScene].label}: ${steps[activeScene].title}` : "Safety routine overview"}
-      </p>
+        <div id="decision-panel" className="decision-demo__panel" role="tabpanel" key={decision.key}>
+          <div className="decision-demo__phone" aria-hidden="true">
+            <div className="decision-demo__phone-top"><span>9:41</span><span>● ● ●</span></div>
+            <div className={`decision-demo__phone-mark decision-demo__phone-mark--${decision.key}`}>
+              {decision.key === "pause" ? "×" : decision.key === "check" ? "✓" : "M"}
+            </div>
+            <strong>{decision.phoneTitle}</strong>
+            <small>{decision.phoneDetail}</small>
+            <span className="decision-demo__phone-action">{decision.action}</span>
+          </div>
+          <article>
+            <span>{decision.tab}</span>
+            <h3>{decision.title}</h3>
+            <p>{decision.body}</p>
+          </article>
+        </div>
+      </div>
     </section>
   );
 }
