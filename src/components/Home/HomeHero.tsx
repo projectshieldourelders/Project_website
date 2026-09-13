@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/utils/assets";
 
 export default function HomeHero() {
   return (
@@ -12,25 +14,17 @@ export default function HomeHero() {
         </div>
       </div>
 
-      <div className="hero-console" aria-label="Example suspicious call review">
-        <div className="hero-console__header">
-          <span>Unknown caller</span>
-          <span className="hero-console__live"><i />Call review</span>
-        </div>
-        <div className="hero-console__body">
-          <div className="hero-console__caller">
-            <span className="hero-console__avatar">?</span>
-            <div><strong>Unknown caller</strong><small>“Your account will close today.”</small></div>
-          </div>
-          <div className="hero-console__checks">
-            <span><i>1</i>You weren’t expecting the call</span>
-            <span><i>2</i>They want you to act immediately</span>
-            <span><i>3</i>They ask for a private code</span>
-          </div>
-          <div className="hero-console__result"><span>What to do</span><strong>Hang up and call the bank using the number printed on your card.</strong></div>
-        </div>
-        <span className="hero-console__scan" aria-hidden="true" />
-      </div>
+      <figure className="home-hero__photo">
+        <Image
+          src={assetPath("/images/photos/workshop-payment-requests.jpg")}
+          alt="Shield Our Elders presenters discussing high-risk payment requests during a community workshop"
+          width={2200}
+          height={1650}
+          priority
+          sizes="(max-width: 1100px) calc(100vw - 3rem), 48vw"
+        />
+        <figcaption>A community workshop in Brevard County</figcaption>
+      </figure>
     </section>
   );
 }
