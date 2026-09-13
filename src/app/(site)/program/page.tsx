@@ -60,7 +60,6 @@ export default function ProgramPage() {
       </section>
 
       <section className="workshop-book">
-        <p>Tell us who will attend and what they have been asking about.</p>
         <h2>We will shape the examples before we arrive.</h2>
         <Link href="/contact" className="light-button">Plan a workshop</Link>
       </section>

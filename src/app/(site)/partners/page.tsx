@@ -11,7 +11,6 @@ export default function PartnersPage() {
   return (
     <main className="story-page partners-page">
       <section className="partners-hero">
-        <p>For organizations that already have a relationship with older adults</p>
         <h1>A useful workshop starts with local trust.</h1>
         <div><span>You know the people</span><i aria-hidden="true" /><span>We prepare the practice</span></div>
       </section>
@@ -45,7 +44,6 @@ export default function PartnersPage() {
       <section className="partners-materials story-section">
         <div><h2>Support stays visible after we leave.</h2><p>Funding helps cover large-print checklists, trusted-contact cards, and practice sheets. Those materials remain at home, at a front desk, or beside a telephone after the workshop ends.</p></div>
         <div className="partners-materials__receipt" aria-label="Example workshop materials supported">
-          <span>Workshop material</span>
           <p>Large-print guides <strong>40</strong></p>
           <p>Trusted-contact cards <strong>40</strong></p>
           <p>Practice examples <strong>1 set</strong></p>
@@ -54,7 +52,6 @@ export default function PartnersPage() {
       </section>
 
       <section className="partners-contact">
-        <p>Based in Brevard County, Florida</p>
         <h2>Tell us who you serve. We will reply with a practical next step.</h2>
         <div><Link href="/contact" className="light-button">Contact Shield Our Elders</Link><Link href="/resources">Share the printable guides</Link></div>
       </section>

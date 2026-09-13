@@ -16,7 +16,6 @@ export default function MinimalHome() {
       <HomeHero />
 
       <section className="home-statement">
-        <p>Scam advice is easy to forget during a stressful call.</p>
         <h2>We rehearse the moment, not just the warning signs.</h2>
         <div>
           <p>In a Shield Our Elders workshop, people look closely at a realistic request, decide what feels wrong, and practice checking it without the caller’s help.</p>
@@ -57,7 +56,6 @@ export default function MinimalHome() {
       </section>
 
       <section className="home-invite">
-        <p>For senior communities, libraries, families, banks, and care teams in Brevard County.</p>
         <h2>Bring one real scam question. We will build the practice around it.</h2>
         <Link href="/contact" className="light-button">Ask about a community session</Link>
       </section>

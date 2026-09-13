@@ -36,9 +36,9 @@ export default function PartnerPath() {
         ))}
       </div>
       <div className="partner-path__route" key={path.tab} role="tabpanel">
-        <div><span>Your part</span><h3>{path.title}</h3><p>{path.body}</p></div>
+        <div><h3>{path.title}</h3><p>{path.body}</p></div>
         <i aria-hidden="true"><span /></i>
-        <div><span>What it makes possible</span><strong>{path.result}</strong><Link href="/contact">Contact our team</Link></div>
+        <div><strong>{path.result}</strong><Link href="/contact">Contact our team</Link></div>
       </div>
     </div>
   );

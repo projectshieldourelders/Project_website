@@ -58,7 +58,6 @@ export default function WorkshopDeck() {
 
       <div className="practice-board__screen" key={slide.label} aria-live="polite">
         <div className="practice-board__message">
-          <span>Example call</span>
           <blockquote>“{slide.quote}”</blockquote>
         </div>
         <div className="practice-board__question">

@@ -33,9 +33,9 @@ export default function ResourcesPage() {
       <section className="help-recovery story-section">
         <header><h2>If money has left the account</h2><p>Speed matters more than finding the perfect words. Use official contact information and keep a record of every call.</p></header>
         <div className="help-recovery__flow">
-          <article><span>First call</span><h3>Bank or payment company</h3><p>Ask whether the transaction can be stopped, disputed, or recalled. Request a case number.</p></article>
-          <article><span>While waiting</span><h3>Secure exposed accounts</h3><p>Change reused passwords, begin with email and banking, and turn on two-step verification.</p></article>
-          <article><span>Before reporting</span><h3>Preserve the trail</h3><p>Save receipts, screenshots, dates, phone numbers, email addresses, and the names of people you spoke with.</p></article>
+          <article><h3>Bank or payment company</h3><p>Ask whether the transaction can be stopped, disputed, or recalled. Request a case number.</p></article>
+          <article><h3>Secure exposed accounts</h3><p>Change reused passwords, begin with email and banking, and turn on two-step verification.</p></article>
+          <article><h3>Preserve the trail</h3><p>Save receipts, screenshots, dates, phone numbers, email addresses, and the names of people you spoke with.</p></article>
         </div>
         <p className="help-recovery__warning">Be wary of anyone who promises to recover lost money for an upfront fee. Recovery offers are often a second scam.</p>
       </section>

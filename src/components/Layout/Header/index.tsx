@@ -41,21 +41,22 @@ export default function Header() {
         <div className="site-header__actions">
           <div className="site-header__reading"><AccessibilityControls /></div>
           <Link href="/contact" className="header-contact">Work with us</Link>
-          <button type="button" className="menu-trigger" onClick={() => setMenuOpen(true)} aria-expanded={menuOpen} aria-controls="mobile-navigation">
+          <button type="button" className={`menu-trigger${menuOpen ? " is-open" : ""}`} onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? "Close menu" : "Open menu"}>
             <span>Menu</span><i aria-hidden="true" />
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="mobile-menu__backdrop" onMouseDown={() => setMenuOpen(false)}>
-          <div id="mobile-navigation" className="mobile-menu" onMouseDown={(event) => event.stopPropagation()}>
-            <div className="mobile-menu__top"><Logo /><button type="button" onClick={() => setMenuOpen(false)} aria-label="Close menu">Close</button></div>
-            <nav aria-label="Mobile navigation">
-              {navigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</Link>)}
-              <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-            </nav>
-            <div className="mobile-menu__reading"><AccessibilityControls /></div>
+        <div id="mobile-navigation" className="mobile-menu">
+          <nav aria-label="Mobile navigation">
+            {navigation.map((item) => (
+              <Link key={item.href} href={item.href} aria-current={currentPath === item.href ? "page" : undefined} onClick={() => setMenuOpen(false)}>{item.label}</Link>
+            ))}
+            <Link href="/contact" aria-current={currentPath === "/contact" ? "page" : undefined} onClick={() => setMenuOpen(false)}>Contact</Link>
+          </nav>
+          <div className="mobile-menu__reading">
+            <AccessibilityControls />
           </div>
         </div>
       )}

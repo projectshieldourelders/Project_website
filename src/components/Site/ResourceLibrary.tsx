@@ -46,7 +46,6 @@ export default function ResourceLibrary() {
 
       <div className="resource-desk__preview" key={guides[active].file}>
         <div className="resource-desk__paper" aria-hidden="true">
-          <span>Shield Our Elders</span>
           <strong>{guides[active].filename}</strong>
           <i /><i /><i /><i />
         </div>

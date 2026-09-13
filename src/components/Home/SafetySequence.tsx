@@ -39,7 +39,6 @@ export default function SafetySequence() {
   return (
     <section id="how-it-works" className="decision-demo">
       <div className="decision-demo__intro">
-        <p>Try it with the example above</p>
         <h2>What would you do after hanging up?</h2>
         <span>Choose a step. The example changes with you.</span>
       </div>
@@ -72,7 +71,6 @@ export default function SafetySequence() {
             <span className="decision-demo__phone-action">{decision.action}</span>
           </div>
           <article>
-            <span>{decision.tab}</span>
             <h3>{decision.title}</h3>
             <p>{decision.body}</p>
           </article>
