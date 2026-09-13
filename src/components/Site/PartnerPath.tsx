@@ -5,22 +5,28 @@ import Link from "next/link";
 
 const paths = [
   {
-    tab: "Host a session",
-    title: "You provide the room. We bring the lesson.",
-    body: "Choose a date, invite the people you serve, and tell us which scam questions have been coming up. A screen is helpful, but it is not required.",
-    result: "A 45–60 minute workshop with printed take-home material",
+    tab: "Host a workshop",
+    title: "Invite us to speak with your community.",
+    body: "Our workshops typically last 45–60 minutes and include real scam examples, discussion, and printed take-home materials. Before the session, we ask what types of scams your group has been seeing so the examples are relevant.",
+    result: "A practical session shaped around your group",
   },
   {
-    tab: "Fund materials",
-    title: "Put a useful guide in someone’s hands.",
-    body: "Local support pays for large-print checklists, trusted-contact cards, and practice examples that participants can keep after the session.",
-    result: "Materials that remain available after the workshop ends",
+    tab: "Share resources",
+    title: "Put printable information where people can find it.",
+    body: "Organizations are welcome to share our printable scam-prevention guides. They are designed to be easy to print and keep at home, near a phone, or at a front desk.",
+    result: "Free guides for the people you serve",
   },
   {
     tab: "Make an introduction",
-    title: "Help us reach a group that already trusts you.",
-    body: "Introduce us to a senior community, library, caregiver network, faith group, bank, or another organization serving older adults.",
-    result: "A direct conversation with the right community contact",
+    title: "Connect us with another local organization.",
+    body: "An introduction to a senior community, library, caregiver group, neighborhood organization, or other group can help. You do not need to organize the session yourself.",
+    result: "A direct conversation with a trusted community contact",
+  },
+  {
+    tab: "Support materials",
+    title: "Help cover practical workshop materials.",
+    body: "Donations and sponsorships can help pay for large-print guides, trusted-contact cards, practice sheets, printing, and presentation materials.",
+    result: "Take-home information that remains useful after the session",
   },
 ];
 
@@ -38,7 +44,7 @@ export default function PartnerPath() {
       <div className="partner-path__route" key={path.tab} role="tabpanel">
         <div><h3>{path.title}</h3><p>{path.body}</p></div>
         <i aria-hidden="true"><span /></i>
-        <div><strong>{path.result}</strong><Link href="/contact">Contact our team</Link></div>
+        <div><strong>{path.result}</strong><Link href="/contact">Contact Shield Our Elders</Link></div>
       </div>
     </div>
   );

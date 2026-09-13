@@ -3,7 +3,7 @@ import MinimalHome from '@/components/Home/MinimalHome';
 
 export const metadata: Metadata = {
   title: "Shield Our Elders",
-  description: "Partner with Shield Our Elders to bring practical, repeated scam-prevention workshops and tools to older adults in Brevard County.",
+  description: "Brevard County scam-prevention workshops and practical resources for older adults, families, and community organizations.",
 };
 
 export default function Home() {

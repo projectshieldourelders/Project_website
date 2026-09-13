@@ -5,28 +5,28 @@ import { assetPath } from "@/utils/assets";
 
 const guides = [
   {
-    title: "A caller wants money or a private code",
+    title: "Suspicious phone call",
     file: "/guides/suspicious-call-checklist.pdf",
     filename: "Suspicious Call Checklist",
-    detail: "End the call first. This sheet helps you verify the organization without relying on anything the caller told you.",
+    detail: "Use this checklist if a caller is asking for money, account information, a password, or a verification code.",
   },
   {
-    title: "A text or email includes a link",
+    title: "Suspicious text or email",
     file: "/guides/suspicious-message-checklist.pdf",
     filename: "Suspicious Message Checklist",
-    detail: "Review the sender, the web address, and the request before replying, downloading a file, or opening a QR code.",
+    detail: "Use this guide before clicking a link, opening an attachment, or replying to an unexpected message.",
   },
   {
-    title: "Money or personal information was already sent",
+    title: "Money or personal information already sent",
     file: "/guides/after-a-scam-recovery-guide.pdf",
     filename: "After a Scam: What to Do Next",
-    detail: "A calm order for contacting a bank, changing exposed passwords, saving evidence, and reporting what happened.",
+    detail: "Use this guide for the first steps to take after responding to a possible scam.",
   },
   {
-    title: "I want a plan before anything happens",
+    title: "Make a plan ahead of time",
     file: "/guides/trusted-contact-plan.pdf",
     filename: "My Trusted-Contact Plan",
-    detail: "Write down two reliable contacts, official account numbers, and a family phrase while there is no pressure.",
+    detail: "Write down trusted contacts and important phone numbers before you need them.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function ResourceLibrary() {
           <i /><i /><i /><i />
         </div>
         <p>{guides[active].detail}</p>
-        <a href={assetPath(guides[active].file)} download>Download the one-page PDF</a>
+        <a href={assetPath(guides[active].file)} download>Download {guides[active].filename}</a>
       </div>
     </div>
   );

@@ -9,26 +9,26 @@ const slides = [
   {
     label: "Read the request",
     quote: "I need the six-digit code we just sent so I can secure your account.",
-    prompt: "What does the caller gain if you share it?",
-    answer: "A verification code can let another person enter an account, reset a password, or approve a transfer.",
+    prompt: "What should make you stop?",
+    answer: "A verification code is normally meant for you, not for someone calling you. Sharing it may let another person enter an account, reset a password, or approve a transfer.",
   },
   {
-    label: "Break the urgency",
+    label: "Look for pressure",
     quote: "Stay on the line. This has to be fixed before the account closes.",
-    prompt: "Does this decision really belong to the caller?",
-    answer: "No. Ending the call removes their pressure and gives you time to use an independent contact method.",
+    prompt: "Are they asking you to act immediately or keep a secret?",
+    answer: "Ending the call removes their pressure and gives you time to check the story without the caller listening.",
   },
   {
     label: "Verify independently",
     quote: "Call me back at this direct number if we are disconnected.",
-    prompt: "Which phone number should you use instead?",
-    answer: "Use the number printed on your bank card, shown in the official app, or saved before this call began.",
+    prompt: "Can you contact the organization another way?",
+    answer: "Use the number printed on your bank card, shown in the official app, or found independently on the organization’s official website.",
   },
   {
     label: "Choose the next step",
     quote: "Do not tell anyone about this investigation.",
-    prompt: "Who could hear the story before you act?",
-    answer: "A trusted person can help you call the bank, preserve evidence, block the caller, or make a report.",
+    prompt: "What should you do if you are still unsure?",
+    answer: "Do not send money or share information. A trusted person can help you contact the organization, preserve evidence, block the caller, or make a report.",
   },
 ];
 

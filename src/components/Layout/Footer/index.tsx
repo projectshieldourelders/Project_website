@@ -4,15 +4,15 @@ import Logo from "../Header/Logo";
 const groups = [
   {
     title: "Learn",
-    links: [["About", "/about"], ["Workshop", "/program"], ["Scam examples", "/examples"]],
+    links: [["About", "/about"], ["Workshops", "/program"], ["Scam Examples", "/examples"]],
   },
   {
-    title: "Get help",
-    links: [["Resources", "/resources"], ["App support", "/support"], ["Accessibility", "/accessibility"]],
+    title: "Resources",
+    links: [["Scam Resources", "/resources"], ["App Support", "/support"], ["Accessibility", "/accessibility"]],
   },
   {
     title: "Connect",
-    links: [["Partners", "/partners"], ["Contact", "/contact"], ["Email us", "mailto:projectshieldourelders@gmail.com"]],
+    links: [["Partners", "/partners"], ["Contact", "/contact"], ["Email Us", "mailto:projectshieldourelders@gmail.com"]],
   },
 ];
 
@@ -20,13 +20,13 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__cta">
-        <h2>Need a checklist you can keep by the phone?</h2>
-        <Link href="/resources" className="primary-button">Choose a printable guide</Link>
+        <div><h2>Looking for something you can keep by the phone?</h2><p>Our printable scam-prevention guides are available free.</p></div>
+        <Link href="/resources" className="primary-button">View all resources</Link>
       </div>
       <div className="site-footer__main">
       <div className="site-footer__brand">
           <Logo />
-          <p>Community scam-prevention workshops and practical resources for older adults, families, and the people who support them.</p>
+          <p>Helping older adults and families in Brevard County recognize scams, verify suspicious requests, and respond safely.</p>
           <span>Brevard County, Florida</span>
         </div>
         <div className="site-footer__links">

@@ -32,8 +32,8 @@
   --accent: #315c9b;
   --accent-dark: #244879;
   --accent-soft: #e3eaf5;
-  --display: Charter, "Bitstream Charter", "Sitka Text", Georgia, serif;
-  --sans: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -1178,6 +1178,7 @@ main:not(.home-page):not(.story-page) .text-\[\#5f6862\] { color: var(--muted) !
 .site-footer { border-top: 1px solid var(--line); background: var(--paper-bright); color: var(--ink); }
 .site-footer__cta { display: flex; align-items: end; justify-content: space-between; gap: 3rem; width: min(100% - 3rem, 86rem); margin: 0 auto; border-bottom: 1px solid var(--line); padding: 6rem 0; }
 .site-footer__cta h2 { max-width: 18ch; margin: 0; font-size: 3.5rem; line-height: 1.04; }
+.site-footer__cta p { max-width: 34rem; margin: 1.25rem 0 0; color: var(--muted); font-size: 1.05rem; }
 .site-footer__main { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; width: min(100% - 3rem, 86rem); margin: 0 auto; padding: 5rem 0; }
 .site-footer__brand p { max-width: 28rem; margin: 2rem 0 0; color: var(--muted); }
 .site-footer__brand > span { display: block; margin-top: 1.5rem; color: var(--muted); font-size: 0.85rem; }

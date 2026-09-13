@@ -13,8 +13,11 @@ export default function AboutPage() {
     <main className="story-page profile-page">
       <section className="about-photo-hero">
         <div className="about-photo-hero__title">
-          <h1>It began with a gap between hearing a warning and using it.</h1>
-          <p>Shield Our Elders is a Brevard County project built around what people can do during the call—not what they should have known afterward.</p>
+          <h1>About Shield Our Elders</h1>
+          <div>
+            <p>Shield Our Elders is a Brevard County community project focused on helping older adults recognize scams, verify suspicious requests, and respond safely.</p>
+            <p>We started the project because knowing that scams exist is not always enough. The difficult part is recognizing one while it is happening, especially when someone is creating urgency, fear, or pressure.</p>
+          </div>
         </div>
         <div className="about-photo-hero__photo">
           <Image src={assetPath("/images/photos/workshop-verification.jpg")} alt="Shield Our Elders presenters and participants discussing verification codes at a community workshop" fill priority sizes="100vw" />
@@ -24,44 +27,54 @@ export default function AboutPage() {
       </section>
 
       <section className="about-origin story-section">
-        <blockquote>“I know scams are out there. I just do not always recognize one while it is happening.”</blockquote>
+        <blockquote>Stop before responding. Verify the request yourself. Ask another person if you are unsure.</blockquote>
         <div>
-          <h2>That is the problem we teach for.</h2>
-          <p>Pressure changes how a person makes decisions. A caller may create a deadline, claim a relative is in danger, or ask for secrecy before requesting money or a code. A list of scam types does not prepare someone for that feeling by itself.</p>
-          <p>We put realistic examples on screen, stop at the difficult moment, and let the room work out a safer response together. Repeating the decision makes it easier to remember later.</p>
+          <h2>Why we started</h2>
+          <p>Many scam-prevention resources explain what a scam looks like after the fact. Our goal is different.</p>
+          <p>We want people to practice what to do during the moment itself: when a caller claims there is an emergency, when a message asks for a verification code, or when someone is being pressured to send money quickly.</p>
+          <p>During our workshops, we use realistic examples and walk through the decisions people may have to make. Participants learn how to slow the situation down, verify information independently, and involve someone they trust before taking action.</p>
         </div>
       </section>
 
       <section className="about-principles story-section">
-        <h2>What the room feels like</h2>
+        <h2>What happens during a workshop</h2>
         <div className="about-principles__tape">
-          <article><h3>No one is put on the spot.</h3><p>People may listen, take notes, ask privately, or bring someone with them. A person never has to describe a loss to take part.</p></article>
-          <article><h3>The examples are recognizable.</h3><p>We use bank alerts, family emergencies, delivery texts, remote-access requests, and other situations the group has actually been hearing about.</p></article>
-          <article><h3>Questions change the lesson.</h3><p>If the room is unsure about caller ID, QR codes, or gift-card payments, we stay with that subject rather than rushing through a deck.</p></article>
+          <article><h3>Participation is optional</h3><p>No one is required to speak, answer a question, or share a personal experience. Participants can listen, take notes, ask questions, or attend with a family member or caregiver.</p></article>
+          <article><h3>We use situations people actually encounter</h3><p>Examples may include fake bank alerts, family emergency scams, delivery messages, government impersonation, gift-card requests, remote-access scams, verification-code requests, suspicious links, and QR codes. We update examples as tactics change.</p></article>
+          <article><h3>Questions are encouraged</h3><p>If participants have questions about caller ID, online payments, text messages, artificial intelligence, QR codes, or another topic, we can spend more time on it. The goal is to make sure people leave knowing what they can actually do.</p></article>
         </div>
       </section>
 
       <section className="about-local story-section">
         <div className="about-local__map" aria-hidden="true"><span>Brevard County</span><i /><i /><i /><i /></div>
         <div>
-          <h2>Local examples keep the work honest.</h2>
-          <p>We listen to older adults, families, caregivers, community staff, and financial-service teams in Brevard County. Their questions show us where instructions are too vague and which new tactics belong in the next session.</p>
-          <Link href="/partners" className="text-link">Work with the project</Link>
+          <h2>Built for Brevard County</h2>
+          <p>Shield Our Elders works with older adults, families, caregivers, community organizations, and local professionals throughout Brevard County.</p>
+          <p>The questions we hear during workshops help us improve future sessions and create better resources. If several people are confused by the same type of scam or verification process, that becomes something we address more clearly the next time.</p>
+          <Link href="/partners" className="text-link">Partner with Shield Our Elders</Link>
         </div>
       </section>
 
       <section className="about-team story-section">
-        <div><h2>The people behind the work</h2><p>This is a small, community-led project. Roles stay practical because the same people who prepare the examples also hear the questions in the room.</p></div>
+        <div><h2>Who is involved</h2><p>Shield Our Elders is a small, community-led project supported by students, volunteers, community organizations, and local advisors.</p></div>
         <dl>
-          <div><dt>Project lead</dt><dd>Plans sessions and turns current scam tactics into teachable examples.</dd></div>
-          <div><dt>Workshop volunteers</dt><dd>Facilitate practice, answer questions, and prepare large-print material.</dd></div>
-          <div><dt>Community advisors</dt><dd>Tell us what people are encountering and where an explanation needs work.</dd></div>
+          <div><dt>Project leadership</dt><dd>Organizes workshops, develops educational material, researches current scam tactics, and coordinates with community partners.</dd></div>
+          <div><dt>Workshop volunteers</dt><dd>Help lead activities, answer questions, prepare materials, and assist participants during sessions.</dd></div>
+          <div><dt>Community partners and advisors</dt><dd>Help us understand the problems older adults are encountering and connect the project with the people who can benefit from it.</dd></div>
         </dl>
       </section>
 
+      <section className="about-approach story-section">
+        <div>
+          <h2>Our approach</h2>
+          <p>We do not want scam education to make people afraid of every phone call, message, or website. We want people to feel more confident about what to do when something seems unusual.</p>
+          <p>Stop before responding. Verify the request using contact information you find yourself. Do not let someone pressure you into acting immediately. Ask another person if you are unsure. If something has already happened, act quickly and get help.</p>
+        </div>
+      </section>
+
       <section className="about-close">
-        <h2>A good workshop should leave people calmer, not more afraid.</h2>
-        <Link href="/program" className="light-button">Read the workshop plan</Link>
+        <h2>Want to bring Shield Our Elders to your organization?</h2>
+        <div><Link href="/program" className="light-button">Learn about our workshops</Link><Link href="/partners">Partner with Shield Our Elders</Link></div>
       </section>
     </main>
   );

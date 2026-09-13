@@ -5,27 +5,27 @@ import { useState } from "react";
 const decisions = [
   {
     key: "pause",
-    tab: "Pause the call",
-    title: "Give yourself room to think.",
-    body: "Let an unknown call go to voicemail, or end a conversation that has become pushy. A real bank or government office will not punish you for taking time to check.",
+    tab: "Take a minute",
+    title: "Do not let the caller rush you.",
+    body: "There is no need to make a decision while someone is pressuring you. You can end the call before sending money, sharing account information, or giving out a password or verification code.",
     phoneTitle: "Call ended",
     phoneDetail: "No information shared",
     action: "You are in control",
   },
   {
     key: "check",
-    tab: "Check the story",
-    title: "Use contact details you already trust.",
-    body: "Open the bank’s official app or call the number printed on your card. Do not call back using a number supplied by the person who contacted you.",
+    tab: "Verify the request",
+    title: "Find the organization’s contact information yourself.",
+    body: "Do not use the phone number, website, or contact information the caller gives you. Use the number printed on your card, shown on an official statement, or published on the organization’s official website.",
     phoneTitle: "Shield Community Bank",
     phoneDetail: "Number from the back of your card",
     action: "Official number found",
   },
   {
     key: "tell",
-    tab: "Bring in someone else",
-    title: "Say the request out loud to another person.",
-    body: "A family member, friend, neighbor, caregiver, or staff member can help you notice pressure and choose the next step without the caller listening.",
+    tab: "Ask someone else",
+    title: "Get a second opinion before doing anything.",
+    body: "A family member, friend, neighbor, caregiver, or staff member can help you check the story. A legitimate organization will give you time to verify what it is telling you.",
     phoneTitle: "Maya",
     phoneDetail: "Trusted contact",
     action: "Ready to call",
@@ -39,8 +39,8 @@ export default function SafetySequence() {
   return (
     <section id="how-it-works" className="decision-demo">
       <div className="decision-demo__intro">
-        <h2>What would you do after hanging up?</h2>
-        <span>Choose a step. The example changes with you.</span>
+        <h2>What would you do after a suspicious call?</h2>
+        <span>There is no need to make a decision while someone is pressuring you.</span>
       </div>
 
       <div className="decision-demo__stage">

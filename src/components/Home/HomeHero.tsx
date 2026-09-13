@@ -6,11 +6,11 @@ export default function HomeHero() {
   return (
     <section className="home-hero">
       <div className="home-hero__copy">
-        <h1>A simple way to deal with suspicious calls and messages.</h1>
-        <p>Shield Our Elders helps older adults recognize scams, double-check suspicious requests, and know what to do before sending money or sharing personal information.</p>
+        <h1>Protect yourself from scams before money or information is lost.</h1>
+        <p>Shield Our Elders is a Brevard County community program that helps older adults recognize scams, verify suspicious calls and messages, and know what to do when something does not seem right.</p>
         <div className="home-hero__actions">
-          <Link href="/program" className="primary-button">See the workshop</Link>
-          <Link href="/resources" className="secondary-button">Get help now</Link>
+          <Link href="/program" className="primary-button">See our workshops</Link>
+          <Link href="/resources" className="secondary-button">Scam help &amp; resources</Link>
         </div>
       </div>
 

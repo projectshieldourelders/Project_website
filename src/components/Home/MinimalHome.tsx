@@ -5,9 +5,9 @@ import HomeHero from "./HomeHero";
 import SafetySequence from "./SafetySequence";
 
 const downloads = [
-  ["Unexpected call", "A five-step checklist to keep by the phone.", "/guides/suspicious-call-checklist.pdf"],
-  ["Strange text or email", "What to inspect before opening a link.", "/guides/suspicious-message-checklist.pdf"],
-  ["Money already sent", "Who to contact and what to save right away.", "/guides/after-a-scam-recovery-guide.pdf"],
+  ["Unexpected phone call", "What to do when someone calls asking for money or personal information.", "/guides/suspicious-call-checklist.pdf", "Download the checklist"],
+  ["Suspicious text or email", "What to check before clicking a link, replying, or opening an attachment.", "/guides/suspicious-message-checklist.pdf", "Download the checklist"],
+  ["Already sent money or information", "Steps you can take quickly if you think you may have responded to a scam.", "/guides/after-a-scam-recovery-guide.pdf", "Download the recovery guide"],
 ];
 
 export default function MinimalHome() {
@@ -16,10 +16,11 @@ export default function MinimalHome() {
       <HomeHero />
 
       <section className="home-statement">
-        <h2>We rehearse the moment, not just the warning signs.</h2>
+        <h2>Free scam-prevention workshops for our community</h2>
         <div>
-          <p>In a Shield Our Elders workshop, people look closely at a realistic request, decide what feels wrong, and practice checking it without the caller’s help.</p>
-          <Link href="/program">See a workshop from start to finish</Link>
+          <p>Scammers are constantly changing the way they reach people. Our workshops use real examples of phone calls, text messages, emails, payment requests, and other common scams so participants can see what they look like before encountering one themselves.</p>
+          <p>We also practice what to do next: ending the conversation, checking whether a request is legitimate, contacting the real organization, and asking someone you trust for a second opinion.</p>
+          <Link href="/program">Learn about the workshop</Link>
         </div>
       </section>
 
@@ -27,10 +28,10 @@ export default function MinimalHome() {
 
       <section id="app" className="app-showcase app-showcase--reframed">
         <div className="app-showcase__copy">
-          <h2>One place to check the thing in front of you.</h2>
-          <p>Paste a message, inspect a link, scan a QR code, or review a phone number. The app points to warning signs and gives you a safer way to verify the request.</p>
-          <p className="app-showcase__note">The result is guidance, not a guarantee. For money, account access, or identity information, confirm the answer with the organization or a person you trust.</p>
-          <Link href="/support" className="secondary-button">How the app works</Link>
+          <h2>Check a suspicious message, link, QR code, or phone number</h2>
+          <p>Our scam-checking tool can help you look for common warning signs in something you received. You can use it to review messages, links, phone numbers, and QR codes.</p>
+          <p className="app-showcase__note">The tool can help you decide what to check next, but it cannot guarantee that something is safe. If the request involves money, financial accounts, passwords, Social Security information, or other sensitive information, contact the organization directly using information from its official website, statement, or card.</p>
+          <Link href="/support" className="secondary-button">See how the tool works</Link>
         </div>
         <div className="app-showcase__visual">
           <div className="app-device">
@@ -42,13 +43,13 @@ export default function MinimalHome() {
 
       <section id="guides" className="home-guide-strip">
         <div>
-          <h2>Choose the situation, not a long article.</h2>
-          <p>Each printable guide starts with the first call to make and fits on one page.</p>
+          <h2>Quick guides for common situations</h2>
+          <p>Sometimes you just need to know what to do next. Our printable guides are short, easy to keep nearby, and organized around situations people actually encounter.</p>
         </div>
         <nav aria-label="Quick printable guides">
-          {downloads.map(([title, detail, href]) => (
+          {downloads.map(([title, detail, href, action]) => (
             <a key={title} href={assetPath(href)} download>
-              <span><strong>{title}</strong><small>{detail}</small></span>
+              <span><strong>{title}</strong><small>{detail}</small><em>{action}</em></span>
               <i aria-hidden="true">PDF</i>
             </a>
           ))}
@@ -56,8 +57,12 @@ export default function MinimalHome() {
       </section>
 
       <section className="home-invite">
-        <h2>Bring one real scam question. We will build the practice around it.</h2>
-        <Link href="/contact" className="light-button">Ask about a community session</Link>
+        <div>
+          <h2>Host a Shield Our Elders workshop</h2>
+          <p>We work with senior communities, libraries, community groups, families, and other local organizations in Brevard County.</p>
+          <p>Sessions can be adjusted around the scams your group is most concerned about, and participants are welcome to bring examples or questions they have received themselves.</p>
+        </div>
+        <Link href="/contact" className="light-button">Ask about hosting a workshop</Link>
       </section>
     </main>
   );
