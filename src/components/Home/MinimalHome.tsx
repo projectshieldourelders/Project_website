@@ -4,40 +4,31 @@ import { assetPath } from "@/utils/assets";
 import HomeHero from "./HomeHero";
 import SafetySequence from "./SafetySequence";
 
-const audiences = [
-  "Older adults",
-  "Families and caregivers",
-  "Senior communities",
-  "Libraries",
-  "Banks and credit unions",
-  "Care teams",
-];
-
 const services = [
   {
     title: "Community workshops",
-    body: "A 45–60 minute session built around the calls, texts, and payment requests people are seeing now.",
+    body: "A 45–60 minute session covering common scams, warning signs, and what to do when something does not feel right.",
     href: "/program",
     link: "See how a session works",
   },
   {
-    title: "Help in the moment",
-    body: "Short, plain-language guides for checking a caller, reading a strange message, or acting after money was sent.",
+    title: "Help when you need it",
+    body: "Simple guides for checking an unexpected caller, suspicious message, strange link, or payment request.",
     href: "/resources",
     link: "Open the free guides",
   },
   {
-    title: "A safer second opinion",
-    body: "The Shield Our Elders app helps people slow down, notice pressure, and choose an independent way to verify.",
+    title: "The Shield Our Elders app",
+    body: "Our app gives people another way to check suspicious messages, links, phone numbers, QR codes, and payment requests. It points out possible warning signs and explains what you can do next.",
     href: "/support",
     link: "Learn about the app",
   },
 ];
 
 const resources = [
-  ["Suspicious call checklist", "Five questions to ask before doing anything.", "/guides/suspicious-call-checklist.pdf"],
-  ["Strange message checklist", "Check the sender, request, link, and pressure.", "/guides/suspicious-message-checklist.pdf"],
-  ["After a scam", "The first calls to make and the records to save.", "/guides/after-a-scam-recovery-guide.pdf"],
+  ["Suspicious Call Checklist", "Five things to check before responding to an unexpected caller.", "/guides/suspicious-call-checklist.pdf"],
+  ["Suspicious Message Checklist", "Check the sender, the request, any links, and whether someone is trying to rush you.", "/guides/suspicious-message-checklist.pdf"],
+  ["What to Do After a Scam", "Steps to take if you sent money or shared personal information.", "/guides/after-a-scam-recovery-guide.pdf"],
 ];
 
 export default function MinimalHome() {
@@ -45,16 +36,10 @@ export default function MinimalHome() {
     <main className="home-page">
       <HomeHero />
 
-      <section className="audience-marquee" aria-label="People and organizations we serve">
-        <div className="audience-marquee__track">
-          {[...audiences, ...audiences].map((audience, index) => <span key={`${audience}-${index}`}>{audience}</span>)}
-        </div>
-      </section>
-
       <section className="home-services">
         <div className="section-heading">
-          <h2>Scam prevention works better when people can practice it.</h2>
-          <p>We turn familiar warnings into decisions people can rehearse, remember, and use under pressure.</p>
+          <h2>Knowing about scams is one thing. Practicing what to do is another.</h2>
+          <p>Our workshops use real examples of scam calls, texts, emails, and payment requests so people can practice how to respond before it happens to them.</p>
         </div>
         <div className="service-list">
           {services.map((service, index) => (
@@ -71,8 +56,14 @@ export default function MinimalHome() {
 
       <section id="app" className="app-showcase">
         <div className="app-showcase__copy">
-          <h2>The app is there when a workshop is not.</h2>
-          <p>Paste a message, check a link, review a caller, or scan a QR code. The result explains the warning signs and gives a safer next step without pretending any automated check is perfect.</p>
+          <h2>The app can help when you are unsure.</h2>
+          <p>You can use the Shield Our Elders app to check suspicious text messages, phone numbers, website links, QR codes, and unusual payment requests.</p>
+          <ul className="app-check-list">
+            <li>It explains what looks suspicious.</li>
+            <li>It suggests ways to verify the situation yourself.</li>
+            <li>It reminds you when another person should be involved.</li>
+          </ul>
+          <p className="app-showcase__note">No automated tool can guarantee whether something is a scam, so we always encourage people to double-check important decisions with a trusted person or organization.</p>
           <Link href="/support" className="secondary-button">See app support</Link>
         </div>
         <div className="app-showcase__visual">
@@ -89,12 +80,13 @@ export default function MinimalHome() {
           <Image src={assetPath("/images/photos/presenters-closing.jpg")} alt="Shield Our Elders presenters leading the closing portion of a community workshop" fill sizes="(max-width: 900px) 100vw, 58vw" className="object-cover" />
         </div>
         <div className="workshop-proof__copy">
-          <h2>Built in the room, with real questions.</h2>
-          <p>Participants can stop us, ask for an example again, write down a trusted number, or bring a family member. Every session ends with a simple plan people can take home.</p>
+          <h2>Our workshops are built around real conversations.</h2>
+          <p>People can ask questions throughout the session. If someone wants us to explain an example again, we will. Participants can write down an important phone number or bring a family member with them.</p>
+          <p>The goal is for everyone to leave knowing what they can actually do the next time a suspicious call or message appears.</p>
           <dl>
             <div><dt>Session</dt><dd>45–60 minutes</dd></div>
-            <div><dt>Format</dt><dd>Small-group practice</dd></div>
-            <div><dt>Take-home</dt><dd>Large-print guides</dd></div>
+            <div><dt>Format</dt><dd>Small-group discussion and practice</dd></div>
+            <div><dt>Take-home</dt><dd>Large-print guides and checklists</dd></div>
           </dl>
           <Link href="/contact" className="primary-button">Request a community session</Link>
         </div>
@@ -102,8 +94,8 @@ export default function MinimalHome() {
 
       <section id="guides" className="home-resources">
         <div className="section-heading section-heading--compact">
-          <h2>Keep the next step close by.</h2>
-          <p>Download a guide now, before a stressful call arrives.</p>
+          <h2>Keep these guides somewhere easy to find.</h2>
+          <p>It is much easier to know what to do when you already have the information in front of you.</p>
         </div>
         <div className="home-resource-list">
           {resources.map(([title, detail, href]) => (
@@ -118,10 +110,10 @@ export default function MinimalHome() {
 
       <section className="home-final">
         <div>
-          <h2>Bring practical scam-safety training to your community.</h2>
-          <p>Tell us who you serve and what people have been seeing. A short note is enough to begin.</p>
+          <h2>Want to bring a workshop to your community?</h2>
+          <p>We work with senior communities, libraries, families, local organizations, and other groups that serve older adults. Tell us a little about your group and what kinds of scams people have been seeing.</p>
         </div>
-        <Link href="/contact" className="light-button">Talk with our team</Link>
+        <Link href="/contact" className="light-button">Contact our team</Link>
       </section>
     </main>
   );

@@ -6,10 +6,10 @@ import chevronForward from "@iconify/icons-ion/chevron-forward";
 import { useRef, useState } from "react";
 
 const slides = [
-  { title: "Notice", prompt: "What is the person asking for?", detail: "Listen for money, passwords, codes, remote access, or secrecy.", color: "#dfe9df" },
-  { title: "Pause", prompt: "What happens if we wait?", detail: "A legitimate organization will let you stop and verify before acting.", color: "#e6eee8" },
-  { title: "Check", prompt: "Which trusted source can confirm it?", detail: "Use a number, app, or website you already know instead of one the sender provided.", color: "#e6eee8" },
-  { title: "Act", prompt: "What is the safer next step?", detail: "Block, report, call a trusted person, or contact the organization directly.", color: "#dfe9df" },
+  { title: "Notice", prompt: "What are they asking you to do?", detail: "Look for requests involving money, passwords, verification codes, personal information, remote access, or secrecy.", color: "#e7efe9" },
+  { title: "Pause", prompt: "Do you really have to act right now?", detail: "Scammers often try to make something feel urgent. Take a moment before answering, clicking, paying, or sharing information.", color: "#f6f1e7" },
+  { title: "Check", prompt: "Can you confirm the story another way?", detail: "Call a number you already trust, open the official app yourself, or go directly to the organization’s website.", color: "#dcece7" },
+  { title: "Tell someone", prompt: "Who can help you decide what to do next?", detail: "Talk to a family member, friend, caregiver, staff member, or another person you trust before you block, report, or pay.", color: "#f2dfd8" },
 ];
 
 const WorkshopDeck = () => {
@@ -51,7 +51,7 @@ const WorkshopDeck = () => {
         }}
       >
         {slides.map((slide, index) => (
-          <article key={slide.title} className="workshop-deck__slide" style={{ backgroundColor: slide.color }} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}>
+          <article key={slide.title} className={`workshop-deck__slide ${activeSlide === index ? "is-active" : ""}`} style={{ backgroundColor: slide.color }} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}>
             <span className="font-display text-2xl">0{index + 1}</span>
             <div>
               <h3 className="font-display text-5xl sm:text-6xl">{slide.title}</h3>
@@ -67,6 +67,7 @@ const WorkshopDeck = () => {
       </button>
 
       <p className="workshop-deck__status" aria-live="polite">Slide {activeSlide + 1} of {slides.length}</p>
+      <div className="workshop-deck__progress" aria-hidden="true"><span style={{ width: `${((activeSlide + 1) / slides.length) * 100}%` }} /></div>
     </div>
   );
 };

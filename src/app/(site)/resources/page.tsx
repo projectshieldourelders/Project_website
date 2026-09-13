@@ -1,81 +1,121 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/Site/PageHero";
+import AnimatedPageHero from "@/components/Site/AnimatedPageHero";
 import PrintButton from "@/components/Common/PrintButton";
 import { assetPath } from "@/utils/assets";
 
-export const metadata: Metadata = { title: "Resources", description: "Plain-language scam safety and recovery resources for older adults and families." };
-
-const reports = [
-  ["Report a scam", "Federal Trade Commission", "https://reportfraud.ftc.gov/"],
-  ["Create an identity-theft recovery plan", "Federal Trade Commission", "https://www.identitytheft.gov/"],
-  ["Report internet crime", "FBI Internet Crime Complaint Center", "https://www.ic3.gov/"],
-  ["Report a Social Security scam", "Social Security Administration", "https://oig.ssa.gov/report/"],
-];
+export const metadata: Metadata = {
+  title: "Resources",
+  description: "Printable scam-prevention and recovery guides for older adults and families.",
+};
 
 const downloads = [
-  {
-    title: "Suspicious Call Checklist",
-    description: "Five large-print steps to keep beside the phone.",
-    file: "/guides/suspicious-call-checklist.pdf",
-  },
-  {
-    title: "Suspicious Message Checklist",
-    description: "A quick check before replying, clicking, or downloading.",
-    file: "/guides/suspicious-message-checklist.pdf",
-  },
-  {
-    title: "After a Scam: What to Do Next",
-    description: "A calm recovery checklist for payments and account security.",
-    file: "/guides/after-a-scam-recovery-guide.pdf",
-  },
-  {
-    title: "My Trusted-Contact Plan",
-    description: "A printable page for important names, numbers, and a family phrase.",
-    file: "/guides/trusted-contact-plan.pdf",
-  },
+  ["Suspicious Call Checklist", "Five simple steps to use when a caller is asking for money, personal information, or a code.", "/guides/suspicious-call-checklist.pdf"],
+  ["Suspicious Message Checklist", "A quick checklist to use before replying to a strange text, clicking a link, or downloading something.", "/guides/suspicious-message-checklist.pdf"],
+  ["After a Scam: What to Do Next", "Steps to take if money was sent or an account may have been affected.", "/guides/after-a-scam-recovery-guide.pdf"],
+  ["My Trusted-Contact Plan", "A printable page for important names, phone numbers, and a family verification phrase.", "/guides/trusted-contact-plan.pdf"],
+];
+
+const immediateSteps = [
+  ["Stop replying", "Do not keep talking just because someone is pressuring you."],
+  ["Do not click", "Avoid links, attachments, QR codes, or downloads sent in the message."],
+  ["Do not send money", "Do not send a payment until you have checked the story another way."],
+  ["Call someone you trust", "Tell a family member, friend, caregiver, neighbor, or staff member what happened."],
+  ["Check using an official source", "Call a number you already know or find the organization’s official website yourself."],
+];
+
+const reports = [
+  ["Federal Trade Commission", "Report fraud and scams.", "Report a scam", "https://reportfraud.ftc.gov/"],
+  ["IdentityTheft.gov", "Create a recovery plan if personal information was stolen or misused.", "Start a recovery plan", "https://www.identitytheft.gov/"],
+  ["FBI Internet Crime Complaint Center", "Report certain internet-related crimes and scams.", "Report internet crime", "https://www.ic3.gov/"],
+  ["Social Security Administration", "Report scams involving Social Security.", "Report a Social Security scam", "https://oig.ssa.gov/report/"],
 ];
 
 export default function ResourcesPage() {
   return (
-    <main className="bg-[#f7f6f0] text-[#111815]">
-      <PageHero title="Help, without the runaround" intro="Start with the situation in front of you. Each guide gives you a short next step." />
+    <main className="story-page story-page--resources">
+      <AnimatedPageHero
+        variant="resources"
+        title="Not sure what to do next?"
+        intro="Start with what is happening right now. These guides walk you through simple steps for suspicious calls, messages, payments, and account problems."
+      />
 
-      <section id="downloads" className="resource-library scroll-mt-24 border-b border-[#183b36] bg-white px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
-        <div className="mx-auto max-w-[86rem]">
-          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <h2 className="font-display text-4xl leading-tight sm:text-5xl">Download and print</h2>
-            <p className="max-w-2xl text-xl leading-8 text-[#526661] lg:justify-self-end">Four one-page guides made for a refrigerator door, community table, or folder beside the phone.</p>
-          </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {downloads.map((guide) => (
-              <a key={guide.file} href={assetPath(guide.file)} download className="resource-download">
-                <span className="resource-download__type" aria-hidden="true">PDF</span>
-                <span>
-                  <strong className="font-display block text-2xl">{guide.title}</strong>
-                  <span className="mt-2 block text-lg leading-7 text-[#526661]">{guide.description}</span>
-                  <span className="mt-4 block font-bold text-[#2f756b]">Download one-page guide</span>
-                </span>
-                <span className="resource-download__arrow" aria-hidden="true">↓</span>
+      <section id="downloads" className="story-section download-library">
+        <div className="story-wrap">
+          <div className="section-intro"><h2>Download and print</h2><p>We made these one-page guides so they can be kept somewhere easy to find, like next to the phone, on the refrigerator, or in a folder at home.</p></div>
+          <div className="download-shelf">
+            {downloads.map(([title, description, file], index) => (
+              <a key={file} href={assetPath(file)} download className="paper-download">
+                <span className="paper-download__number">0{index + 1}</span>
+                <span><strong>{title}</strong><small>{description}</small></span>
+                <span className="paper-download__action">Download one-page guide</span>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-[#111815] bg-[#dfe9df] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl leading-tight sm:text-6xl">If the call or message is happening now</h2><ol className="mt-10 grid gap-5 lg:grid-cols-5">{["Stop replying", "Do not click", "Do not pay", "Call someone you trust", "Verify through an official number"].map((item, index) => <li key={item} className="border-l border-[#111815] pl-5 text-xl font-bold"><span className="block font-display text-3xl">{index + 1}</span><span className="mt-2 block">{item}</span></li>)}</ol></div></section>
+      <section className="story-section immediate-help">
+        <div className="story-wrap story-split">
+          <div><h2>If the call or message is happening right now</h2><p>Use these steps in order. You do not have to keep a caller or sender waiting while you decide.</p></div>
+          <ol>
+            {immediateSteps.map(([title, body], index) => <li key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}
+          </ol>
+        </div>
+      </section>
 
-      <section id="recovery" className="scroll-mt-28 border-b border-[#111815] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24"><div><h2 className="font-display text-5xl leading-tight sm:text-6xl">Money was sent</h2><p className="mt-6 text-xl leading-8 text-[#5f6862]">Move quickly, but use official contact information.</p></div><ol className="divide-y-2 divide-[#111815] border-y-2 border-[#111815]">{[["Call the bank or payment company", "Ask whether the transfer can be stopped or reversed."], ["Secure the account", "Change the password and turn on two-step verification."], ["Save the evidence", "Keep receipts, messages, phone numbers, and dates."], ["Make a report", "Use the official reporting links below."], ["Watch for recovery scams", "No legitimate helper can guarantee your money back for an upfront fee."]].map(([title, text], index) => <li key={title} className="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]"><span className="font-display text-2xl text-[#176d5b]">0{index + 1}</span><div><h3 className="font-display text-2xl">{title}</h3><p className="mt-2 text-lg leading-7 text-[#5f6862]">{text}</p></div></li>)}</ol></div></section>
+      <section className="story-section recovery-path">
+        <div className="story-wrap">
+          <div className="section-intro"><h2>If you already sent money</h2><p>Act as soon as you can and use official contact information.</p></div>
+          <ol>
+            <li><strong>Contact the bank or payment company</strong><p>Tell them what happened and ask whether the payment can be stopped, disputed, or reversed.</p></li>
+            <li><strong>Protect your accounts</strong><p>Change passwords for any accounts that may have been affected. Turn on two-step verification when it is available.</p></li>
+            <li><strong>Save what happened</strong><p>Keep screenshots, receipts, messages, phone numbers, email addresses, and dates.</p></li>
+            <li><strong>Report the scam</strong><p>Use the official government reporting websites listed below.</p></li>
+            <li><strong>Be careful of follow-up scams</strong><p>Someone may claim they can recover your money. Be especially careful if they ask for another payment first.</p></li>
+          </ol>
+        </div>
+      </section>
 
-      <section className="border-b border-[#111815] bg-[#e6eee8] px-5 py-20 sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto max-w-[86rem]"><h2 className="font-display text-5xl leading-tight sm:text-6xl">Personal information was shared</h2><div className="mt-12 grid gap-6 md:grid-cols-3">{[["Passwords", "Change reused passwords, starting with email and financial accounts."], ["Card or bank details", "Call the issuer and ask about replacement cards or account protections."], ["Social Security number", "Use IdentityTheft.gov to build a recovery plan and consider a credit freeze."]].map(([title, text], index) => <article key={title} className={`doodle-card min-h-64 p-7 ${index === 0 ? "bg-white" : index === 1 ? "bg-[#e6eee8]" : "bg-[#dfe9df]"}`}><h3 className="font-display text-3xl">{title}</h3><p className="mt-5 text-lg leading-7">{text}</p></article>)}</div></div></section>
+      <section className="story-section personal-info">
+        <div className="story-wrap">
+          <h2>If you shared personal information</h2>
+          <div className="personal-info__rows">
+            <article><h3>Passwords</h3><p>Change the password for the affected account. If you used the same password anywhere else, change it there too. Start with email, banking, and payment services.</p></article>
+            <article><h3>Credit or debit card information</h3><p>Call the bank or card company using the number printed on the card or listed on the official website. Ask whether the card should be replaced and whether there are suspicious transactions.</p></article>
+            <article><h3>Social Security number</h3><p>Visit IdentityTheft.gov for recovery steps. You may also want to consider placing a credit freeze with the major credit bureaus.</p></article>
+          </div>
+        </div>
+      </section>
 
-      <section className="border-b border-[#111815] bg-[#111815] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-10"><div className="mx-auto max-w-[86rem]"><div className="grid gap-8 lg:grid-cols-2"><h2 className="font-display text-5xl leading-tight sm:text-6xl">Official places to report</h2><p className="text-xl leading-8 text-[#e6eee8]">These links leave our website and go directly to U.S. government services.</p></div><div className="mt-12 divide-y border-y border-white/50">{reports.map(([title, source, href]) => <a key={href} href={href} target="_blank" rel="noreferrer" className="grid min-h-28 gap-2 py-6 text-white sm:grid-cols-[0.8fr_1fr_auto] sm:items-center"><strong className="font-display text-2xl">{title}</strong><span className="text-[#e6eee8]">{source}</span><span className="font-bold text-[#dfe9df]">Open official site ↗</span></a>)}</div></div></section>
+      <section className="story-section official-reports">
+        <div className="story-wrap">
+          <div className="section-intro"><h2>Official places to report scams</h2><p>These links go directly to U.S. government websites.</p></div>
+          <div className="official-report-list">
+            {reports.map(([title, body, action, href]) => <a key={href} href={href} target="_blank" rel="noreferrer"><span><strong>{title}</strong><small>{body}</small></span><span>{action}</span></a>)}
+          </div>
+        </div>
+      </section>
 
-      <section className="border-b border-[#111815] px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-12 lg:grid-cols-2 lg:gap-24"><div><h2 className="font-display text-5xl leading-tight">Build a trusted-contact plan</h2><p className="mt-6 text-xl leading-8 text-[#5f6862]">Choose one or two people you can call before sending money or sharing a code. Write their numbers somewhere you can reach without opening a suspicious message.</p></div><div className="doodle-card bg-white p-7 sm:p-9"><p className="font-display text-3xl">My trusted contacts</p><div className="mt-8 space-y-8 text-xl"><p className="border-b-2 border-[#111815] pb-3">Name and phone number</p><p className="border-b-2 border-[#111815] pb-3">Name and phone number</p><p className="border-b-2 border-[#111815] pb-3">Family verification phrase</p></div></div></div></section>
+      <section className="story-section trusted-plan">
+        <div className="story-wrap story-split">
+          <div><h2>Make a trusted-contact plan</h2><p>Choose one or two people you can contact before sending money, sharing a code, or giving someone personal information. Write their phone numbers somewhere you can reach without using the suspicious message.</p><p>A family verification phrase can help if someone calls pretending to be a relative.</p></div>
+          <div className="trusted-plan__sheet">
+            <strong>My trusted contacts</strong>
+            <label>Name <span /></label><label>Phone number <span /></label>
+            <label>Name <span /></label><label>Phone number <span /></label>
+            <label>Family verification phrase <span /></label>
+          </div>
+        </div>
+      </section>
 
-      <section className="border-b border-[#111815] bg-[#e6eee8] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="font-display text-4xl sm:text-5xl">Keep a paper copy nearby</h2><p className="mt-4 max-w-3xl text-xl leading-8">Printing removes the need to find this page during a stressful call.</p></div><PrintButton /></div></section>
-
-      <section className="bg-[#dfe9df] px-5 py-16 sm:px-8 sm:py-20 lg:px-10"><div className="mx-auto grid max-w-[86rem] gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><h2 className="font-display max-w-4xl text-4xl leading-tight sm:text-6xl">Practice before the next call arrives</h2><Link href="/examples" className="doodle-button inline-flex min-h-14 w-fit items-center bg-white px-7 font-bold">Try scam examples</Link></div></section>
+      <section className="story-section resource-close">
+        <div className="story-wrap story-split">
+          <div><h2>Keep a paper copy somewhere easy to find</h2><p>A printed guide can be useful when you do not want to search online during a stressful call. Keep one near the phone, on the refrigerator, or with other important documents.</p></div>
+          <PrintButton />
+        </div>
+        <div className="story-wrap resource-close__practice"><div><h2>Want to practice?</h2><p>Try a few example scams and see what warning signs you notice.</p></div><Link href="/examples" className="light-button">Try scam examples</Link></div>
+      </section>
     </main>
   );
 }

@@ -24,9 +24,9 @@ export default function Footer() {
         <Link href="/resources" className="primary-button">Open the free guides</Link>
       </div>
       <div className="site-footer__main">
-        <div className="site-footer__brand">
+      <div className="site-footer__brand">
           <Logo />
-          <p>Community scam-safety workshops and practical tools for older adults, families, and the people who serve them.</p>
+          <p>Community scam-prevention workshops and practical resources for older adults, families, and the people who support them.</p>
           <span>Brevard County, Florida</span>
         </div>
         <div className="site-footer__links">

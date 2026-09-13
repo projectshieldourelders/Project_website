@@ -5,24 +5,24 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     label: "Pause",
-    title: "Let the pressure pass.",
-    body: "A real bank, government office, or family member will still be there after you take a minute. Let an unfamiliar call go to voicemail and stop replying to a message that is rushing you.",
+    title: "Do not let someone rush you.",
+    body: "If you do not recognize a caller, let the call go to voicemail. If a message is demanding money, personal information, or immediate action, stop replying for a moment. Legitimate organizations will give you time to check.",
     detail: "Unknown number",
     subdetail: "Claims your account closes today",
     action: "Let it ring",
   },
   {
-    label: "Verify",
-    title: "Use a route you already trust.",
-    body: "Call the number printed on your card, use a saved contact, or type the organization’s address yourself. Do not use the number or link supplied by the person asking for money or a code.",
+    label: "Check",
+    title: "Contact the organization yourself.",
+    body: "If someone says they are from your bank, call the number printed on your bank card. If they claim to be from a company or government agency, find the official website or a number you already trust. Do not use the phone number or link sent by the person contacting you.",
     detail: "Shield Community Bank",
     subdetail: "Number saved from the back of your card",
     action: "Call saved number",
   },
   {
     label: "Tell someone",
-    title: "Bring in a second person.",
-    body: "Call a family member, neighbor, caregiver, or staff member before anything moves. Scammers depend on isolation; another person can help check the story while you stay off the original call.",
+    title: "Ask another person before sending anything.",
+    body: "Call a family member, friend, caregiver, neighbor, or staff member and explain what happened. A second person may notice something you missed.",
     detail: "Maya",
     subdetail: "Trusted contact",
     action: "Call Maya",
@@ -116,7 +116,7 @@ export default function SafetySequence() {
     <section ref={sectionRef} id="how-it-works" className="safety-sequence" data-scene={activeScene}>
       <div className="safety-sequence__sticky">
         <div className="sequence-toolbar">
-          <span>How the safety check works</span>
+          <span>Pause. Check. Tell someone.</span>
           <span>{activeScene < 0 ? "Overview" : activeScene > 2 ? "Ready" : `0${activeScene + 1} / 03`}</span>
         </div>
 
@@ -133,8 +133,8 @@ export default function SafetySequence() {
           ))}
 
           <div className="sequence-intro-scene" aria-hidden={activeScene !== -1}>
-            <p>Calls, messages, links, and payment requests</p>
-            <h2>One routine for the moment something feels wrong.</h2>
+            <p>When something does not feel right</p>
+            <h2>Pause. Check. Tell someone.</h2>
           </div>
 
           {steps.map((step, index) => (
@@ -158,8 +158,8 @@ export default function SafetySequence() {
           ))}
 
           <div className="sequence-outro-scene" aria-hidden={activeScene !== 3}>
-            <span>Pause. Verify. Tell someone.</span>
-            <h2>You do not have to decide while someone is pressuring you.</h2>
+            <span>Pause. Check. Tell someone.</span>
+            <h2>You never have to make a decision while someone is pressuring you.</h2>
           </div>
         </div>
 
@@ -168,8 +168,8 @@ export default function SafetySequence() {
       </div>
 
       <div className="sequence-mobile">
-        <p className="sequence-mobile__intro">Calls, messages, links, and payment requests</p>
-        <h2>One routine for the moment something feels wrong.</h2>
+        <p className="sequence-mobile__intro">When something does not feel right</p>
+        <h2>Pause. Check. Tell someone.</h2>
         <ol>
           {steps.map((step, index) => (
             <li key={step.title}>

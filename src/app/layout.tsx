@@ -2,6 +2,7 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import PageMotion from "@/components/Common/PageMotion";
 import { assetPath } from "@/utils/assets";
 
 export const metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({
           showForHashAnchor={false}
         />
         <Header />
+        <PageMotion />
         <div id="main-content">{children}</div>
         <Footer />
       </body>
